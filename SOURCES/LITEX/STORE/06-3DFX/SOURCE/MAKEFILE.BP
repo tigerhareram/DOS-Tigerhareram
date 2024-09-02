@@ -1,0 +1,28 @@
+#様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様
+#                  Inertia/16 Realtime 3D Rendering Engine
+#                     Makefile for Turbo Pascal products
+#    Copyright (c) 1997, Alex Chalfin, Jeroen Bouwens. All Rights Reserved.
+#                    Inertia/16 Source Code Release.
+#様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様
+
+OBJFILLERS = spoly1.obj spoly2.obj
+
+MISASM     = vector.asm xform.asm matrix.asm
+MISOBJ     = vector.obj xform.obj matrix.obj
+
+PC         = bpc
+PCO        = -b -cp
+
+# we are going to cheat a little in this makefile
+# tp automaticly builds dependancies for each library
+# so wo don't have to specify them in this makefile
+
+inertia.tpp : inertia.pas $(MISOBJ) polygon.tpp define.inc
+        $(PC) $(PCO) inertia.pas
+
+polygon.tpp : $(OBJFILLERS) polygon.pas
+        $(PC) $(PCO) polygon.pas
+
+.asm.obj : 
+        tasm -m9 -t $<
+

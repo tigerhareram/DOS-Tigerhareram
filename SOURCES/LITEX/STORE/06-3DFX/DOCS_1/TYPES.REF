@@ -1,0 +1,244 @@
+Inertia types reference
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Inertia uses a lot of non-standard data-types. As user of the Inertia engine
+you only need two of those types in your programs (ViewObject and
+VectorObject). Here's a reference of all identifiers in these types.
+you can retrieve all sorts of information about the scene you're working on,
+and about individual objects. You could even write directly to the different
+fields, although care must be taken in doing so. Invalid values may cause
+Inertia to crash, behave strange or whatever. The relevant fields can be
+updated by one of the available procedures.
+
+ViewObject
+~~~~~~~~~~
+
+  TempHolder : Pointer
+  ~~~~~~~~~~~~~~~~~~~~
+
+    A 4 byte variable place holder. This pointer can be used to point to
+    your own information. It must remain in the structure for assembly
+    code considerations.
+
+  CenterX, CenterY : Integer
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Center of the viewport for this view. It is updated if the Update para-
+    meter for SetViewPort is true. If Update is false, then the previous value
+    is maintained. The default values are 159,99.
+
+  SortList : pSortList
+  ~~~~~~~~~~~~~~~~~~~~
+
+    Sorted list of visible polygons for this particular frame.
+
+  NumInSortList : Word
+  ~~~~~~~~~~~~~~~~~~~~
+
+    Internal counter to tell how many polygons are currently in the sortlist.
+    This value gets set/reset by the engine under normal rendering conditions.
+    It should not be manually changed.
+
+  AllocatedSortList : Word
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Maximum number of visible polygons for this View. A scene can consist of
+    more polygons then this, but the number visible should not exceed this
+    value.
+
+  PList : pByteArray
+  ~~~~~~~~~~~~~~~~~~
+
+    List used by Inertia for sorting the polygons in a scene.
+
+  WinMinX, WinMinY,WinMaxX, WinMaxY
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    The clipping values for this view. Everything outside the window defined
+    by these coordinates is not drawn. Set the 'Update' parameter for the
+    SetViewPort procedure to true if you want the scene to be centered around
+    the center of the viewport. The default values are 0,0,319,199.
+
+  PolygonList : Array[0..3] of PPolygonList
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+    List of polygons to consider rendering for a particular frame. It is
+    broken into multiple lists to avoid 64K segment limitations. This structure
+    is maintained internally.
+
+  Lights : tLightList
+  ~~~~~~~~~~~~~~~~~~~
+
+    List of lightsources defined for this view. The first word contains the
+    number of lights defined. then the position of these lights follows in
+    triplets of LongInts defining the position in X,Y,Z format.
+
+  Camera : Matrix4x3
+  ~~~~~~~~~~~~~~~~~~
+
+    Camera matrix. Not very usefull for you, but it contains the matrix that
+    transforms an object from the World Coordinate System to the Camera
+    Coordinate System.
+
+  Frame : Longint
+  ~~~~~~~~~~~~~~~
+
+    Number of times this particular view is used to render a scene. It is
+    incremented each time the procedure Render is called.
+
+  StartTime, EndTime : Longint
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    StartTime is the value of the internal clock at the moment InitView is
+    called. EndTime is the value when FreeView is called. Together with
+    the Frame field (Above), they are used to calculate the number of frames
+    per second.
+
+  FramesPerSecond : Real
+  ~~~~~~~~~~~~~~~~~~~~~~
+
+    This field contains the frames per second of a view. It is calculated when
+    FreeView is called, so before that it contains no meaningfull value.
+    Note that this field indicates the performance of the _entire_ program,
+    rather than indicating how fast a frame is calculated/drawn. If you
+    calculate the value of PI to ten million decimals between every frame, then
+    this value will be very low, even if your scene is not complex.
+
+VectorObject
+~~~~~~~~~~~~
+
+    Num_Verticies : Word
+    ~~~~~~~~~~~~~~~~~~~~
+
+      Number of verticies 3D-points in an object.
+
+    Num_Polygons : Word
+    ~~~~~~~~~~~~~~~~~~~~
+
+      Numbor of polygons in an object.
+
+    RotateList : pByteList
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+      List of flags for verticies. The use of the flags involves telling
+      the system if a vertex is visible, shading information, and normal
+      information. This data changes on a per frame basis.
+
+    Object_Definition : pShortVertex3dList
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      List of vertex definitions. Defines each point in an object in object-
+      space. The points are stored as Integer triplets in X,Y,Z format.
+
+    World_Coords : pVertex3dList
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      Coordinates of all verticies in world-space. this depends on the position
+      of the object.
+
+    Screen_Coords : pVertex2dList
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      The 2D screen coordinates of all verticies, stored as integer pairs.
+
+    Vertex_Normals : pShortVertex3dList
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      List of vertex normals. They are stored as Integer triplets (See Object_
+      Definition). The points are relative to the vertex they belong to. A
+      vertex normal is the average of the normals of the polygons a vertex is
+      used in.
+
+    Polygon_Normals : pShortVertex3dList
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      List of polygon normals. They are stored the same way as the Vertex_
+      Normals.
+
+    Polygons : pTriangleList
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+      List of polygon definitions. A polygon is defined as three indices
+      referring to three verticies in the Object_Definition field, a colour
+      and a texture index. First are three Integers (Vertex indices), after
+      that are two bytes (a colour number and a texture index).
+
+    CullList : pCullList
+    ~~~~~~~~~~~~~~~~~~~~
+
+      List of flags for polygons. The use of the flags involves telling
+      the system if a polygon is visible and shading information. This data
+      changes on a per frame basis.
+
+    Texture_Coords : pUVCoord
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      List of texture coordinates, stored as triplets of pairs of bytes.
+
+    Surface : SurfaceType
+    ~~~~~~~~~~~~~~~~~~~~~
+
+      Surface type of an object. This is Smooth, Texture or Reflection.
+
+    Shading : ShadeType
+    ~~~~~~~~~~~~~~~~~~~
+
+      Shading type of an object. This is Ambient, Lambert, Gouraud or Phong.
+
+    IBuffer : Byte
+    ~~~~~~~~~~~~~~
+
+      Index of texture to be used as phong intensity map.
+
+    Radius : Longint
+    ~~~~~~~~~~~~~~~~
+
+      Radius of an object. There is always one vertex that is farthest away
+      from the object's origin. this field indicates that distance. It is used
+      as a preliminary collision detection. If two objects are a distance less
+      than Object1.Radius+Object2.Radius away from each other, they possibly
+      intersect.
+
+    xAngle, yAngle, zAngle : Word
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      Orientation of an object. These values indicate the angle an object is
+      rotated around the X,Y or Z axis.
+
+    Orientation : Matrix4x3
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+      Orientation-matrix. This is derived from the above three values.
+
+    zClip : Boolean
+    ~~~~~~~~~~~~~~~
+
+      If true, the object is clipped if it is more than MaxZ away from the
+      eye position. If false, the object is always processed if it is within
+      the clipping frustum (Without Z-boundary).
+
+    Transparent : Boolean
+    ~~~~~~~~~~~~~~~~~~~~~
+
+      If true, the object is transparent. If false, the object is opaque.
+
+    Cull : Boolean
+    ~~~~~~~~~~~~~~
+
+      If true, the object polygons are culled. If false, all polygons
+      are processed. If true, backfacing polygons are removed. This is
+      provided for transparency sake (where you might want to see backfacing
+      polygons).
+
+    CorrectCount : Integer
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+      Value used by Inertia for correct rotations if DELTA_ROTATIONS is defined.
+
+    MaxZ : Longint
+    ~~~~~~~~~~~~~~
+
+      If zClip is true, this is the maximum distance for an object to be
+      processed. If the object is farther away than this distance, it's not
+      processed and simply not visible.
+

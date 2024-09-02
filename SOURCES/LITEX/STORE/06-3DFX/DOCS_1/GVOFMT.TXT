@@ -1,0 +1,79 @@
+                             GFXFX Vector Object
+                                File Format
+
+
+ -= Header =-
+
+ The GVO header consists of 5 bytes. The first 3 bytes are the letters
+ 'GVO', and the second 2 bytes are a word which tells what data is in the
+ file. The breakdown of the flag word is as follows:
+
+
+    Bit 0: If set, vertex information is in the data file, otherwise no
+           vertex information is contained
+    Bit 1: If set, polygon definitions are in the data file
+    Bit 2: If set, polygon normals are in the data file
+    Bit 3: If set, vertex normals are in the data file
+    Bit 4: Texture coordinate information is in the file
+
+
+ -= Vertex Information =-
+
+ The vertex information consists of 1 word, then N signed integers.
+ The first word is the number of vertices in the object. The rest of this
+ field is made up of NumVerticies vertex points. Each vertex is stored as 3
+ signed 16-bit integers. Here is the Pascal structure for a vertex:
+
+   Vertex3d = Record
+     x, y, z : Integer;
+   End;
+
+
+
+
+ -= Polygon Information =-
+
+ The polygon information consists of 1 word the N integers. The first word
+ tells you how many polygons are in the block. After the NumPolygons word,
+ the polygon data is left. Each polygon consists of three 16-bit integers
+ which are indices into the vertex list. Each polygon is a triangle, therefore
+ only has 3 sides. There are NumPolygons triangles in the file.
+
+
+ -= Polygon Normal Information =-
+
+   There are (Number of polygons in object) normals in this section. This
+   number is the same (and is gotten from) the polygon information. The
+   coordinates of the face normals are stored in the exact same manor as
+   the vertex information, 3 signed 2 byte integers. The Normals are stored
+   in fixed point (the value of the fixed point is specified at conversion
+   time).
+
+
+ -= Vertex Normal Information =-
+
+   There are (Number of vertices in object) normals in this section. This 
+   number is the same (and is gotten from) the vertex information. The
+   coordinates of the vertex normals are stored in the exact same manor as
+   the vertex information, 3 signed 2 byte integers. The Normals are stored
+   in fixed point (the value of the fixed point is specified at conversion
+   time).
+
+
+ -= Texture Vertex Information =-
+
+   Has 1 to (Number of Polygons) texture polygon definitions. Each texture
+   polygon definition is 3 UV coords. Each UV coord is 2 bytes, containing
+   the x and y location in the  texture. Supports up to 256x256 texture
+   bitmap (because of byte sized indices).
+
+
+ -= Notes =-
+
+   The data in the file is stored sequentially, as stated in the Flag byte.
+   First is vertex information, then polygon information. Next are normals
+   then texture coord information. The lengths of sections are not included in
+   the data file because they can be _easily_ calculated from the first
+   couple of bytes.
+
+

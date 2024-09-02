@@ -1,0 +1,48 @@
+PCX Loading and saving routines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Other Units Used
+~~~~~~~~~~~~~~~~
+  Types, BufIO
+
+Procedures and Functions by Alex Chalfin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LoadPCXFile
+~~~~~~~~~~~
+  Declaration:
+    Function LoadPCXFile(Filename : String; Var BitMap : Pointer; Var Pal : Palette; Var Size : Word; FOfs : Longint) : Integer;
+
+  Parameters:
+    Filename - name of the file to load PCX from
+    BitMap - Un-initialized pointer to  data
+    Pal - palette info
+    Size - size of the uncompressed raw data
+    FOfs - offset into file to start loading
+
+  Returns:
+    0 - Operation successful
+    1 - File not found
+    2 - Error reading from file
+    3 - Not enough memory
+    4 - Not a 256 color file
+
+  Description:
+    Reads a PCX file from disk and decodes it using the buffered file IO
+    routines. The bitmap pointer is an unallocated pointer which gets
+    allocated from within the function.
+
+SavePCXFile
+~~~~~~~~~~~
+  Declaration:
+    Procedure SavePCXFile(Filename : String; XSize, YSize : Word; Screen : Pointer; Pal : Palette);
+
+  Parameters:
+    Filename - name of the file to write
+    XSize - x-dimension of the picture
+    YSize - y-dimension of the picture
+    Screen - pointer to the buffer to write
+    Pal - Palette of the picture to write
+
+  Description:
+    Writes the specified buffer to a PCX file.

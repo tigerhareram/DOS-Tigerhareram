@@ -1,0 +1,207 @@
+Buffered File I/O routines
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  The new file I/O routines provide a means of buffering binary data
+  input into your programs, make the file reading and writing much faster.
+  The unit is compiled in the {$I-} state, so the IOResult flag is still
+  available to your programs. With these routines, there is no difference
+  between binary and text files. The bReadLn procedure is provided to
+  facilitate buffered input of text files.
+
+Types
+~~~~~
+   bFile
+   ~~~~~
+   This is the new file variable type for use with the buffered IO
+ routines. Instead of declaring something as "FILE", it would be declared
+ as "bFILE" (the 'b' stands for buffered).
+
+
+Procedures and Functions by Alex Chalfin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FAssign
+~~~~~~~
+  Declaration:
+    Procedure FAssign(Var D : bFile; Filename : String);
+
+  Parameters:
+    D - File variable
+    Filename - name of the file to associate the file variable with.
+
+  Description:
+    Does the same thing as the Assign procedure does with standard files
+    but uses the new buffered file type
+
+
+FSetBuffer
+~~~~~~~~~~
+  Declaration:
+    Procedure FSetBuffer(Var D : bFile; Var Buffer; Size : Word);
+
+  Parameters:
+    D - File Variable
+    Buffer - Address of file IO buffer
+    Size - size of buffer
+
+  Description:
+    Assigns a buffer of the specified size to the file variable. This
+    procedure must be called before FReset or FReWrite in order to buffer
+    the IO. Calling this after FReset or FReWrite will cause undesired
+    operation and probably a crash. Not calling this at all forces
+    non-buffered file IO operations to occur.
+
+
+FReset
+~~~~~~
+  Declaration:
+    Procedure FReset(Var D : bFile);
+
+  Parameters:
+    D - File Variable
+
+  Description:
+    Performs a Reset on the buffered file variable. Similar to the Pascal
+    Reset procedure. If you are using the buffering capabilities, be sure
+    make a call to FSetBuffer before a Call to FReset
+
+FReWrite
+~~~~~~~~
+  Declaration:
+    Procedure FReWrite(Var D : bFile);
+
+  Parameters:
+    D - File Variable
+
+  Description:
+    Performs a ReWrite on the buffered file variable. Similar to the Pascal
+    ReWrite procedure. If you are using the buffering capabilities, be sure
+    make a call to FSetBuffer before a call to FReWrite
+
+FSeek
+~~~~~
+  Declaration:
+    Procedure FSeek(Var D : bFile; Location : Longint);
+
+  Parameters:
+    D - File variable
+    Location - new location in file to seek to
+
+  Description:
+    FSeek locates the file pointer to the specified location, and
+    invalidates the buffer data. Subsequent file reads will continue
+    from the specified location.
+
+bFileSize
+~~~~~~~~~
+  Declaration:
+    Function bFileSize(D : bFile) : Longint;
+
+  Parameters:
+    D - File Variable
+
+  Returns:
+    Size of the specified file
+
+  Description:
+    Performs the same function as FileSize, but uses a bFile as the
+    parameter.
+
+bFilePos
+~~~~~~~~
+  Declaration:
+    Function bFilePos(D : bFile) : Longint;
+
+  Parameters:
+    D - File variable
+
+  Returns:
+    Current position in the file
+
+  Description:
+    Performs the same function as FilePos, but uses a bFile as the
+    parameter.
+
+bEOF
+~~~~
+  Declaration:
+    Function bEOF(D : bFile) : Boolean;
+
+  Parameters:
+    D - File variable
+
+  Returns:
+    TRUE - file pointer is at the end of the file
+    FALSE - file pointer is not at the end of the file
+
+  Description:
+    Performs the same function as EOF, but uses a bFile as the
+    parameter.
+
+FRead
+~~~~~
+  Declaration:
+    Function  FRead(Var D : bFile; Var Dest; Count : Word) : Word;
+
+  Parameters:
+    D - File variable
+    Dest - Address to store data in
+    Count - Number of bytes to read in
+
+  Returns:
+    Number of bytes actually read in
+
+  Description:
+    Functionally similar to Blockread. The file is read (using buffering)
+    and is stored in the specified address.
+
+FWrite
+~~~~~~
+  Declaration:
+    Procedure FWrite(Var D : bFile; Var Buf; Count : Word);
+
+  Parameters:
+    D - File variable
+    Buf - Address of the buffer to write
+    Count - length of the buffer to write
+
+  Description:
+    Functionally similar to BlockWrite. This essentially is a small write
+    back caching system.
+
+bReadLn
+~~~~~~~
+  Declaration:
+    Procedure bReadLn(Var D : bFile; Var S : String);
+
+  Parameters:
+    D - File Variable
+    S - String to load data into
+
+  Description:
+    Functionally similar to Readln for text files. This function reads
+    from the file till a carriage return using the buffering routines.
+
+Flush
+~~~~~
+  Declaration:
+    Procedure Flush(Var D : bFile);
+
+  Parameters:
+    D - File variable
+
+  Description:
+    Flushes the write buffer to disk (when using FWrite). This procedure
+    should be called before you close the file. This procedure only needs
+    to be used when writing to files.
+
+FClose
+~~~~~~
+  Declaration:
+    Procedure FClose(Var D : bFile);
+
+  Parameters:
+    D - File variable
+
+  Description:
+    Closes the file
