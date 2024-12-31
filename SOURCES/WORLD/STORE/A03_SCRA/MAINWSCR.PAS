@@ -11,15 +11,15 @@ Begin
 
   If MainMenu=0 then
   Begin
-    I:=0;  Text_OutText(20,30+15*I,'Hit100A',Buffer[0],SVGA);
-    I:=1;  Text_OutText(20,30+15*I,'Hit100B',Buffer[0],SVGA);
-    I:=2;  Text_OutText(20,30+15*I,'Hit100C',Buffer[0],SVGA);
-    I:=3;  Text_OutText(20,30+15*I,'Hit100D',Buffer[0],SVGA);
-    I:=4;  Text_OutText(20,30+15*I,'Hit50',Buffer[0],SVGA);
-    I:=5;  Text_OutText(20,30+15*I,'Hit25A',Buffer[0],SVGA);
-    I:=6;  Text_OutText(20,30+15*I,'Hit25B',Buffer[0],SVGA);
-    I:=7;  Text_OutText(20,30+15*I,'Hit15',Buffer[0],SVGA);
-    I:=8;  Text_OutText(20,30+15*I,'Alternative',Buffer[0],SVGA);
+    I:=0;  Text_OutText(20,30+15*I,'Program',Buffer[0],SVGA);
+    I:=1;  Text_OutText(20,30+15*I,'Hit100A',Buffer[0],SVGA);
+    I:=2;  Text_OutText(20,30+15*I,'Hit100B',Buffer[0],SVGA);
+    I:=3;  Text_OutText(20,30+15*I,'Hit100C',Buffer[0],SVGA);
+    I:=4;  Text_OutText(20,30+15*I,'Hit100D',Buffer[0],SVGA);
+    I:=5;  Text_OutText(20,30+15*I,'Hit50',Buffer[0],SVGA);
+    I:=6;  Text_OutText(20,30+15*I,'Hit25A',Buffer[0],SVGA);
+    I:=7;  Text_OutText(20,30+15*I,'Hit25B',Buffer[0],SVGA);
+    I:=8;  Text_OutText(20,30+15*I,'Hit15',Buffer[0],SVGA);
     I:=9;  Text_OutText(20,30+15*I,'Exit',Buffer[0],SVGA);
     {Kur}  Text_OutText(20-15,30+15*MainmenuSel,'>>',Buffer[0],SVGA);
     {Stitek} Text_OutText(20,455,'// MENU //',Buffer[0],SVGA);
@@ -38,7 +38,7 @@ Begin
     I:=0;  Text_OutText(20,30+15*I,'Dungeon',Buffer[0],SVGA);
     I:=1;  Text_OutText(20,30+15*I,'..back',Buffer[0],SVGA);
     {Kur}  Text_OutText(20-15,30+15*MainmenuSel,'>>',Buffer[0],SVGA);
-    {Stitek} Text_OutText(20,455,'// ALTERNATIVE //',Buffer[0],SVGA);
+    {Stitek} Text_OutText(20,455,'// PROGRAM //',Buffer[0],SVGA);
 
     {World}
     SVGA_Rectangle(285,30,624,349,ColX[15]);
