@@ -50,7 +50,7 @@ Begin
                          Hit100A;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -64,7 +64,7 @@ Begin
                          Hit100B;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -78,7 +78,7 @@ Begin
                          Hit100C;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -92,7 +92,7 @@ Begin
                          Hit100D;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -106,7 +106,7 @@ Begin
                          Hit50;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -120,7 +120,7 @@ Begin
                          Hit25A;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -134,7 +134,7 @@ Begin
                          Hit25B;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -148,18 +148,54 @@ Begin
                          ALL15Min;
                          MainMenu:=0;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=8;
+                         MainMenuMax:=9;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
                          LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
                        End;
-                    8: Begin
+                    8: Begin                           {change menu to 1}
+                         MainMenu:=1;                   {Alternative}
+                         MainMenuMax:=1;
+                         MainMenuSel:=0;
+
+                         P16_SetPal(ColX[0],0,0,0);   {Black}
+                         P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                         LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                         LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
+                       End;
+                    9: Begin
                          KonecProgramu:=True;           {Exit}
                        End;
                   End; {Case End}
                 End;
-  {Prog}     1: Begin
+ {Alt. Prog} 1: Begin
+                  Case MainMenuSel of
+                    0: Begin
+                         MainMenu:=1;                   {Dungeon}
+                         MainMenuSelSave:=MainMenuSel;
+                         MainMenuSel:=0;
+                         MainMenuMax:=0;
+                         Dungeon;
+                         MainMenu:=1;
+                         MainMenuSel:=MainMenuSelSave;
+                         MainMenuMax:=1;
+                         P16_SetPal(ColX[0],0,0,0);   {Black}
+                         P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                         LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                         LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
+                       End;
+                    1: Begin                            {back Alternative}
+                         MainMenu:=0;
+                         MainMenuMax:=9;
+                         MainMenuSel:=0;
+
+                         P16_SetPal(ColX[0],0,0,0);   {Black}
+                         P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                         LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                         LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
+                       End;
+                  End; {Case End}
                 End;
            End; {Case End}
          End;
@@ -171,6 +207,16 @@ Begin
            Case MainMenu of
              0: Begin
                   KonecProgramu:=True;                      {Esc MainMenu}
+                End;
+             1: Begin                                    {Esc Alternative}
+                  MainMenu:=0;
+                  MainMenuMax:=9;
+                  MainMenuSel:=0;
+
+                  P16_SetPal(ColX[0],0,0,0);   {Black}
+                  P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                  LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                  LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
                 End;
            End; {Case End}
          End;

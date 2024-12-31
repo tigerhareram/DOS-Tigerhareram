@@ -1,0 +1,38 @@
+v     i     v     a     t     a     c     i     d     h     o     u     s     e
+        лллллл
+      л ллллллм       (c) 1996 by Zd3N && M0Sh3
+      лллллллллл
+    л ллллллллллм     W1R3d demo competition (party release)
+    лллл     Блллл
+g   лллл      лллл    minimum machine requirements:
+r   лл         Блл    486 dx100 - 8mb ram system - pentium recommended!
+t  Блл          ллм   no ems for gus, need of ems for sb, nosound works
+z  лл ллллллллллВлл
+2  лл ллллллллллБлл   additional code:
+a  лл лллллллллл лл   extender     - pmode by tran
+l Блл лллллллллл ллм  sound system - midas by sahara surfers
+l ллл лл         Влл
+w ллл лл         Блл  3d objects by nelo
+h лл  лл          лл
+o лл  лл          лл  contact:
+r лл  ллллллллллм лл  zden ............. hlinkaz@elf.stuba.sk (++42-7-5414-756)
+e лл  лллллллллл  лл  moshe ............ bohmer@elf.stuba.sk  (++42-7-813-568)
+a лл  лллллллллл  лл
+l лл  лллллллллл  лл  about gfx modes:
+l лл  лл          лл  mode 1 ............. standard vga rgb-fake (virtual
+y лл  лл          лл                       rgb-screens 320x160)
+c лл  лл          лл  mode 2 ............. the same, showing only 128 of 160
+a ллм лл         Влл                       lines (fast!)
+r Влл лллллллллл ллБ  mode 3 ............. vesa mode, 320x240x16bit, virtual
+e Блл лллллллллл лл                        screens are zoomed to save
+   лл лллллллллл лл                        the correct aspect ratio (vesa mode
+   ллмллллллллллВлл                        320x160 does not exists!)
+   Влл          ллБ   mode 4 ............. the same, but palette effects are
+ u Бллм     п  Влл                         emulated (slow!) (ok on p100+)
+ .  лллл      лллл    mode 5 ............. vesa mode, 320x200x16bit, 160 active
+ d  ллллм    Влллл                         lines, fast but does not save
+ .   Блллллллллл л                         the aspect ratio (ugly (e) in
+ m    лллллллллл                           the beginnig)
+ .     Блллллл        mode 6 ............. the same, but with palette emulation
+        лллллл
+ v ! l i k o v c v a i e t s f a e o c r r i a f d e r h w i o s e u e n s y d e
