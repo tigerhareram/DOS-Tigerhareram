@@ -21,12 +21,16 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 b_xms, b_detect, b_smix;
 
    Procedure Dungeon;
+   Procedure KnihovnaInfoOperate;
+   Procedure Kniha;
 
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\dungeon.pas}
+  {$I ..\SOURCES\WORLD\STORE\A12_PROW\knioper.pas}
+  {$I ..\SOURCES\WORLD\STORE\A12_PROW\kniha.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.

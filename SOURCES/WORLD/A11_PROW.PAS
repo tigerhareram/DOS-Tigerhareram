@@ -20,10 +20,20 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
+     Procedure WriterChat(Y1: Word);
+
+     Procedure PrecistZKnihovny(Index: Byte);
+     Procedure ZadaniJmena(Y,Pripocet:Byte);
+     Procedure WriterMemo(Soubor: Word);
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 
+  {$I ..\SOURCES\WORLD\STORE\A11_PROW\writerch.pas}
+
+  {$I ..\SOURCES\WORLD\STORE\A11_PROW\zadejm.pas}
+  {$I ..\SOURCES\WORLD\STORE\A11_PROW\precist.pas}
+  {$I ..\SOURCES\WORLD\STORE\A11_PROW\writerme.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.

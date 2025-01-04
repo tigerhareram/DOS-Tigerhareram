@@ -44,7 +44,7 @@ Begin
                   Case MainMenuSel of
                     0: Begin
                          MainMenu:=1;                  {Program}
-                         MainMenuMax:=1;
+                         MainMenuMax:=2;
                          MainMenuSel:=0;
 
                          P16_SetPal(ColX[0],0,0,0);   {Black}
@@ -169,7 +169,7 @@ Begin
                        End;
                   End; {Case End}
                 End;
- {Alt. Prog} 1: Begin
+   {Program} 1: Begin
                   Case MainMenuSel of
                     0: Begin
                          MainMenu:=1;                   {Dungeon}
@@ -185,7 +185,21 @@ Begin
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
                          LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
                        End;
-                    1: Begin                            {back Alternative}
+                    1: Begin
+                         MainMenu:=15;                  {Kniha}
+                         MainMenuSelSave:=MainMenuSel;
+                         MainMenuSel:=0;
+                         MainMenuMax:=64;
+                         Kniha;
+                         MainMenu:=1;
+                         MainMenuSel:=MainMenuSelSave;
+                         MainMenuMax:=2;
+                         P16_SetPal(ColX[0],0,0,0);   {Black}
+                         P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                         LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                         LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
+                       End;
+                    2: Begin                            {back ..}
                          MainMenu:=0;
                          MainMenuMax:=9;
                          MainMenuSel:=0;

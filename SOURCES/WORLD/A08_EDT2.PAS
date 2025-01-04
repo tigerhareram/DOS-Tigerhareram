@@ -19,9 +19,18 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
+     Procedure ExportujKnihovnu(Cesta,Uzivatel:string);
+     Procedure ImportujKnihovnu(Cesta,Uzivatel:string);
+     Procedure SmazVsechnySoubory(Cesta:string);
+
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+
+   {$I ..\SOURCES\WORLD\STORE\A08_EDT2\pomocne.pas}
+   {$I ..\SOURCES\WORLD\STORE\A08_EDT2\export.pas}
+   {$I ..\SOURCES\WORLD\STORE\A08_EDT2\import.pas}
+   {$I ..\SOURCES\WORLD\STORE\A08_EDT2\mazani.pas}
 
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}

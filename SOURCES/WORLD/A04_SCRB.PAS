@@ -19,10 +19,24 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
+  Procedure WriteStranka;                             {STR80.PAS Kniha}
+  Procedure WriteStrankaChat(Y1: Word);               {STR80.PAS Chat}
+
+  Procedure Doprava;                                  {Memo writer}
+  Procedure Doleva;
+  Procedure SmazZnak;
+  Procedure ZalomRadek;
+
+  Procedure Doprava2;                                 {Chat lobby}
+  Procedure Doleva2;
+  Procedure SmazZnak2(Y1: Word);
+  Procedure ZalomRadek2(Y1: Word);
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXX}
 
+   {$I ..\SOURCES\WORLD\STORE\A04_SCRB\str80.pas}
+   {$I ..\SOURCES\WORLD\STORE\A04_SCRB\memo.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.

@@ -1,6 +1,5 @@
 @echo off
 CD ..
-mkdir OUTPUTS
 CD OUTPUTS
 
 tasm -m9 -t ..\SOURCES\LITEX\STORE\06-3DFX\SOURCE\i_spoly1.asm
