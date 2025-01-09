@@ -39,7 +39,8 @@ Begin
   Begin
     I:=0;  Text_OutText(20,30+15*I,'Dungeon',Buffer[0],SVGA);
     I:=1;  Text_OutText(20,30+15*I,'Kniha',Buffer[0],SVGA);
-    I:=2;  Text_OutText(20,30+15*I,'..back',Buffer[0],SVGA);
+    I:=2;  Text_OutText(20,30+15*I,'Zvuky',Buffer[0],SVGA);
+    I:=3;  Text_OutText(20,30+15*I,'..back',Buffer[0],SVGA);
     {Kur}  Text_OutText(20-15,30+15*MainmenuSel,'>>',Buffer[0],SVGA);
     {Stitek} Text_OutText(20,455,'// PROGRAM //',Buffer[0],SVGA);
 

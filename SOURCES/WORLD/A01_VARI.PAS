@@ -74,6 +74,10 @@ Var
              Save: TSave;
              KnihovnaInfo: TKnihovnaInfo;
 
+{Zvuky}      ZvukRaw: array[0..120] of PSound;
+             LenghtF: array[0..9] of LongInt;
+             Hraje: array[0..7] of Boolean;
+
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}

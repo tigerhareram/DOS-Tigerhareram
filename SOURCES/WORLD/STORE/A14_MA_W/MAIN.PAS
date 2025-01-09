@@ -9,6 +9,16 @@ Begin
   LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
   LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
 
+  OpenSoundResourceFile('ZVUKY\zvuky.snd');
+  LoadSound(ZvukRaw[0],'MUSIC432');
+  LoadSound(ZvukRaw[1],'ASMR');
+  LoadSound(ZvukRaw[2],'BLASTER1');
+  LoadSound(ZvukRaw[3],'BLASTER2');
+  LoadSound(ZvukRaw[4],'BLASTER3');
+  LoadSound(ZvukRaw[5],'WAKEUP1');
+  LoadSound(ZvukRaw[6],'WAKEUP2');
+  LoadSound(ZvukRaw[7],'WAKE-UP');
+
   Repeat
     MainWorldScreen;
 
@@ -44,7 +54,7 @@ Begin
                   Case MainMenuSel of
                     0: Begin
                          MainMenu:=1;                  {Program}
-                         MainMenuMax:=2;
+                         MainMenuMax:=3;
                          MainMenuSel:=0;
 
                          P16_SetPal(ColX[0],0,0,0);   {Black}
@@ -179,7 +189,7 @@ Begin
                          Dungeon;
                          MainMenu:=1;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=1;
+                         MainMenuMax:=3;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
@@ -193,13 +203,27 @@ Begin
                          Kniha;
                          MainMenu:=1;
                          MainMenuSel:=MainMenuSelSave;
-                         MainMenuMax:=2;
+                         MainMenuMax:=3;
                          P16_SetPal(ColX[0],0,0,0);   {Black}
                          P16_SetPal(ColX[15],5,35,8); {Dark Green}
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
                          LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
                        End;
-                    2: Begin                            {back ..}
+                    2: Begin
+                         MainMenu:=36;                  {Zvuky}
+                         MainMenuSelSave:=MainMenuSel;
+                         MainMenuSel:=0;
+                         MainMenuMax:=8;
+                         Zvuky;
+                         MainMenu:=1;
+                         MainMenuSel:=MainMenuSelSave;
+                         MainMenuMax:=3;
+                         P16_SetPal(ColX[0],0,0,0);   {Black}
+                         P16_SetPal(ColX[15],5,35,8); {Dark Green}
+                         LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
+                         LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
+                       End;
+                    3: Begin                            {back ..}
                          MainMenu:=0;
                          MainMenuMax:=9;
                          MainMenuSel:=0;
@@ -236,6 +260,12 @@ Begin
          End;
 
   Until KonecProgramu=True;
+
+  If ZvukKarta=True then
+  Begin
+    for i:=0 to 7 do FreeSound(ZvukRaw[i]);
+    CloseSoundResourceFile;
+  End;
 
   Spkr_Silence;
 End;

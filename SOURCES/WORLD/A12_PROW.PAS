@@ -23,6 +23,7 @@ b_xms, b_detect, b_smix;
    Procedure Dungeon;
    Procedure KnihovnaInfoOperate;
    Procedure Kniha;
+   Procedure Zvuky;
 
 
 Implementation
@@ -31,6 +32,7 @@ Implementation
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\dungeon.pas}
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\knioper.pas}
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\kniha.pas}
+  {$I ..\SOURCES\WORLD\STORE\A12_PROW\zvuky.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.
