@@ -20,6 +20,7 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
+
   Procedure Main;
 
 

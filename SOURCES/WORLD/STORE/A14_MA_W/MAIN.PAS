@@ -9,6 +9,9 @@ Begin
   LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
   LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
 
+  If ParamCount>0 then LoadGRAFile(ParamStr(1),0,0);
+  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+
   OpenSoundResourceFile('ZVUKY\zvuky.snd');
   LoadSound(ZvukRaw[0],'MUSIC432');
   LoadSound(ZvukRaw[1],'ASMR');
@@ -54,7 +57,7 @@ Begin
                   Case MainMenuSel of
                     0: Begin
                          MainMenu:=1;                  {Program}
-                         MainMenuMax:=3;
+                         MainMenuMax:=4;
                          MainMenuSel:=0;
 
                          P16_SetPal(ColX[0],0,0,0);   {Black}
@@ -223,7 +226,14 @@ Begin
                          LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
                          LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
                        End;
-                    3: Begin                            {back ..}
+                    3: Begin                            {Convert}
+                         MainMenu:=37;
+                         Convert;
+                         MainMenu:=1;
+                         MainMenuMax:=4;
+                         MainMenuSel:=0;
+                       End;
+                    4: Begin                            {back ..}
                          MainMenu:=0;
                          MainMenuMax:=9;
                          MainMenuSel:=0;

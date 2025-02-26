@@ -20,6 +20,7 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
+   Procedure Convert; {GRA > BMP}
    Procedure Dungeon;
    Procedure KnihovnaInfoOperate;
    Procedure Kniha;
@@ -29,6 +30,7 @@ b_xms, b_detect, b_smix;
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 
+  {$I ..\SOURCES\WORLD\STORE\A12_PROW\convert.pas}
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\dungeon.pas}
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\knioper.pas}
   {$I ..\SOURCES\WORLD\STORE\A12_PROW\kniha.pas}
