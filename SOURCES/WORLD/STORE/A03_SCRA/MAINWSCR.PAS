@@ -37,7 +37,7 @@ Begin
 
   If MainMenu=1 then
   Begin
-    I:=0;  Text_OutText(20,30+15*I,'Dungeon',Buffer[0],SVGA);
+    I:=0;  Text_OutText(20,30+15*I,'Mapa',Buffer[0],SVGA);
     I:=1;  Text_OutText(20,30+15*I,'Kniha',Buffer[0],SVGA);
     I:=2;  Text_OutText(20,30+15*I,'Zvuky',Buffer[0],SVGA);
     I:=3;  Text_OutText(20,30+15*I,'Convert',Buffer[0],SVGA);

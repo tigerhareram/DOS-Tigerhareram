@@ -5,6 +5,9 @@ Var EndConvert: Boolean;
 Begin
   EndConvert:=False;
 
+  If ParamCount>0 then LoadGRAFile(ParamStr(1),0,0);
+  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+
   Repeat
     SVGA_ClearPage(ColX[0]);
     SVGA_Rectangle(0,0,639,399,ColX[15]);

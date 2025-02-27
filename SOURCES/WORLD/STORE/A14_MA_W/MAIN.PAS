@@ -9,9 +9,6 @@ Begin
   LoadBMPFile('BITMAP\globe.bmp',0,0,0,176,Buffer[1]);
   LoadBMPFile('BITMAP\rambo16.bmp',0,0,100,188,Buffer[1]);
 
-  If ParamCount>0 then LoadGRAFile(ParamStr(1),0,0);
-  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
-
   OpenSoundResourceFile('ZVUKY\zvuky.snd');
   LoadSound(ZvukRaw[0],'MUSIC432');
   LoadSound(ZvukRaw[1],'ASMR');
@@ -185,11 +182,11 @@ Begin
    {Program} 1: Begin
                   Case MainMenuSel of
                     0: Begin
-                         MainMenu:=1;                   {Dungeon}
+                         MainMenu:=1;                   {Mapa}
                          MainMenuSelSave:=MainMenuSel;
                          MainMenuSel:=0;
                          MainMenuMax:=0;
-                         Dungeon;
+                         Mapa;
                          MainMenu:=1;
                          MainMenuSel:=MainMenuSelSave;
                          MainMenuMax:=3;

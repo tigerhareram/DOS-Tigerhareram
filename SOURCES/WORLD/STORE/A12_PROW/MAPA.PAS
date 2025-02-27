@@ -1,4 +1,4 @@
-Procedure Dungeon;
+Procedure Mapa;
 Var
     Ending: Boolean;
     i: Byte;
@@ -9,15 +9,26 @@ Begin
   SVGA_TogglePaging;
 
   LoadGRAFile('PLANET01\data01a.gra',0,1);
+  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);
+
+  LoadGRAFile('PLANET01\data01b.gra',0,2);
+  VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);
+
+  LoadGRAFile('PLANET01\data01c.gra',0,3);
+  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+
+  LoadGRAFile('PLANET01\data01d.gra',0,4);
+  VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+
   LoadMAPFile('PLANET01\level01.map',0);
 
   Repeat
     SVGA_ClearPage(ColX[0]);
 
-{   Map_WriteSVGAComplet(Buffer[3]); }
+    Map_WriteSVGAComplet(Buffer[1]);
 
     SVGA_Rectangle(0,400,639,479,ColX[15]);
-    Text_OutText(5,403,'Dungeon Interface',Buffer[0],SVGA);
+    Text_OutText(5,403,'Map Interface',Buffer[0],SVGA);
 
     SVGA_WaitRetrace;
     SVGA_FlipPage;
