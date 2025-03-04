@@ -26,6 +26,7 @@ b_xms, b_detect, b_smix;
   Procedure Doleva;
   Procedure SmazZnak;
   Procedure ZalomRadek;
+  Procedure Scan_ToggleProc;
 
   Procedure Doprava2;                                 {Chat lobby}
   Procedure Doleva2;

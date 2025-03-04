@@ -37,6 +37,9 @@ Begin
   For X:=0 to 79 do Begin
                       _Print(X*8,Y*16,ColX[15],Stranka[Y,X]);
                     End;
+
+  If Scan_Toggle=True then SVGA_SprZ(ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSize_X2,ScanSizeY2,1,Buffer[2]);
+
 End;
 
 

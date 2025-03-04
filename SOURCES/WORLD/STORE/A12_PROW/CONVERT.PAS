@@ -7,6 +7,8 @@ Begin
 
   If ParamCount>0 then LoadGRAFile(ParamStr(1),0,0);
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+  LoadBMPFile('SCAN\scan.bmp',0,0,0,0,Buffer[3]);
+  VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);
 
   Repeat
     SVGA_ClearPage(ColX[0]);
@@ -22,6 +24,11 @@ Begin
     SVGA_Rectangle(0,400,639,479,ColX[15]);
     Text_OutText(5,403,'GRA>BMP converter',Buffer[0],SVGA);
     Text_OutText(5,423,'press F2 to convert',Buffer[0],SVGA);
+    Text_OutText(325,403,'press Enter to toggle image on Text page visibility',Buffer[0],SVGA);
+    If Scan_Toggle=True then Text_OutText(325,423,'scan on text page enabled',Buffer[0],SVGA)
+                        else Text_OutText(325,423,'scan on text page disabled',Buffer[0],SVGA);
+    Text_OutText(325,443,'check visibility image on text page',Buffer[0],SVGA);
+    Text_OutText(325,463,'work only with file scan.bmp',Buffer[0],SVGA);
 
     SVGA_WaitRetrace;
     SVGA_FlipPage;
@@ -40,6 +47,13 @@ Begin
            If Key[60]=1 then Kbd_RPush(60);
            If Key[30]=1 then Kbd_RPush(30);
            If ParamCount>0 then SaveBMPFile('convert.bmp',0);
+         End;
+
+{Enter}  If ((Key[28]=1) or (Key[30]=1)) then
+         Begin
+           If Key[28]=1 then Kbd_RPush(28);
+           If Key[30]=1 then Kbd_RPush(30);
+           Scan_ToggleProc;
          End;
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then

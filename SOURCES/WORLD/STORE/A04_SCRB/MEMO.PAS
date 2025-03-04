@@ -76,6 +76,11 @@ WriteStranka;
 End;{zalomradek}
 
 
+Procedure Scan_ToggleProc;
+Begin
+If Scan_Toggle=False then Scan_Toggle:=True else Scan_Toggle:=False;
+End;
+
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 
 
