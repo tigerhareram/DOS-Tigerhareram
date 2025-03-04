@@ -20,11 +20,13 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 b_xms, b_detect, b_smix;
 
    Procedure Str80(Cesta:String);
+   Procedure Str80BMP(Cesta:String;x,y,x1size,y1size,x2size,y2size:Word);
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXX}
 
   {$I ..\SOURCES\WORLD2\STORE\A04_SCRB\str80.pas}
+  {$I ..\SOURCES\WORLD2\STORE\A04_SCRB\str80bmp.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.

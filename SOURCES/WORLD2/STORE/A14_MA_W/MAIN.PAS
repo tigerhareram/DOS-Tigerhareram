@@ -7,9 +7,15 @@ Begin
 
 
   Repeat
-    MainWorldScreen;
-    Str80('KNIHOVNA\001.txt');
-    Kbd_RKey;
+
+    MainWorldScreen;                            {1st write screen interface}
+    Str80('KNIHOVNA\001.txt');                  {2nd write text file}
+    Str80BMP('KNIHOVNA\001.bmp',150,250,0,0,79,49); {3rd write image}
+
+    SVGA_WaitRetrace;
+    SVGA_FlipPage;                              {4th show screen finished}
+
+    Kbd_RKey;                                   {5th wait a key}
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then
          Begin
