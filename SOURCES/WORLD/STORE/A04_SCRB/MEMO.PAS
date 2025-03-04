@@ -78,7 +78,12 @@ End;{zalomradek}
 
 Procedure Scan_ToggleProc;
 Begin
-If Scan_Toggle=False then Scan_Toggle:=True else Scan_Toggle:=False;
+If Scan_Toggle=False then Begin
+                            Scan_Toggle:=True;
+                            LoadBMPFile('SCAN\scan.bmp',0,160,0,0,Buffer[3]);
+                            VGA_SprZ(160,0,160,0,319,199,1,Buffer[3],Buffer[2]);
+                          End
+                     else Scan_Toggle:=False;
 End;
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}

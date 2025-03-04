@@ -7,8 +7,6 @@ Begin
 
   If ParamCount>0 then LoadGRAFile(ParamStr(1),0,0);
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
-  LoadBMPFile('SCAN\scan.bmp',0,0,0,0,Buffer[3]);
-  VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);
 
   Repeat
     SVGA_ClearPage(ColX[0]);
@@ -20,6 +18,9 @@ Begin
 
     SVGA_Rectangle(20,35,189,244,ColX[15]);
     SVGA_SprZ(25,40,0,0,159,199,1,Buffer[2]);
+
+    SVGA_Rectangle(420,35,589,244,ColX[15]);
+    SVGA_SprZ(425,40,160,0,319,199,1,Buffer[2]);
 
     SVGA_Rectangle(0,400,639,479,ColX[15]);
     Text_OutText(5,403,'GRA>BMP converter',Buffer[0],SVGA);
