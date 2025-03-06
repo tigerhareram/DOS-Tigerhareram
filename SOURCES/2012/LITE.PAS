@@ -3431,11 +3431,11 @@ Begin
   SetupArray1;
   RLEKompress(24032);
   BlockWrite(F,RLEDelka,2);
-{  For I:=1 to RLEDelka do
+  For I:=1 to RLEDelka do
   Begin
     WritedByte:=mem[RLEKompressedSeg:I-1];
     BlockWrite(F,WritedByte,1);
-  End;}
+  End;
   Close(F);
 End;
 
