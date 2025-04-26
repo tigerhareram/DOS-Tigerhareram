@@ -5,6 +5,10 @@ Begin
   SVGA_ClearPage(ColX[0]); {ColX [0..15] = 16 barevnych fixu barvy 240..255}
   SVGA_Rectangle(0,400,639,479,ColX[15]); {Pouziva se ColX[0] a ColX[15]}
 
+  If Scan_Toggle=True then MAP_WriteSVGAComplet(Buffer[3]);
+
+  If Scan_Toggle=True then SVGA_SprZ(ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSizeX2,ScanSizeY2,0,Buffer[2]);
+
   If Psani=True then
   Begin
     _Print(10,405,ColX[15],'Alt+Cisla:');
@@ -35,9 +39,6 @@ Begin
   For X:=0 to 79 do Begin
                       _Print(X*8,Y*16,ColX[15],Stranka[Y,X]);
                     End;
-
-  If Scan_Toggle=True then SVGA_SprZ(ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSize_X2,ScanSizeY2,1,Buffer[2]);
-
 End;
 
 

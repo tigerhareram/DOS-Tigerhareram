@@ -8,19 +8,19 @@ Begin
   SVGA_ResetPages;
   SVGA_TogglePaging;
 
-  LoadGRAFile('PLANET01\data01a.gra',0,1);
+  LoadGRAFile('PLANET01\001a.gra',0,1);
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);
 
-  LoadGRAFile('PLANET01\data01b.gra',0,2);
+  LoadGRAFile('PLANET01\001b.gra',0,2);
   VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);
 
-  LoadGRAFile('PLANET01\data01c.gra',0,3);
+  LoadGRAFile('PLANET01\001c.gra',0,3);
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
 
-  LoadGRAFile('PLANET01\data01d.gra',0,4);
+  LoadGRAFile('PLANET01\001d.gra',0,4);
   VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);
 
-  LoadMAPFile('PLANET01\level01.map',0);
+  LoadMAPFile('PLANET01\001.map',0);
 
   Repeat
     SVGA_ClearPage(ColX[0]);

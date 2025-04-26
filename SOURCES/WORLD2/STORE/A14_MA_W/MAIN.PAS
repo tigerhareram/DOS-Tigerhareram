@@ -5,17 +5,28 @@ Var
 Begin
   KonecProgramu:=False;
 
+  StranaCis:=001;
+  StranaMin:=001;
+  StranaMax:=001;
 
   Repeat
 
-    MainWorldScreen;                            {1st write screen interface}
-    Str80('KNIHOVNA\001.txt');                  {2nd write text file}
-    Str80BMP('KNIHOVNA\001.bmp',150,250,0,0,79,49); {3rd write image}
+      SkocNaStranku(StranaCis,150,250,0,0,79,49);
+      Kbd_RKey;                                      {wait a key}
 
-    SVGA_WaitRetrace;
-    SVGA_FlipPage;                              {4th show screen finished}
+{Left}   If ((Key[75]=1) or (Key[36]=1)) then
+         Begin
+           If Key[75]=1 then Kbd_RPush(75);
+           If Key[36]=1 then Kbd_RPush(36);
+           If StranaCis>StranaMin then Dec(StranaCis);
+         End;
 
-    Kbd_RKey;                                   {5th wait a key}
+{Right}  If ((Key[77]=1) or (Key[38]=1)) then
+         Begin
+           If Key[77]=1 then Kbd_RPush(77);
+           If Key[38]=1 then Kbd_RPush(38);
+           If StranaCis<StranaMax then Inc(StranaCis);
+         End;
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then
          Begin

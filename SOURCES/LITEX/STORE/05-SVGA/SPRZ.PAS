@@ -9,4 +9,5 @@ If Transp=0
   then for i:=y1 to y2 do _putline(x,y+i-y1,x2-x1+1,ptr(bufferfrom,i*320+x1))
   else for i:=y1 to y2 do
         for j:=x1 to x2 do svga_pixel(x+j-x1,y+i-y1,mem[bufferfrom:i*320+j]);
+
 End;{svga_sprz}

@@ -41,12 +41,12 @@ Const
 
   {here is scan object position and size declared 0..639 x 0..399}
   {change numbers}
-  ScanX=320;       {0..639} {position on text page X,Y}
-  ScanY=200;       {0..399}
+  ScanX=150;       {0..639} {position on text page X,Y}
+  ScanY=250;       {0..399}
   ScanSizeX1=160;  {0..159} {size of image x1..x2 x y1..y2 from Buffer[2]}
   ScanSizeY1=0;    {0..199} {load image scan.bmp from folder SCAN}
-  ScanSize_X2=210; {160..319} {toggle with Enter key on Convert page}
-  ScanSizeY2=50;   {0..199} {all manipulations and changes manualy}
+  ScanSizeX2=239; {160..319} {toggle with Enter key on Convert page}
+  ScanSizeY2=49;   {0..199} {all manipulations and changes manualy}
 
 Var
 {Main Menu}  MainMenu: Byte;
