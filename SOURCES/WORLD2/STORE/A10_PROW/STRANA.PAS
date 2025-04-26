@@ -57,22 +57,27 @@ Begin
                   grafile4:='KNIHOVNA\006d.gra'; End;
     End;
 
+    MainWorldScreen;                        {1st screen interface}
+
     LoadGRAFile(grafile1,0,1);                        {LAYER GRA1}
     VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);        {LOAD}
 
-{    LoadGRAFile(grafile2,0,2);                       {LAYER GRA2}
-{    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);     {LOAD}
-
-{    LoadGRAFile(grafile3,0,3);                       {LAYER GRA3}
-{    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
-
-{    LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
-{    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
-
-    MainWorldScreen;                        {1st screen interface}
-
     LoadMAPFile(mapova,0);                {LAYER MAP EXPERIMENTAL}
     Map_WriteSVGAComplet(Buffer[3]);
+
+    LoadGRAFile(grafile2,0,2);                       {LAYER GRA2}
+    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);     {LOAD}
+
+    LoadGRAFile(grafile3,0,3);                       {LAYER GRA3}
+    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
+
+    LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
+    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
+
+    SVGA_SprZ(5,170,168,0,175,7,1,Buffer[1]);
+    SVGA_SprZ(180,170,8,0,15,7,1,Buffer[2]);
+    SVGA_SprZ(350,170,168,0,175,7,1,Buffer[2]);
+
 
     Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);     {LAYER BMP}
 

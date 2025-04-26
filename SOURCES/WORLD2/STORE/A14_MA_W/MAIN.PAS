@@ -11,8 +11,8 @@ Begin
 
   Repeat
 
-      SkocNaStranku(StranaCis,150,250,0,0,79,49);
-      Kbd_RKey;                                      {wait a key}
+      SkocNaStranku(StranaCis,150,250,0,0,79,49); {+auto gra1234, map, ASCII}
+      Kbd_RKey;                                   {wait a key.. and bmp scan}
 
 {Left}   If ((Key[75]=1) or (Key[36]=1)) then
          Begin
