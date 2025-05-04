@@ -6,7 +6,21 @@ Var textova: String;
     grafile2: String;
     grafile3: String;
     grafile4: String;
+    cislo: String[11];
 Begin
+    Str(StranaCis, cislo);
+    while length(cislo) < 3 do
+        Begin
+          cislo := '0' + cislo;
+        End;
+    textova:='KNIHOVNA\' + cislo + '.txt';
+    obrazek:='KNIHOVNA\' + cislo + '.bmp';
+    mapova:='KNIHOVNA\' + cislo + '.map';
+    grafile1:='KNIHOVNA\' + cislo + 'a.gra';
+    grafile2:='KNIHOVNA\' + cislo + 'b.gra';
+    grafile3:='KNIHOVNA\' + cislo + 'c.gra';
+    grafile4:='KNIHOVNA\' + cislo + 'd.gra';
+{
     Case StranaCis of
       001 : Begin textova:='KNIHOVNA\001.txt';
                   obrazek:='KNIHOVNA\001.bmp';
@@ -56,7 +70,7 @@ Begin
                   grafile3:='KNIHOVNA\006c.gra';
                   grafile4:='KNIHOVNA\006d.gra'; End;
     End;
-
+}
     MainWorldScreen;                        {1st screen interface}
 
     LoadGRAFile(grafile1,0,1);                        {LAYER GRA1}
