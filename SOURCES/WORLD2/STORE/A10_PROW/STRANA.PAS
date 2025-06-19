@@ -187,12 +187,8 @@ Begin
     LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
 
-    SVGA_SprZ(5,170,168,0,175,7,1,Buffer[1]);
-    SVGA_SprZ(180,170,8,0,15,7,1,Buffer[2]);
-    SVGA_SprZ(350,170,168,0,175,7,1,Buffer[2]);
+    Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);    {LAYER BMP}
 
-
-    Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);     {LAYER BMP}
     Case VisiblePage of
       0: Begin SVGA_BarZ(480,0,639,199,ColX[0]); End;
       1: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]); End;
