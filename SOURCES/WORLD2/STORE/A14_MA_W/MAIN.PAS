@@ -5,13 +5,9 @@ Var
 Begin
   KonecProgramu:=False;
 
-  StranaCis:=001;
-  StranaMin:=001;
-  StranaMax:=001;
-
   Repeat
 
-      SkocNaStranku(StranaCis,150,250,0,0,79,49); {+auto gra1234, map, ASCII}
+      SkocNaStranku(StranaCis,0,0,0,0,159,199);   {+auto gra1234, map, ASCII}
       Kbd_RKey;                                   {wait a key.. and bmp scan}
 
 {Left}   If ((Key[75]=1) or (Key[36]=1)) then
@@ -26,6 +22,14 @@ Begin
            If Key[77]=1 then Kbd_RPush(77);
            If Key[38]=1 then Kbd_RPush(38);
            If StranaCis<StranaMax then Inc(StranaCis);
+         End;
+
+{Enter}  If ((Key[28]=1) or (Key[30]=1)) then
+         Begin
+           If Key[28]=1 then Kbd_RPush(28);
+           If Key[30]=1 then Kbd_RPush(30);
+           {Enter Page 160x200 switch Enter}
+           If VisiblePage<4 then Inc(VisiblePage) else VisiblePage:=0;
          End;
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then

@@ -36,6 +36,12 @@ Var
              StranaMax: LongInt;
              ObrPosX,ObrPosY,X1,Y1,X2,Y2: Word;
 
+             Scan_Toggle: Boolean;
+             ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSizeX2,ScanSizeY2: Word;
+
+
+             VisiblePage: Word;
+
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 

@@ -55,6 +55,119 @@ Begin
                   grafile2:='KNIHOVNA\006b.gra';
                   grafile3:='KNIHOVNA\006c.gra';
                   grafile4:='KNIHOVNA\006d.gra'; End;
+
+      007 : Begin textova:='KNIHOVNA\007.txt';
+                  obrazek:='KNIHOVNA\007.bmp';
+                  mapova:='KNIHOVNA\007.map';
+                  grafile1:='KNIHOVNA\007a.gra';
+                  grafile2:='KNIHOVNA\007b.gra';
+                  grafile3:='KNIHOVNA\007c.gra';
+                  grafile4:='KNIHOVNA\007d.gra'; End;
+
+      008 : Begin textova:='KNIHOVNA\008.txt';
+                  obrazek:='KNIHOVNA\008.bmp';
+                  mapova:='KNIHOVNA\008.map';
+                  grafile1:='KNIHOVNA\008a.gra';
+                  grafile2:='KNIHOVNA\008b.gra';
+                  grafile3:='KNIHOVNA\008c.gra';
+                  grafile4:='KNIHOVNA\008d.gra'; End;
+
+      009 : Begin textova:='KNIHOVNA\009.txt';
+                  obrazek:='KNIHOVNA\009.bmp';
+                  mapova:='KNIHOVNA\009.map';
+                  grafile1:='KNIHOVNA\009a.gra';
+                  grafile2:='KNIHOVNA\009b.gra';
+                  grafile3:='KNIHOVNA\009c.gra';
+                  grafile4:='KNIHOVNA\009d.gra'; End;
+
+      010 : Begin textova:='KNIHOVNA\010.txt';
+                  obrazek:='KNIHOVNA\010.bmp';
+                  mapova:='KNIHOVNA\010.map';
+                  grafile1:='KNIHOVNA\010a.gra';
+                  grafile2:='KNIHOVNA\010b.gra';
+                  grafile3:='KNIHOVNA\010c.gra';
+                  grafile4:='KNIHOVNA\010d.gra'; End;
+
+      011 : Begin textova:='KNIHOVNA\011.txt';
+                  obrazek:='KNIHOVNA\011.bmp';
+                  mapova:='KNIHOVNA\011.map';
+                  grafile1:='KNIHOVNA\011a.gra';
+                  grafile2:='KNIHOVNA\011b.gra';
+                  grafile3:='KNIHOVNA\011c.gra';
+                  grafile4:='KNIHOVNA\011d.gra'; End;
+
+      012 : Begin textova:='KNIHOVNA\012.txt';
+                  obrazek:='KNIHOVNA\012.bmp';
+                  mapova:='KNIHOVNA\012.map';
+                  grafile1:='KNIHOVNA\012a.gra';
+                  grafile2:='KNIHOVNA\012b.gra';
+                  grafile3:='KNIHOVNA\012c.gra';
+                  grafile4:='KNIHOVNA\012d.gra'; End;
+
+      013 : Begin textova:='KNIHOVNA\013.txt';
+                  obrazek:='KNIHOVNA\013.bmp';
+                  mapova:='KNIHOVNA\013.map';
+                  grafile1:='KNIHOVNA\013a.gra';
+                  grafile2:='KNIHOVNA\013b.gra';
+                  grafile3:='KNIHOVNA\013c.gra';
+                  grafile4:='KNIHOVNA\013d.gra'; End;
+
+      014 : Begin textova:='KNIHOVNA\014.txt';
+                  obrazek:='KNIHOVNA\014.bmp';
+                  mapova:='KNIHOVNA\014.map';
+                  grafile1:='KNIHOVNA\014a.gra';
+                  grafile2:='KNIHOVNA\014b.gra';
+                  grafile3:='KNIHOVNA\014c.gra';
+                  grafile4:='KNIHOVNA\014d.gra'; End;
+
+      015 : Begin textova:='KNIHOVNA\015.txt';
+                  obrazek:='KNIHOVNA\015.bmp';
+                  mapova:='KNIHOVNA\015.map';
+                  grafile1:='KNIHOVNA\015a.gra';
+                  grafile2:='KNIHOVNA\015b.gra';
+                  grafile3:='KNIHOVNA\015c.gra';
+                  grafile4:='KNIHOVNA\015d.gra'; End;
+
+      016 : Begin textova:='KNIHOVNA\016.txt';
+                  obrazek:='KNIHOVNA\016.bmp';
+                  mapova:='KNIHOVNA\016.map';
+                  grafile1:='KNIHOVNA\016a.gra';
+                  grafile2:='KNIHOVNA\016b.gra';
+                  grafile3:='KNIHOVNA\016c.gra';
+                  grafile4:='KNIHOVNA\016d.gra'; End;
+
+      017 : Begin textova:='KNIHOVNA\017.txt';
+                  obrazek:='KNIHOVNA\017.bmp';
+                  mapova:='KNIHOVNA\017.map';
+                  grafile1:='KNIHOVNA\017a.gra';
+                  grafile2:='KNIHOVNA\017b.gra';
+                  grafile3:='KNIHOVNA\017c.gra';
+                  grafile4:='KNIHOVNA\017d.gra'; End;
+
+      018 : Begin textova:='KNIHOVNA\018.txt';
+                  obrazek:='KNIHOVNA\018.bmp';
+                  mapova:='KNIHOVNA\018.map';
+                  grafile1:='KNIHOVNA\018a.gra';
+                  grafile2:='KNIHOVNA\018b.gra';
+                  grafile3:='KNIHOVNA\018c.gra';
+                  grafile4:='KNIHOVNA\018d.gra'; End;
+
+      019 : Begin textova:='KNIHOVNA\019.txt';
+                  obrazek:='KNIHOVNA\019.bmp';
+                  mapova:='KNIHOVNA\019.map';
+                  grafile1:='KNIHOVNA\019a.gra';
+                  grafile2:='KNIHOVNA\019b.gra';
+                  grafile3:='KNIHOVNA\019c.gra';
+                  grafile4:='KNIHOVNA\019d.gra'; End;
+
+      020 : Begin textova:='KNIHOVNA\020.txt';
+                  obrazek:='KNIHOVNA\020.bmp';
+                  mapova:='KNIHOVNA\020.map';
+                  grafile1:='KNIHOVNA\020a.gra';
+                  grafile2:='KNIHOVNA\020b.gra';
+                  grafile3:='KNIHOVNA\020c.gra';
+                  grafile4:='KNIHOVNA\020d.gra'; End;
+
     End;
 
     MainWorldScreen;                        {1st screen interface}
@@ -80,6 +193,13 @@ Begin
 
 
     Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);     {LAYER BMP}
+    Case VisiblePage of
+      0: Begin SVGA_BarZ(480,0,639,199,ColX[0]); End;
+      1: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]); End;
+      2: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End;
+      3: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[2]); End;
+      4: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End;
+    End; {Case End}
 
     Str80(textova);                                    {LAYER TXT}
 

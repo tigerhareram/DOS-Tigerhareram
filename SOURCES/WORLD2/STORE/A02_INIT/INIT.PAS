@@ -10,5 +10,10 @@ Begin
   _nactifont(FFont,'INT21H\space.fnt');
   _NastavFont(FFont,True);
 
+  StranaCis:=001;
+  StranaMin:=001;
+  StranaMax:=020;
+
+  VisiblePage:=1;
 
 End;
