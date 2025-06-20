@@ -230,7 +230,7 @@ Begin
       1: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]); End; {gra a visible}
       2: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End; {gra b visible}
       3: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[2]); End; {gra c visible}
-      4: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End; {gra d visible}
+      4: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[2]); End; {gra d visible}
     End; {Case End}
 
     Str80(textova);                              {LAYER TXT last}
