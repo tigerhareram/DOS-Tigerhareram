@@ -201,11 +201,16 @@ Begin
     LoadGRAFile(grafile2,0,2);                       {LAYER GRA2}
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);     {LOAD}
 
-    LoadGRAFile(grafile3,0,3);                       {LAYER GRA3}
-    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
+{   LoadGRAFile(grafile3,0,3);                       {LAYER GRA3}
+{   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
+    LoadBMPFile('KNIHOVNA\alien.bmp',0,0,0,128,Buffer[3]);  {alternate BMP}
+    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);
 
-    LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
-    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
+{   LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
+{   VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
+    LoadBMPFile('KNIHOVNA\cosmon.bmp',0,0,0,144,Buffer[3]); {alternate BMP}
+    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);
+
 
     Case VisiblePage of
       0: Begin {gra a not visible}
