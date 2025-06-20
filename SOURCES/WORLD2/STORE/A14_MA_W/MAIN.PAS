@@ -32,6 +32,12 @@ Begin
            If VisiblePage<4 then Inc(VisiblePage) else VisiblePage:=0;
          End;
 
+{Insert} If Key[82]=1 then {Visibility BMP toggle}
+         Begin
+           If Key[82]=1 then Kbd_RPush(82);
+           If VisibleBMP<1 then Inc(VisibleBMP) else VisibleBMP:=0;
+         End;
+
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then
          Begin
            If Key[1]=1 then Kbd_RPush(1);

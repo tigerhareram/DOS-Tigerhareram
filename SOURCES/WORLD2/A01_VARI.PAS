@@ -41,6 +41,7 @@ Var
 
 
              VisiblePage: Word;
+             VisibleBMP: Word;
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}

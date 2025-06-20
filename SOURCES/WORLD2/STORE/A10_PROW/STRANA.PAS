@@ -178,6 +178,26 @@ Begin
     LoadMAPFile(mapova,0);                {LAYER MAP EXPERIMENTAL}
     Map_WriteSVGAComplet(Buffer[3]);
 
+    Case VisibleBMP of
+      0: Begin
+           SVGA_BarZ(0,0,159,199,ColX[0]);
+           LoadGRAFile(grafile1,0,1);                      {LAYER GRA1}
+           VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);      {LOAD}
+           Map_WriteSVGAComplet(Buffer[3]);
+         End;
+      1: Begin
+           LoadMAPFile(mapova,0);         {LAYER MAP EXPERIMENTAL}
+           Map_WriteSVGAComplet(Buffer[3]);
+           VGA_BarZ(0,0,159,199,ColX[0],Buffer[1]);   {Black Page}
+           Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);
+         End;
+      {LAYER BMP first !!}
+    End; {Case End}
+
+    VGA_BarZ(0,0,159,199,ColX[0],Buffer[1]);         {Black Page}
+    LoadGRAFile(grafile1,0,1);                 {LAYER GRA1 again}
+    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);       {LOAD}
+
     LoadGRAFile(grafile2,0,2);                       {LAYER GRA2}
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);     {LOAD}
 
@@ -187,17 +207,33 @@ Begin
     LoadGRAFile(grafile4,0,4);                       {LAYER GRA4}
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
 
-    Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);    {LAYER BMP}
-
     Case VisiblePage of
-      0: Begin SVGA_BarZ(480,0,639,199,ColX[0]); End;
-      1: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]); End;
-      2: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End;
-      3: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[2]); End;
-      4: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End;
+      0: Begin {gra a not visible}
+           SVGA_BarZ(480,0,639,199,ColX[0]);
+           Map_WriteSVGAComplet(Buffer[3]);
+           Case VisibleBMP of
+            0: Begin
+                 SVGA_BarZ(0,0,159,199,ColX[0]);
+                 LoadGRAFile(grafile1,0,1);           {LAYER GRA1 again}
+                 VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]); {LOAD}
+                 Map_WriteSVGAComplet(Buffer[3]);
+               End;
+            1: Begin
+                 LoadGRAFile(grafile1,0,1);           {LAYER GRA1 again}
+                 VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]); {LOAD}
+                 Map_WriteSVGAComplet(Buffer[3]);
+                 VGA_BarZ(0,0,159,199,ColX[0],Buffer[1]);   {Black Page}
+                 Str80BMP(obrazek,ObrPosX,ObrPosY,X1,Y1,X2,Y2);
+               End;
+           End; {Case End}
+         End;
+      1: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]); End; {gra a visible}
+      2: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End; {gra b visible}
+      3: Begin SVGA_SprZ(480,0,0,0,159,199,1,Buffer[2]); End; {gra c visible}
+      4: Begin SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]); End; {gra d visible}
     End; {Case End}
 
-    Str80(textova);                                    {LAYER TXT}
+    Str80(textova);                              {LAYER TXT last}
 
     SVGA_WaitRetrace;
     SVGA_FlipPage;                                 {show screen finished}

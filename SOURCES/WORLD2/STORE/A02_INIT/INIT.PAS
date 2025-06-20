@@ -15,5 +15,6 @@ Begin
   StranaMax:=020;
 
   VisiblePage:=1;
+  VisibleBMP:=1;
 
 End;
