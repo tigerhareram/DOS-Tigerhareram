@@ -176,11 +176,11 @@
     LoadGRAFile(grafile2,0,2);                       {LAYER GRA2} {Buffer1 160..319}
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[1]);     {LOAD}
 
-    LoadGRAFile(grafile3,0,3);                       {LAYER GRA3} {Buffer2   0..159}
-    VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
+{   LoadGRAFile(grafile3,0,3);                       {LAYER GRA3} {Buffer2   0..159}
+{   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
 
-    LoadGRAFile(grafile4,0,4);                       {LAYER GRA4} {Buffer2 160..319}
-    VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
+{   LoadGRAFile(grafile4,0,4);                       {LAYER GRA4} {Buffer2 160..319}
+{   VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
 
     LoadBMPFile('KNIHOVNA\alien.bmp',0,0,0,128,Buffer[3]); {BMP1} {Buffer2   0..159}
     VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);       {LOAD}
@@ -189,6 +189,8 @@
     VGA_SprZ(160,0,0,0,159,199,1,Buffer[3],Buffer[2]);     {LOAD}
 
     LoadMAPFile(mapova,0);    {LAYER MAP EXPERIMENTAL} {grafile1} {Buffer1   0..159}
+
+    LoadBMPFile(obrazek,0,0,0,0,Buffer[3]);            {xxx.BMP}  {Buffer3   0..159}
 
     Str80(textova);                                        {LAYER TXT last}
 

@@ -4,47 +4,55 @@ Var
 
 Begin
   KonecProgramu:=False;
+  StranaCis:=1;
+  LoadingStranky(StranaCis);
+  X1map:=0; {Map segment}
+  Y1map:=0;
+  X2map:=319;
+  Y2map:=199;
+  Rect1map:=ColX[15];
+  Rect2map:=ColX[15];
+  SVGA_ClearPage(ColX[0]);
 
   Repeat
-      StranaCis:=1;
-      LoadingStranky(StranaCis);
+
       SkocNaStranku(StranaCis,0,0,0,0,159,199);   {+auto gra1234, map, ASCII}
+      Kbd_RKey; {Wait KeyPressed}
 
-      Kbd_RKey;                                   {wait a key.. and bmp scan}
-
-
-{Left}   If ((Key[75]=1) or (Key[36]=1)) then
+{Left}   If Key[75]=1 then
          Begin
            If Key[75]=1 then Kbd_RPush(75);
-           If Key[36]=1 then Kbd_RPush(36);
            If StranaCis>StranaMin then Dec(StranaCis);
+           LoadingStranky(StranaCis);
+           SVGA_ClearPage(ColX[0]);
          End;
 
-{Right}  If ((Key[77]=1) or (Key[38]=1)) then
+{Right}  If Key[77]=1 then
          Begin
            If Key[77]=1 then Kbd_RPush(77);
-           If Key[38]=1 then Kbd_RPush(38);
            If StranaCis<StranaMax then Inc(StranaCis);
+           LoadingStranky(StranaCis);
+           SVGA_ClearPage(ColX[0]);
          End;
 
-{Enter}  If ((Key[28]=1) or (Key[30]=1)) then
+{Enter}  If Key[28]=1 then
          Begin
            If Key[28]=1 then Kbd_RPush(28);
-           If Key[30]=1 then Kbd_RPush(30);
-           {Enter Page 160x200 switch Enter}
+           {Enter Page 160x200 switch Enter gra1234}
            If VisiblePage<4 then Inc(VisiblePage) else VisiblePage:=0;
+           SVGA_ClearPage(ColX[0]);
          End;
 
 {Insert} If Key[82]=1 then {Visibility BMP toggle}
          Begin
            If Key[82]=1 then Kbd_RPush(82);
            If VisibleBMP<1 then Inc(VisibleBMP) else VisibleBMP:=0;
+           SVGA_ClearPage(ColX[0]);
          End;
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then
          Begin
            If Key[1]=1 then Kbd_RPush(1);
-           If Key[31]=1 then Kbd_RPush(31);
            KonecProgramu:=True;                      {Esc MainMenu}
          End;
 

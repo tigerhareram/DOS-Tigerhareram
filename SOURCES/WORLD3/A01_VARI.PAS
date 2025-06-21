@@ -39,9 +39,11 @@ Var
              Scan_Toggle: Boolean;
              ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSizeX2,ScanSizeY2: Word;
 
-
              VisiblePage: Word;
              VisibleBMP: Word;
+
+             X1map,Y1map,X2map,Y2map:Word;
+             Rect1map,Rect2map:Byte;
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
