@@ -6,9 +6,12 @@ Begin
   KonecProgramu:=False;
 
   Repeat
-
+      StranaCis:=1;
+      LoadingStranky(StranaCis);
       SkocNaStranku(StranaCis,0,0,0,0,159,199);   {+auto gra1234, map, ASCII}
+
       Kbd_RKey;                                   {wait a key.. and bmp scan}
+
 
 {Left}   If ((Key[75]=1) or (Key[36]=1)) then
          Begin
