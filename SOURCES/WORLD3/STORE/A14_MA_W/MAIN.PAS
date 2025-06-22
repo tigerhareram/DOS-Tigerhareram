@@ -19,10 +19,26 @@ Begin
       SkocNaStranku(StranaCis,0,0,0,0,159,199);   {+auto gra1234, map, ASCII}
       Kbd_RKey; {Wait KeyPressed}
 
+{Up}     If Key[72]=1 then
+         Begin
+           If Key[72]=1 then Kbd_RPush(72);
+           If StranaCis>5 then Dec(StranaCis,5);
+           LoadingStranky(StranaCis);
+           SVGA_ClearPage(ColX[0]);
+         End;
+
+{Down}   If Key[80]=1 then
+         Begin
+           If Key[80]=1 then Kbd_RPush(80);
+           If StranaCis<=15 then Inc(StranaCis,5);
+           LoadingStranky(StranaCis);
+           SVGA_ClearPage(ColX[0]);
+         End;
+
 {Left}   If Key[75]=1 then
          Begin
            If Key[75]=1 then Kbd_RPush(75);
-           If StranaCis>StranaMin then Dec(StranaCis);
+           If StranaCis>1 then Dec(StranaCis);
            LoadingStranky(StranaCis);
            SVGA_ClearPage(ColX[0]);
          End;
@@ -30,7 +46,7 @@ Begin
 {Right}  If Key[77]=1 then
          Begin
            If Key[77]=1 then Kbd_RPush(77);
-           If StranaCis<StranaMax then Inc(StranaCis);
+           If StranaCis<20 then Inc(StranaCis);
            LoadingStranky(StranaCis);
            SVGA_ClearPage(ColX[0]);
          End;
@@ -46,6 +62,7 @@ Begin
 {Insert} If Key[82]=1 then {Visibility BMP toggle}
          Begin
            If Key[82]=1 then Kbd_RPush(82);
+           {show/hide BMP 160x200}
            If VisibleBMP<1 then Inc(VisibleBMP) else VisibleBMP:=0;
            SVGA_ClearPage(ColX[0]);
          End;

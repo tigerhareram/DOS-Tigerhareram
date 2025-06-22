@@ -7,7 +7,7 @@ Begin
   SVGA_Rectangle(0,200,319,399,ColX[15]);
   SVGA_Rectangle(320,200,639,399,ColX[15]);
   SVGA_Rectangle(0,400,639,479,ColX[15]);
-  Text_OutText(20,420,'controls: Left, Right, Insert, Enter, Esc',Buffer[0],SVGA);
+  Text_OutText(20,420,'controls: Up, Down, Left, Right, Insert, Enter, Esc',Buffer[0],SVGA);
   Text_OutText(585,419,'Page=',Buffer[0],SVGA);
   Text_OutNumber(620,420,StranaCis,False,Buffer[0],SVGA);
   Text_OutText(590,439,'Gra=',Buffer[0],SVGA);
