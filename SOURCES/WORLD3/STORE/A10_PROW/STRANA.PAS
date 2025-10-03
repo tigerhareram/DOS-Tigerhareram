@@ -4,25 +4,25 @@ Begin
 {   SVGA_BarZ(0,0,319,199,ColX[0]); {mapa 320x200}
     Map_WriteSVGASegment(0,200,X1map,Y1map,X2map,Y2map,Rect1map,Rect2map);
 
-    If VisibleBMP=1 then SVGA_SprZ(0,0,0,0,159,199,1,Buffer[3]);    {BMP}
+    SVGA_SprZ(0,0,0,0,159,199,1,Buffer[3]);             {BMP}
 
-    SVGA_BarZ(480,0,639,199,ColX[0]);
+{    SVGA_BarZ(480,0,639,199,ColX[0]);
     Case VisiblePage of
-      0: Begin
+{      0: Begin
           {SVGA_BarZ(480,0,639,199,ColX[0]);}
-         End;
+{         End;
       1: Begin
            SVGA_SprZ(480,0,0,0,159,199,1,Buffer[1]);    {gra1}
-         End;
+{         End;
       2: Begin
            SVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]);  {gra2}
-         End;
+{         End;
       3: Begin
            SVGA_SprZ(480,0,0,0,159,199,1,Buffer[2]);    {gra3}
-         End;
+{         End;
       4: Begin
            SVGA_SprZ(480,0,160,0,319,199,1,Buffer[2]);  {gra4}
-         End;
+{         End;
     End; {Case End}
 
     For Y:=0 to 24 do                               {vypsani textove stranky}
