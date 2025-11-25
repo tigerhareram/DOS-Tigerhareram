@@ -12,7 +12,7 @@ Begin
 
   Spkr_Done;             { PC-Speaker              }
   Text_Done;             { Text,Numbers output     }
-  VGA_Done;              { 320x200 x256 colors     }
+  SVGA_Done;             { 640x480 x256 colors     }
   Timer_Done;            { paralel processing      }
   RAM_Done;              { global memory model     }
 End;
