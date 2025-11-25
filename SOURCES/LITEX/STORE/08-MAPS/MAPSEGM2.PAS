@@ -45,7 +45,7 @@ Begin
     For xd:=(StartX div 8) to (StartX div 8)+(xL3 div 8)-1 do
     Begin
       MapWord:=memW[BufferMap:(yd*80+xd)*2];
-      Map_SqrSVGA(X+Xa*8+(8-xL1),Y+Ya*8+(8-yL1),MapWord,Buffer[2]);
+      Map_SqrSVGA(X+Xa*8+(8-xL1),Y+Ya*8+(8-yL1),MapWord,Buffer[1]);
       Inc(Xa);
     End;
     Inc(Ya);

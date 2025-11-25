@@ -25,7 +25,6 @@ b_xms, b_detect, b_smix;
              Procedure Map_WriteSVGASegment(X,Y,X1,Y1,X2,Y2:Word;Rect1,Rect2:Byte);
              Procedure Map_WriteSVGAComplet(BufferFrom:Word);
 
-
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 {08-Maps}    {$I ..\SOURCES\Litex\STORE\08-MAPS\mapgetb.pas}
