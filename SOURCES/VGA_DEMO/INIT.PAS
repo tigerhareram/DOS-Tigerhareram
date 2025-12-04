@@ -3,9 +3,6 @@ Var R,G,B : Byte;
 
 Begin
 
-  Col[0]:=240;
-  P16_SetPal(Col[0],0,0,0);
-
   {fonty}
   _nactifont(FFont,'INT21H\space.fnt');
   _NastavFont(FFont,True);
@@ -20,6 +17,15 @@ Begin
   Col[1]:=255;
   P16_SetPal(Col[1],10,46,5);
 
+  Col[2]:=254;
+  P16_SetPal(Col[2],10,16,5);
+
+  Col[3]:=253;
+  P16_SetPal(Col[3],46,29,12);
+
+  Col[4]:=252;
+  P16_SetPal(Col[4],43,17,26);
+
   Text_WriteDefaultFont(160,0,Col[1],Col[0],Buffer[1],VGA);
 
   selection:=1;
@@ -33,4 +39,5 @@ Begin
   X2:=319;
   Y2:=199;
 
+  Mouse_Hide;
 End;

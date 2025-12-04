@@ -29,7 +29,6 @@ Var
 
 {fps}
  fps: Integer;
- fps_counter: Integer;
  frame_counter: Word;
 
  Procedure Init;

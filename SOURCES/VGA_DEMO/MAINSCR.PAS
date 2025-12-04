@@ -18,5 +18,4 @@ Begin
 
   VGA_WaitRetrace;
   VGA_FlipPage(Buffer[3],Buffer[4]);
-  Mouse_Show;
 End;
