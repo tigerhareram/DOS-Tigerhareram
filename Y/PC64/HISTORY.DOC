@@ -1,0 +1,118 @@
+29-Mar-95 *** Version 1.14 released ***
+
+03-Apr-95 The boot sector of the L64 disk had no CBM tag. That's why the
+          auto start of L64 did not work on a C128.
+
+07-Apr-95 Shift-Lock now also appears at address 653. The current state
+          won't be saved at Esc/F5. A simple Shift can release the
+          Shift-Lock key, that depends on the DOS keyboard driver. The
+          national keyboard driver option must be set on.
+
+07-Apr-95 The start up message of the floppy has been changed from 1541 to
+          1551. This may trick some fast loaders.
+
+21-Apr-95 In Linux dosemu, enter the PC64 about box and press the mouse
+          button on the OK button. Press Ctrl+Alt+F2 to switch to another
+          console and release the mouse button there. Go back with Alt+F1 to
+          PC64, and the about box will remain on the screen until you move
+          the mouse. A demo program for this bug has been sent to
+          jmaclean@fox.nstu.ns.ca.
+
+21-Apr-95 On some computers PC64 says "Adlib?" and hangs. Maybe this is an
+          incorrect initialized gate of timer 2. Requires further tests at
+          the customer's site.
+
+21-Apr-95 If you specify /nosound on the command line, PC64 won't try to
+          detect the sound hardware any more.
+
+01-May-95 The new utility CBMTEXT.EXE converts files from some C64 text
+          programs directly to DOS, instead of having to print into
+          PRINT.OUT from C64 mode.
+
+12-May-95 Registeres customers can order the 64'er-CD for 25 Marks. It
+          contains 220 service disks from the 64'er magazine and its special
+          editions.
+
+12-May-95 The German online help has been converted into a Books Online
+          format, the file HANDBUCH.TXT is omitted. Changes to the
+          documentation now will only have to be written into 4 files, and
+          everywhere on the same position.
+
+12-May-95 With LShift+GreyPlus/Minus, one can change the CPU speed directly
+          without having to go to <Options / Timing / Limit CPU performance
+          to x percent>.
+
+12-May-95 When copying disk images, DISK99 will be counted to DISK100 and no
+          longer to DIS100.
+
+20-May-95 The secondary address 8 has been defined for printing from text
+          programs. It is the same as 7, i.e. small letters with conversion
+          from CBM to ASCII. The control characters 0-31 and 128-159 as well
+          as the german umlauts 91-93 and 123-126 are not converted, also the
+          conversion from CR to CRLF is omitted. Now you can use printer
+          control codes like bold without having to go without the CBM to
+          ASCII conversion.
+
+25-May-95 The disk image file will be closed when leaving C64 mode. Now the
+          DOS FAT is kept intact if you delete a disk image in the Manager
+          which is also selected in an Emulator window.
+
+27-May-95 If you switch from an Emulator window with a disk image to an
+          Emulator window with P00 files and then back to the disk image,
+          the first disk command did not work. The variable fCtrlBreak has
+          been mistakenly not reset.
+
+27-May-95 Open two Emulator windows with disk images, run one of them, go
+          back to the desktop, switch to the other window, switch the disk
+          image to a directory and start the second Emulator window. There
+          is still the disk image selected. Although it has been correctly
+          set to a directory, starting the Emulation has reload the old
+          settings from the temporary file.
+
+29-May-95 Sometimes loading from disk images was very slow. This is a
+          problem with overlays. The code for disk images is now resident
+          which will reduce the available DOS memory by 32 Kbyte.
+
+29-May-95 The installation program does no longer call NEWNAME.EXE and
+          T64TOP00.EXE.
+
+30-May-95 The call to MOUSE_SETSPEED(8, 8) in MEWEL has been removed. Now
+          the mouse pointer is no longer faster than in other programs.
+
+30-May-95 If a directory contained more than 150 P00 files, the manager stopped
+          reading its contents with the error "00, OK,00,00". This
+          limitation is necessary for disk images, because the directory
+          sectors can be linked in an endless loop. Now there are 32767
+          entries allowed in directories and 1000 on external C64 drives.
+          The error message has been changed to "Directory is destroyed".
+
+30-May-95 The display is now updated correctly when you search backward and
+          the found match lies within the first few lines.
+
+30-May-95 You can now specify a single file name for T64TOP00, not only a
+          complete directory tree.
+
+31-May-95 *** Version 1.15 released ***
+
+06-Jun-95 Because the code for disk images had to be made resident
+          (29-May-95), its load address was below 48 Kb if there were more
+          than 600 Kb DOS memory free. Because the floppy ROM starts at
+          $C000, the pointer to the memory base is set 48 Kb back. This
+          was causing a wrap around which is not allowed under memory
+          managers like HIMEM.SYS, 386MAX or QEMM. And so the disk images
+          were reporting the error message "drive not ready" or "timeout
+          on the IEC bus on output". To fix that bug, the floppy ROM has
+          been moved into its own data segment which will be always linked
+          above the code segments.
+
+06-Jun-95 When changing disk images with F9, the BAM has not been re-read
+          and thus the free blocks from the old disk appeared. When
+          modifying the code for disk images, the call to the INITIALIZE
+          command has been mistakenly removed.
+
+06-Jun-95 The converter CBMText now understands eight formats: CBM Big
+          Letters, CBM Small Letters, Vizawrite, Easy Script, Star Texter
+          (untested), Textomat (untested), Master Text (untested) and
+          Protext-128.
+
+06-Jun-95 *** Version 1.16 released ***

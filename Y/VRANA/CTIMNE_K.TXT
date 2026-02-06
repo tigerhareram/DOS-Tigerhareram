@@ -1,0 +1,241 @@
+  
+  ﬂﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂ ﬂﬂ       ﬂﬂﬂﬂﬂ    ﬂﬂ     ﬂﬂ ﬂﬂﬂﬂﬂﬂ   ﬂﬂﬂﬂﬂ  ﬂﬂﬂ   ﬂﬂ  ﬂﬂﬂﬂﬂ
+  ﬂﬂ   ﬂﬂ   ﬂﬂ   ﬂﬂ      ﬂﬂ   ﬂﬂ    ﬂﬂ   ﬂﬂ  ﬂﬂ   ﬂﬂ ﬂﬂ   ﬂﬂ ﬂﬂﬂﬂ  ﬂﬂ ﬂﬂ   ﬂﬂ
+  ﬂﬂﬂﬂﬂﬂ    ﬂﬂ   ﬂﬂ      ﬂﬂﬂﬂﬂﬂﬂ     ﬂﬂ ﬂﬂ   ﬂﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂﬂ ﬂﬂ ﬂﬂ ﬂﬂ ﬂﬂﬂﬂﬂﬂﬂ
+  ﬂﬂ   ﬂﬂ   ﬂﬂ   ﬂﬂ      ﬂﬂ   ﬂﬂ      ﬂﬂﬂ    ﬂﬂ  ﬂﬂ  ﬂﬂ   ﬂﬂ ﬂﬂ  ﬂﬂﬂﬂ ﬂﬂ   ﬂﬂ
+  ﬂﬂﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂ ﬂﬂﬂﬂﬂﬂﬂ ﬂﬂ   ﬂﬂ       ﬂ     ﬂﬂ   ﬂﬂ ﬂﬂ   ﬂﬂ ﬂﬂ   ﬂﬂﬂ ﬂﬂ   ﬂﬂ
+
+                  S  H  A  R  E  W  A  R  E     C  D  -  R  O  M
+  
+  ---------------------------------------------------------------------------
+
+  OBSAH:
+
+  1. Co je B°l† Vr†na
+     1.1 Licenán° ujedn†n°
+     1.2 Co B°l† Vr†na p©in†®°
+     1.3 Co je shareware, freeware a public domain
+     1.4 O autorech
+ 
+  2. TechnickÇ informace
+     2.1 SystÇmovÇ poëadavky
+     2.2 DOS a Windows 3.x
+     2.3 Windows 95
+  
+  3. Ovl†d†n° menu-systÇmu KrykoMenu I
+     3.1 Hlavn° menu
+     3.2 Oblasti souborñ
+     3.3 Funkce vyhled†v†n°
+
+  4. Dal®° informace
+     4.1 Podpora z†kazn°kñ
+     4.2 Jak z°skat tuto CD-ROM zdarma
+     4.3 Jak si mñëete svñj program na B°lou Vr†nu um°stit
+     4.4 Informace o distribuci
+
+  5. Z†vàr
+
+  --------------------------------------------------------------------------
+
+
+  1. CO JE BãLè VRèNA 
+  ===================
+  
+  1.1 Licenán° ujedn†n° COmputer-COnnection - Richard Bare®.................
+  Toto je leg†ln° dohoda mezi V†mi (uëivatelem) a firmou COmputer-COnnnec-
+  tion - Richard Bare®. Pokud nesouhlas°te s podm°nkami tÇto dohody, nemñëe-
+  te tento produkt pouë°vat.
+
+    a) Copyright a plnàn° licence:
+       B°l† Vr†na je produkt chr†nànò autorskòm pr†vem a obsahuje obchodn°
+       tajemstv°. COmputer-COnnection-Richard Bare® si ponech†v† vlastnict-
+       v° tohoto CD disku B°l† Vr†na. Tento CD disk B°l† Vr†na mñëete pouë°-
+       vat v souladu s t°mto licenán°m ujedn†n°m.
+    b) PovolenÇ uë°v†n°:
+       CD disk B°l† Vr†na mñëete pouë°vat na kompatibiln°m poá°taái váetnà
+       s°t°. Mñëete CD disk B°l† Vr†na vyuë°t pro ve©ejnÇ i soukromÇ Bulle-
+       tin Board SystÇmy (BBS). Mñëete pouë°vat programy obsaëenÇ na CD
+       disku B°l† Vr†na v souladu s podm°nkami jejich autorñ.
+    c) Zak†zanÇ uë°v†n°:
+       CD disk B°l† Vr†na nesm°te pñjáovat ani pronaj°mat. Nesm°te poskyto-
+       vat sublicence CD disku B°l† Vr†na.
+
+  COmputer-COnnection - Richard Bare® si vyhrazuje pr†vo p©eru®it tuto li-
+  cenci v p©°padà, ëe bude nàkter† z tàchto podm°nek poru®ena nebo opomenu-
+  ta nositelem licence podle tohoto licenán°ho ujedn†n°. V p©°padà 
+  p©eru®en° licence mus° bòt v®echny kopie programu zniáeny a nositel li-
+  cence bude zodpovàdnò za v®echny ®kody vzniklÇ jako vòsledek poru®en° 
+  nebo opomenut° tohoto licenán°ho ujedn†n°.
+
+  Autor tohoto CD disku a programu COCOCD.EXE (COmputer-COnnection - 
+  Richard Bare®) nen° odpovàdnò za ®kody vzniklÇ pouë°v†n°m tohoto progra-
+  mu.
+
+         CD-ROM B°l† Vr†na, COCOCD.EXE (váetnà v®ech jeho souá†st°) 
+             Copyright 1997 COmputer-COnnection - Richard Bare®
+             All rights reserved        V®echna pr†va vyhrazena
+
+  1.2 Co B°l† Vr†na p©in†®°?................................................
+  B°l† Vr†na je CD-ROM, kter† V†m kaëdòch 6 màs°cñ p©in†®° ty nejkvalitnàj®°
+  volnà ®i©itelnÇ programy za uplynulò pñlrok. Nen° tedy koncipov†na jako 
+  CD-ROM, kter† m† obsahovat v®e. Obsahuje jen to, co za minulòch ®est màs°-
+  cñ vzniklo. Pokud tedy nevznikl ë†dnò novò animaán° program, ani na n° 
+  ë†dnò nenajdete. D°ky tomu B°l† Vr†na obsahuje vëdy jen aktu†ln° verze 
+  programñ a ne jen nàjakÇ smet° pro zapl†cnut° pr†zdnÇho m°sta ái doplnàn° 
+  pr†zdnÇ oblasti souborñ.
+  
+  1.3 Co je shareware, freeware a public domain?............................
+  Vàt®ina programñ na CD-ROM je shareware. Tyto programy si mñëete naista-
+  lovat a uráitou, autorem vymezenou, dobu je mñëete pouë°vat. Pokud se
+  rozhodnete program pouë°vat i nad†le, jste povinni uhradit autorovi prog-
+  ramu registraán° poplatek. V mnoha p©°padech V†m tento poplatek otev©e
+  dal®° funkce programu.
+  Programy typu freeware jsou vàt®inou updaty a cheaty, ale najdou se i v
+  ostatn°ch oblastech. Tyto programy mñëete pouë°vat neomezenà dlouho bez
+  jakòchkoliv poplatkñ. Nesm°te v®ak program jakkoliv mànit.
+  Public domain v posledn° dobà uplnà miz°. Je to d†no t°m, ëe program mñ-
+  ëete neomezenà zdarma vyuë°vat a nav°c do nàj mñëete i zasahovat.
+
+  1.4 O autorech............................................................
+  Autor, vydavatel:                      COmputer-COnnection - Richard Bare®
+  Obsahov† á†st a popisy programñ:                              Robert Bare®
+  Menu-systÇm:                                           ing. Milan Krykorka
+  Ovladaáe áe®tiny                                             Radek Karaffa
+  Design obalu:                                    ing. arch. Lubom°r Kipila
+  Testov†n°:                  Michal Kom†rek, Jan Domnosil, Martin Folprecht 
+                            a kolektiv zamàstnancñ firmy COmputer-COnnection
+
+
+  2. TECHNICKê INFORMACE
+  ======================
+
+  2.1 SystÇmovÇ poëadavky...................................................
+  Poëadavky programu KrykoMenu I na systÇm jsou minim†ln°:
+  - IBM-PC kompatibiln° poá°taá
+  - barevnò monitor
+  - pevnò disk: 2MB na disku C: (pracovn° soubory instal†toru)
+                3MB na c°lovÇm disku 
+  - CD-ROM
+  - voln† pamàü (z†kladn°): 400 kB
+  - poloëka FILES v CONFIG.SYS nastaven† na hodnotu minim†lnà 30
+  - operaán° systÇm MS-DOS 6.x, Novell DOS 7.x, Windows 3.x, Windows 95 nebo 
+    vy®®° (na nië®°ch verz°ch tàchto systÇmñ nebyl menusystÇm testov†n)
+
+  2.2 DOS a Windows 3.x.....................................................
+  Instalaán° program CD-ROM B°l† Vr†na V†m d† po zvolen° c°lovÇho disku 
+  (adres†©e) a jednotky CD-ROM na vòbàr mezi instalac° pro DOS/Windows 3.x 
+  a Windows 95. Programy jsou identickÇ, ale li®° se ovl†d†n° áe®tiny. Proto 
+  pokud chcete CD-ROM vyuë°vat pod DOSem ái Windows 3.x zvolte instalaci 
+  pro tyto systÇmy.
+
+  POZOR!! Instalace trv† nàkolik minut, vytv†©° se sloëitÇ datab†zovÇ sou-
+  bory. Proto vyákejte konce instalace a v ë†dnÇm p©°padà se j° nepokou®ej-
+  te p©eru®it. MenusystÇm by pak nefungoval!
+
+  Doporuáujeme odstranit p©°kaz COUNTRY z Va®eho CONFIG.SYS a odstra§te ta-
+  kÇ v®echny ovladaáe áe®tiny. Mohly by se dostat do konfliktu s ovladaáem 
+  menusystÇmu.
+  MenusystÇm je DOS aplikace, proto doporuáujeme provozovat jej pod DOSem.
+
+  2.3 Windows 95............................................................
+  Instalaán° program CD-ROM B°l† Vr†na V†m d† po zvolen° c°lovÇho disku 
+  (adres†©e) a jednotky CD-ROM na vòbàr mezi instalac° pro DOS/Windows 3.x 
+  a Windows 95. Programy jsou identickÇ, ale li®° se ovl†d†n° áe®tiny. Proto 
+  pokud chcete CD-ROM vyuë°vat pod Windows 95 zvolte instalaci pro tento 
+  systÇm.
+
+  POZOR!! Instalace trv† nàkolik minut, vytv†©° se sloëitÇ datab†zovÇ sou-
+  bory. Proto vyákejte konce instalace a v ë†dnÇm p©°padà se ji nepokou®ej-
+  te p©eru®it. MenusystÇm by pak nefungoval!
+
+  MenusystÇm je DOS aplikace, proto doporuáujeme provozovat jej v DOS re-
+  ëimu, lze jej v®ak provozovat i v DOS oknà.
+
+
+  3. OVLèDèNã MENU-SYSTêMU KRYKOMENU I
+  ===================================
+
+  3.1 Hlavn° menu...........................................................
+  V hlavn°m menu se pohybujete pomoc° kurzorovòch kl†ves. V doln° á†sti o-
+  brazovky se zobrazuje popis oblasti souborñ, na kterÇ je pr†và um°stàn 
+  kurzor. Stisknut°m kl†vesy ENTER (nebo takÇ TAB) na jednÇ z oblast° soubo-
+  rñ se dostanete do pravÇ á†sti obrazovky, kde jsou um°stàna jednotliv† 
+  tlaá°tka. Pomoc° tlaá°tka PROHLãíENã se p©esunete do obrazovky ovl†d†n° 
+  aktivn° (vybranÇ) oblasti souborñ (viz bod 3.2). Tlaá°tko NèPOVâDA vyvol† 
+  n†povàdu (takÇ kl†vesa F1). Stisknut°m tlaá°tka VYHLEDèVèNã aktivujete 
+  funkci vyhled†v†n° (viz bod 3.3). Tlaá°tko OZNAÄENã oznaá° v®echny oblasti
+  souborñ pro vyhled†v†n° (viz bod 3.3). Pomoc° tlaá°tka KONEC ukoná°te pro-
+  gram. Aktivn° oblast souborñ indikuje lev† ®ipka u jmÇna oblasti.
+
+  3.2 Obrazovka ovl†d†n° oblasti souborñ....................................
+  V levÇ á†sti obrazovky je seznam souborñ obsaëenòch v danÇ oblasti. V tom-
+  to seznamu se pohybujete pomoc° kurzorovòch kl†ves. V pravÇ á†sti obrazov-
+  ky se zobrazuje popis souboru, na kterÇm je pr†và um°stàn kurzor. Stisknu-
+  t°m kl†vesy ENTER (nebo takÇ TAB) na nàkterÇm ze souborñ se dostanete do 
+  doln° á†sti obrazovky, kde jsou um°stàna tlaá°tka pro pr†ci se zvolenòm 
+  souborem. Tlaá°tko PROHL V†m zobraz° obsah souboru (v®echny jsou komprimo-
+  vanÇ programem ZIP, zobraz° se tedy obsah tohoto ZIP arch°vu). Tlaá°tko
+  NèPOVâDA vyvol† n†povàdu (takÇ F1), tlaá°tkem UNZIP rozbal°te (dekompri-
+  mujete) aktu†ln° soubor (nebo v®echny oznaáenÇ soubory - viz d†le) do 
+  adres†©e UNZIP\JMêNO_SOUBORU (tento adres†© je um°stàn v adres†©i, kde 
+  je B°l† Vr†na nainstalov†na). Tlaá°tko OZNAÄ oznaá° v®echny soubory 
+  (viz d†le). Tlaá°tkem KOPãR zkop°rujete aktu†ln° soubor (nebo v®echny 
+  oznaáenÇ soubory - viz d†le) do adres†©e KOPIR (tento adres†© je um°stàn 
+  v adres†©i, kde je B°l† Vr†na nainstalov†na). Tlaá°tkem ZPâT se vr†t°te do 
+  hlavn°ho menu.
+  Pro usnadnàn° pr†ce mñëete zvolit v°ce souborñ najednou, a to pomoc° kl†-
+  vesy SPACE (mezern°k). Pokud takto oznaá°te v°ce souborñ a stisknete ENTER
+  nebo TAB (pro aktivaci funkán°ch tlaá°tek), mñëete pomoc° tlaá°tka KOPãR
+  kop°rovat v®echny oznaáenÇ soubory najednou, stejnà tak tlaá°tko UNZIP 
+  rozbal° v®echny oznaáenÇ soubory. Pokud stisknete tlaá°tko PROHL, zobraz°
+  jen obsah souboru, na kterÇm byla stisknuta kl†vesa ENTER nebo TAB. Tla-
+  á°tkem OZNAÄ oznaá°te v®echny soubory. Oznaáen° indikuje prav† ®ipka u 
+  jmÇna souboru, aktivn° soubor oznaáuje lev† ®ipka.
+
+  3.3 Funkce vyhled†v†n°....................................................
+  Tuto funkci aktivujete stisknut°m tlaá°tka VYHLEDèVèNã v hlavn°m menu.
+  Mñëete si vybrat, zda budete hledat jmÇno souboru, nebo textovò ©etàzec
+  v popisech souborñ. Pokud nepouëijete tlaá°tko OZNAÄ k oznaáen° v®ech 
+  oblast° souborñ, nebo pokud si kl†vesou SPACE (mezern°kem) neoznaá°te nàk-
+  terÇ oblasti, bude program vyhled†vat jen v aktivn° oblasti. Oznaáen° k
+  vyhled†v†n° indikuje prav† ®ipka u jmÇna oblasti.
+  Po ukonáen° vyhled†v†n° se dostanete do obrazovky ovl†d†n° nalezenòch sou-
+  borñ. V tÇto obrazovce jsou v®echny soubory, kterÇ vyhovuj° Va®emu poëa-
+  davku. Ovl†d†n° je stejnÇ jako u obrazovky oblasti souborñ (viz bod 3.2).
+
+
+  4. DALõã INFORMACE
+  ==================
+
+  4.1 Podpora z†kazn°kñ.....................................................
+  Pokud m†te nàjakÇ problÇmy s CD-ROM, pokus°me se V†m poradit:
+  
+  po®ta:                 COmputer-COnnection, T†dëick† 1423, 101 00 PRAHA 10
+  telefon:                             hotline (Po-P† 16-18 hod) 02-67310567
+  e-mail:                                              robacoco@bohem-net.cz
+  WWW:                                                    http://www.coco.cz 
+
+  4.2 Jak z°skat tuto CD-ROM zdarma?........................................
+  ÄlenovÇ klubu CLUB OF MORTALS dost†v†j° CD-ROM pravidelnà zdarma. Klub 
+  poskytuje ©adu dal®°ch vòhod. V°ce o podm°nk†ch álenstv° se dozv°te na 
+  tel. 02-6832309, p. Jaro®.
+
+  4.3 Jak mñëete svñj program na CD-ROM B°l† Vr†na um°stit?.................
+  Po®lete n†m svñj program buÉ po®tou nebo e-mailem spolu s popisem, kterò
+  chcete u programu m°t.
+
+  4.4 Informace o distribuci................................................
+  Distribuce v ÄR:          COmputer-COnnection, Branick† 40, 147 00 PRAHA 4
+                       tel./fax: 02-461379, 462651, 463505, 460703  p. Bare®
+  Distribuce v SR:                 IPATRADE s.r.o., Slneán† 1, 010 03 íILINA
+                                                        tel./fax: 089-667219
+
+
+  5. ZèVâR
+  ========
+
+  Douf†me, ëe se V†m CD-ROM B°l† Vr†na bude l°bit, a ëe V†m p©inese mnoho
+  uëitku a radosti. 
+  S pozdravem
+
+                                                         COmputer-COnnection

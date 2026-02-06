@@ -1,0 +1,66 @@
+         -----------------------------------------------------------
+         Inertia real-time 3D rendering engine trouble shooting guide
+         -----------------------------------------------------------
+
+This document discusses some common mistakes that can be made when you're using
+Inertia. If you experience any problems, consult this guide first before
+writing us a bug-report. If there's a problem that you think should be included
+here, feel free to contact us.
+
+
+--------------------------------------------------------------------------------
+
+Problem : I get a general protection fault whenever I assign a texture surface
+          type to an object.
+
+Cause   : You haven't loaded a texture or you haven't assigned one to this
+          object. This problem will only occurs in Protected Mode. In Real Mode,
+          you'll get a rubbish texture.
+
+
+
+Problem : I get a general protection fault whenever I assign phong-shading to
+          an object.
+
+Cause   : You haven't created a phong-map or you haven't assigned one to this
+          object. This problem will only occurs in Protected Mode. In Real Mode,
+          you'll get a totally messed up intensity distribution.
+
+
+
+Problem : I did load a texture and I did create a phong-map. But I still get
+          a general protection fault.
+
+Cause   : Be sure to check the results of the Load..... and MakePhongMap
+          functions. If they detect an error (Out of memory, file not found
+          etc.), they don't halt the program, but merely return an error value.
+          Check the Inertia.ref file for error codes.
+
+Problem : I loaded all the textures and objects properly, but I get nothing
+          on the screen.
+
+Cause   : The object does not have texture coordinates. Add textures coordinates
+          with the TMAP program or make sure the original object has texture
+          coordinates.
+
+Problem : The computer hangs whenever I run my program. I am using the SMC
+          polygon fillers and Real Mode.
+
+Cause   : You forgot to reassemble the polygon fillers. The SMC fillers write
+          directly to the code segment, and in protected mode this has an
+          offset of 8 bytes. In Real Mode, there's no such offset. The
+          DPMI compiler directive in PDEFINES.INC takes care of the correct
+          compilation of the fillers.
+
+Problem : I get miscellaneous General Protection faults when using protected
+          mode.
+
+Cause   : BP7's *terrible* memory allocation system only lets you allocate
+          64K-1 bytes of memory. With the 256x256 textures, you need that
+          extra byte. All efforts have been made to minimize this including
+          using a DPMI call to manually extend the segment limit an extra
+          byte.
+
+Problem : I have a hole in my head.
+
+Cause   : You've been shot at.

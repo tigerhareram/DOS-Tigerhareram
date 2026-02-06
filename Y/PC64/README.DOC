@@ -1,0 +1,169 @@
+                          P e r s o n a l   C 6 4
+                        ---------------------------
+                        The C64 emulator for the PC
+                        ---------------------------
+
+Run PC64.EXE and press F1 for online help. The contents page has a quick
+start info.
+
+
+                            More documentation
+                            ------------------
+
+ORDER.DOC      Cable infos, distributor addresses and order form.
+
+GAMES.DOC      Optimal settings for some games. All programs in GAMES.DOC
+               work with PC64. If a game doesn't run, it has been treated
+               with a non compatible packer.
+
+
+                            System requirements
+                            -------------------
+
+- IBM AT with 486DX2-66 CPU. Personal C64 runs also on a 386SX-25, but not
+  with original speed.
+
+- A VGA graphic card. Only mode 13h is used which should work with every
+  card. Speed is very important as old VGA cards can add up to 130(!) wait
+  states to each video RAM access. New cards reduce this to 10 wait states
+  in ISA bus. VL and PCI bus will be even faster.
+
+- DOS since version 3.3 or the DOS emulations in Windows 3.1, OS/2 2.1,
+  Windows NT 3.5 and Linux 1.1.64 to 1.1.73 with dosemu 0.53.35. NT doesn't
+  allow sound, transfer between the PC and the C64 or external joysticks.
+
+- At least 480 Kb low RAM. The more you have free, the faster is the
+  desktop.
+
+- A hard disk with about 4 Mb free. You can reduce this to 1.3 Mb by
+  deleting the bundled games.
+
+The following hardware isn't necessary but will be supported:
+
+- For the desktop a Microsoft compliant mouse and appropriate driver.
+
+- An AdLib compliant sound card for SID voices 1 to 3 and a Soundblaster
+  compliant DSP for digitized samples over the volume register. The dialog
+  box <Options / Sound> shows which sound hardware has been detected.
+
+- A PC gameport card and an analog or digital IBM joystick (registered
+  version only).
+
+- A digital C64 joystick and the Alternate joystick adapter on LPTx
+  (registered version only).
+
+- For transferring files the PC64 cable and a C64 or C128 with any drive
+  on IEC bus or expansion port, not on userport (registered version only).
+
+- A CD ROM drive. This is in provision for third party vendors who want to
+  bring out a CD with C64 games.
+
+
+                       Limits of the shareware version
+                       -------------------------------
+
+- The transfer between the PC and the C64 is disabled. For testing purposes,
+  <Manager / Clone L64> and <Options / Waitstates> are working.
+
+- External joysticks are disabled, i.e. IBM analog on a game card and C64
+  digital on the Alternate joystick adaptor. You must use the white arrows
+  on the numeric pad and the right control key.
+
+- A shareware message will be displayed and must be confirmed when you leave
+  PC64.
+
+- No printed manual, PC64 cable and Alternate joystick adapter.
+
+To get the registered version without these limitations, please fill out the
+form in ORDER.DOC and send it to your local distributor.
+
+
+                                  Updates
+                                  -------
+
+The license information for the full version is located in the file
+LICENSE.DAT. As all versions since 1.03 work with the same licensing file,
+the emulator can be updated from the shareware evaluation versions. Simply
+install the new shareware version on the old licensed version, and you will
+get a new licensed version. This applies for all PC64 versions with major
+version number 1, e.g. version number 1.x.
+
+You can get the newest shareware version can be obtained from your
+acquaintances, or from BBS systems, like:
+
+* CompuServe, Magna Forum, Library 4, PC64*.ZIP
+
+* ftp.funet.fi:/pub/cbm/emulation/pc64/pc64*.zip
+
+* frodo.hiof.no:/pub/c64/emulator/pc64*.zip
+
+* watson.mbb.sfu.ca:/pub/c64/emulator/pc64*.zip
+
+The version 2.0 should be ready in autumn 1995, and it will run completely
+under Windows. Licensed users will be informed, as the new version comes
+available. The update will cost about 15-20 American dollars.
+
+
+                                Copyright
+                                ---------
+
+                    Author, production and distribution:
+                  Copyright (C) 1994-1995 Wolfgang Lorenz
+                 Gundekarstr. 4, 91187 Roettenbach, Germany
+    Phone: +49-9172-2885 (from 10 to 20 CET except Sundays, German only)
+                Compuserve: 100112,220 (German and English)
+                    Internet: 100112.220@compuserve.com
+
+                             System software:
+          Copyright (C) 1982-1995 Commodore Business Machines, Inc.
+                 Basic V2 Copyright (C) 1979-1995 Microsoft
+
+                                 Desktop:
+                 MEWEL Window System Version 4.0 Text Mode
+                    Copyright (C) 1989-1995 Magma Systems
+
+                                Fastloader:
+                             Michael Niemeyer
+
+                               Translation:
+                               Marko M„kel„
+
+
+                            License conditions:
+                            -------------------
+
+You may install Personal C64 on all your computers. You may also copy the
+program for friends and acquaintances and upload it to BBSes, as long as the
+licensing file is not included. Never give the file LICENSE.DAT to anyone!
+It contains your name and the serial number in encrypted form, so that the
+author can easily find out the origin of any illegal copies.
+
+
+                                Disclaimer:
+                                -----------
+
+Before connecting the PC and the C64, you must switch off all related
+equipment, also the TV set or monitor on the C64! All equipment must be
+connected to the same wall outlet, to avoid current loops. The user port
+connector may not be connected the wrong way around in any case, or the PC's
+printer port will get broken! Broken TV sets may lead high voltage to the
+antenna connector, killing the CIA chip when you connect the C64 with the
+grounded PC.
+
+The manufacturer is not responsible for any defects in the interfaces that
+are caused by not following these rules!
+
+
+                          Who owns the system ROMs?
+                          -------------------------
+
+The C64 ROMs are copyrighted by Commodore, BASIC V2 is copyrighted by
+Microsoft. I've written a letter to the German sites of both companies on
+07-27-97 and asked them for the permission to distribute the system ROMs
+together with Personal C64. On 08-02-94, Commodore has directed me to the
+mother company in the USA.
+
+Because there was no reaction since then, I've decided to distribute the
+ROMs without the explicit permission. If Commodore or Microsoft will forbid
+that, you'd have to connect the C64 or the C128 with the PC64 cable and run
+the command <Manager / Read ROMs>.

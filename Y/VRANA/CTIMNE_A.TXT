@@ -1,0 +1,241 @@
+  
+                                                                            
+                                                                             
+                     B   I   L   A         V   R   A   N   A                                                          
+                                                                             
+                                                                             
+
+                  S  H  A  R  E  W  A  R  E     C  D  -  R  O  M
+  
+  ---------------------------------------------------------------------------
+
+  OBSAH:
+
+  1. Co je Bila Vrana
+     1.1 Licencni ujednani
+     1.2 Co Bila Vrana prinasi
+     1.3 Co je shareware, freeware a public domain
+     1.4 O autorech
+ 
+  2. Technicke informace
+     2.1 Systemove pozadavky
+     2.2 DOS a Windows 3.x
+     2.3 Windows 95
+  
+  3. Ovladani menu-systemu KrykoMenu I
+     3.1 Hlavni menu
+     3.2 Oblasti souboru
+     3.3 Funkce vyhledavani
+
+  4. Dalsi informace
+     4.1 Podpora zakazniku
+     4.2 Jak ziskat tuto CD-ROM zdarma
+     4.3 Jak si muzete svuj program na Bilou Vranu umistit
+     4.4 Informace o distribuci
+
+  5. Zaver
+
+  --------------------------------------------------------------------------
+
+
+  1. CO JE BILA VRANA 
+  ===================
+  
+  1.1 Licencni ujednani COmputer-COnnection - Richard Bares.................
+  Toto je legalni dohoda mezi Vami (uzivatelem) a firmou COmputer-COnnnec-
+  tion - Richard Bares. Pokud nesouhlasite s podminkami teto dohody, nemuze-
+  te tento produkt pouzivat.
+
+    a) Copyright a plneni licence:
+       Bila Vrana je produkt chraneny autorskym pravem a obsahuje obchodni
+       tajemstvi. COmputer-COnnection-Richard Bares si ponechava vlastnict-
+       vi tohoto CD disku Bila Vrana. Tento CD disk Bila Vrana muzete pouzi-
+       vat v souladu s timto licencnim ujednanim.
+    b) Povolene uzivani:
+       CD disk Bila Vrana muzete pouzivat na kompatibilnim pocitaci vcetne
+       siti. Muzete CD disk Bila Vrana vyuzit pro verejne i soukrome Bulle-
+       tin Board Systemy (BBS). Muzete pouzivat programy obsazene na CD
+       disku Bila Vrana v souladu s podminkami jejich autoru.
+    c) Zakazane uzivani:
+       CD disk Bila Vrana nesmite pujcovat ani pronajimat. Nesmite poskyto-
+       vat sublicence CD disku Bila Vrana.
+
+  COmputer-COnnection - Richard Bares si vyhrazuje pravo prerusit tuto li-
+  cenci v pripade, ze bude nektera z techto podminek porusena nebo opomenu-
+  ta nositelem licence podle tohoto licencniho ujednani. V pripade 
+  preruseni licence musi byt vsechny kopie programu zniceny a nositel li-
+  cence bude zodpovedny za vsechny skody vznikle jako vysledek poruseni 
+  nebo opomenuti tohoto licencniho ujednani.
+
+  Autor tohoto CD disku a programu COCOCD.EXE (COmputer-COnnection - 
+  Richard Bares) neni odpovedny za skody vznikle pouzivanim tohoto progra-
+  mu.
+
+         CD-ROM Bila Vrana, COCOCD.EXE (vcetne vsech jeho soucasti) 
+             Copyright 1997 COmputer-COnnection - Richard Bares
+             All rights reserved        Vsechna prava vyhrazena
+
+  1.2 Co Bila Vrana prinasi?................................................
+  Bila Vrana je CD-ROM, ktera Vam kazdych 6 mesicu prinasi ty nejkvalitnejsi
+  volne siritelne programy za uplynuly pulrok. Neni tedy koncipovana jako 
+  CD-ROM, ktera ma obsahovat vse. Obsahuje jen to, co za minulych sest mesi-
+  cu vzniklo. Pokud tedy nevznikl zadny novy animacni program, ani na ni 
+  zadny nenajdete. Diky tomu Bila Vrana obsahuje vzdy jen aktualni verze 
+  programu a ne jen nejake smeti pro zaplacnuti prazdneho mista ci doplneni 
+  prazdne oblasti souboru.
+  
+  1.3 Co je shareware, freeware a public domain?............................
+  Vetsina programu na CD-ROM je shareware. Tyto programy si muzete naista-
+  lovat a urcitou, autorem vymezenou, dobu je muzete pouzivat. Pokud se
+  rozhodnete program pouzivat i nadale, jste povinni uhradit autorovi prog-
+  ramu registracni poplatek. V mnoha pripadech Vam tento poplatek otevre
+  dalsi funkce programu.
+  Programy typu freeware jsou vetsinou updaty a cheaty, ale najdou se i v
+  ostatnich oblastech. Tyto programy muzete pouzivat neomezene dlouho bez
+  jakychkoliv poplatku. Nesmite vsak program jakkoliv menit.
+  Public domain v posledni dobe uplne mizi. Je to dano tim, ze program mu-
+  zete neomezene zdarma vyuzivat a navic do nej muzete i zasahovat.
+
+  1.4 O autorech............................................................
+  Autor, vydavatel:                      COmputer-COnnection - Richard Bares
+  Obsahova cast a popisy programu:                              Robert Bares
+  Menu-system:                                           ing. Milan Krykorka
+  Ovladace cestiny                                             Radek Karaffa
+  Design obalu:                                    ing. arch. Lubomir Kipila
+  Testovani:                  Michal Komarek, Jan Domnosil, Martin Folprecht 
+                            a kolektiv zamestnancu firmy COmputer-COnnection
+
+
+  2. TECHNICKE INFORMACE
+  ======================
+
+  2.1 Systemove pozadavky...................................................
+  Pozadavky programu KrykoMenu I na system jsou minimalni:
+  - IBM-PC kompatibilni pocitac
+  - barevny monitor
+  - pevny disk: 2MB na disku C: (pracovni soubory instalatoru)
+                3MB na cilovem disku 
+  - CD-ROM
+  - volna pamet (zakladni): 400 kB
+  - polozka FILES v CONFIG.SYS nastavena na hodnotu minimalne 30
+  - operacni system MS-DOS 6.x, Novell DOS 7.x, Windows 3.x, Windows 95 nebo 
+    vyssi (na nizsich verzich techto systemu nebyl menusystem testovan)
+
+  2.2 DOS a Windows 3.x.....................................................
+  Instalacni program CD-ROM Bila Vrana Vam da po zvoleni ciloveho disku 
+  (adresare) a jednotky CD-ROM na vyber mezi instalaci pro DOS/Windows 3.x 
+  a Windows 95. Programy jsou identicke, ale lisi se ovladani cestiny. Proto 
+  pokud chcete CD-ROM vyuzivat pod DOSem ci Windows 3.x zvolte instalaci 
+  pro tyto systemy.
+
+  POZOR!! Instalace trva nekolik minut, vytvari se slozite databazove sou-
+  bory. Proto vyckejte konce instalace a v zadnem pripade se ji nepokousej-
+  te prerusit. Menusystem by pak nefungoval!
+
+  Doporucujeme odstranit prikaz COUNTRY z Vaseho CONFIG.SYS a odstrante ta-
+  ke vsechny ovladace cestiny. Mohly by se dostat do konfliktu s ovladacem 
+  menusystemu.
+  Menusystem je DOS aplikace, proto doporucujeme provozovat jej pod DOSem.
+
+  2.3 Windows 95............................................................
+  Instalacni program CD-ROM Bila Vrana Vam da po zvoleni ciloveho disku 
+  (adresare) a jednotky CD-ROM na vyber mezi instalaci pro DOS/Windows 3.x 
+  a Windows 95. Programy jsou identicke, ale lisi se ovladani cestiny. Proto 
+  pokud chcete CD-ROM vyuzivat pod Windows 95 zvolte instalaci pro tento 
+  system.
+
+  POZOR!! Instalace trva nekolik minut, vytvari se slozite databazove sou-
+  bory. Proto vyckejte konce instalace a v zadnem pripade se ji nepokousej-
+  te prerusit. Menusystem by pak nefungoval!
+
+  Menusystem je DOS aplikace, proto doporucujeme provozovat jej v DOS re-
+  zimu, lze jej vsak provozovat i v DOS okne.
+
+
+  3. OVLADANI MENU-SYSTEMU KRYKOMENU I
+  ===================================
+
+  3.1 Hlavni menu...........................................................
+  V hlavnim menu se pohybujete pomoci kurzorovych klaves. V dolni casti o-
+  brazovky se zobrazuje popis oblasti souboru, na ktere je prave umisten 
+  kurzor. Stisknutim klavesy ENTER (nebo take TAB) na jedne z oblasti soubo-
+  ru se dostanete do prave casti obrazovky, kde jsou umistena jednotliva 
+  tlacitka. Pomoci tlacitka PROHLIZENI se presunete do obrazovky ovladani 
+  aktivni (vybrane) oblasti souboru (viz bod 3.2). Tlacitko NAPOVEDA vyvola 
+  napovedu (take klavesa F1). Stisknutim tlacitka VYHLEDAVANI aktivujete 
+  funkci vyhledavani (viz bod 3.3). Tlacitko OZNACENI oznaci vsechny oblasti
+  souboru pro vyhledavani (viz bod 3.3). Pomoci tlacitka KONEC ukoncite pro-
+  gram. Aktivni oblast souboru indikuje leva sipka u jmena oblasti.
+
+  3.2 Obrazovka ovladani oblasti souboru....................................
+  V leve casti obrazovky je seznam souboru obsazenych v dane oblasti. V tom-
+  to seznamu se pohybujete pomoci kurzorovych klaves. V prave casti obrazov-
+  ky se zobrazuje popis souboru, na kterem je prave umisten kurzor. Stisknu-
+  tim klavesy ENTER (nebo take TAB) na nekterem ze souboru se dostanete do 
+  dolni casti obrazovky, kde jsou umistena tlacitka pro praci se zvolenym 
+  souborem. Tlacitko PROHL Vam zobrazi obsah souboru (vsechny jsou komprimo-
+  vane programem ZIP, zobrazi se tedy obsah tohoto ZIP archivu). Tlacitko
+  NAPOVEDA vyvola napovedu (take F1), tlacitkem UNZIP rozbalite (dekompri-
+  mujete) aktualni soubor (nebo vsechny oznacene soubory - viz dale) do 
+  adresare UNZIP\JMENO_SOUBORU (tento adresar je umisten v adresari, kde 
+  je Bila Vrana nainstalovana). Tlacitko OZNAC oznaci vsechny soubory 
+  (viz dale). Tlacitkem KOPIR zkopirujete aktualni soubor (nebo vsechny 
+  oznacene soubory - viz dale) do adresare KOPIR (tento adresar je umisten 
+  v adresari, kde je Bila Vrana nainstalovana). Tlacitkem ZPET se vratite do 
+  hlavniho menu.
+  Pro usnadneni prace muzete zvolit vice souboru najednou, a to pomoci kla-
+  vesy SPACE (mezernik). Pokud takto oznacite vice souboru a stisknete ENTER
+  nebo TAB (pro aktivaci funkcnich tlacitek), muzete pomoci tlacitka KOPIR
+  kopirovat vsechny oznacene soubory najednou, stejne tak tlacitko UNZIP 
+  rozbali vsechny oznacene soubory. Pokud stisknete tlacitko PROHL, zobrazi
+  jen obsah souboru, na kterem byla stisknuta klavesa ENTER nebo TAB. Tla-
+  citkem OZNAC oznacite vsechny soubory. Oznaceni indikuje prava sipka u 
+  jmena souboru, aktivni soubor oznacuje leva sipka.
+
+  3.3 Funkce vyhledavani....................................................
+  Tuto funkci aktivujete stisknutim tlacitka VYHLEDAVANI v hlavnim menu.
+  Muzete si vybrat, zda budete hledat jmeno souboru, nebo textovy retezec
+  v popisech souboru. Pokud nepouzijete tlacitko OZNAC k oznaceni vsech 
+  oblasti souboru, nebo pokud si klavesou SPACE (mezernikem) neoznacite nek-
+  tere oblasti, bude program vyhledavat jen v aktivni oblasti. Oznaceni k
+  vyhledavani indikuje prava sipka u jmena oblasti.
+  Po ukonceni vyhledavani se dostanete do obrazovky ovladani nalezenych sou-
+  boru. V teto obrazovce jsou vsechny soubory, ktere vyhovuji Vasemu poza-
+  davku. Ovladani je stejne jako u obrazovky oblasti souboru (viz bod 3.2).
+
+
+  4. DALSI INFORMACE
+  ==================
+
+  4.1 Podpora zakazniku.....................................................
+  Pokud mate nejake problemy s CD-ROM, pokusime se Vam poradit:
+  
+  posta:                 COmputer-COnnection, Tadzicka 1423, 101 00 PRAHA 10
+  telefon:                             hotline (Po-Pa 16-18 hod) 02-67310567
+  e-mail:                                              robacoco@bohem-net.cz
+  WWW:                                                    http://www.coco.cz 
+
+  4.2 Jak ziskat tuto CD-ROM zdarma?........................................
+  Clenove klubu CLUB OF MORTALS dostavaji CD-ROM pravidelne zdarma. Klub 
+  poskytuje radu dalsich vyhod. Vice o podminkach clenstvi se dozvite na 
+  tel. 02-6832309, p. Jaros.
+
+  4.3 Jak muzete svuj program na CD-ROM Bila Vrana umistit?.................
+  Poslete nam svuj program bud postou nebo e-mailem spolu s popisem, ktery
+  chcete u programu mit.
+
+  4.4 Informace o distribuci................................................
+  Distribuce v CR:          COmputer-COnnection, Branicka 40, 147 00 PRAHA 4
+                       tel./fax: 02-461379, 462651, 463505, 460703  p. Bares
+  Distribuce v SR:                 IPATRADE s.r.o., Slnecna 1, 010 03 ZILINA
+                                                        tel./fax: 089-667219
+
+
+  5. ZAVER
+  ========
+
+  Doufame, ze se Vam CD-ROM Bila Vrana bude libit, a ze Vam prinese mnoho
+  uzitku a radosti. 
+  S pozdravem
+
+                                                         COmputer-COnnection

@@ -1,0 +1,135 @@
+AGSI120E.ZIP   533364      30/11/96agSI 1.2.0 - Tento program V m
+                                   sdØl¡ stovky vØc¡ o Vaçem hard-
+                                   ware/syst‚mu, operaŸn¡m syst‚mu,
+                                   pamØti, softwaru, jednotk ch a
+                                   konfiguraŸn¡ch souborech. M  mno-
+                                   ho funkc¡, jako zmØna syst‚mov‚ho
+                                   nastaven¡ a form tov n¡ disku.
+                                   Detailn¡ n povØda..
+BIOSR11.ZIP    15400       30/11/96BIOS Reporter 1.1 - AktivnØ vypi-
+                                   suje syst‚mov‚ informace z BIOSu.
+                                   M…§e fungovat i jako TSR na poza-
+                                   d¡ a hl sit zmØny v BIOSu.
+CACHCHK5.ZIP   41314       30/11/96CACHECHK - Tento program provØý¡
+                                   L1 a L2 chache pamØœ. Zjist¡ i 
+                                   jej¡ rychlost, kapacitu a tak‚
+                                   V m ýekne, zda cel‚ pamØœ je 
+                                   cachov na nebo ne.
+                                   CACHECTL - Umo§n¡ vyp¡nat a za-
+                                   p¡nat L1 cache.
+CONF822S.ZIP   207513      30/11/96PC-CONFIG 8.22 - InformaŸn¡ a
+                                   benchmarkovì program pro V ç po-
+                                   Ÿ¡taŸ. Mimojin‚ um¡: CDROM bench-
+                                   mark, zjist¡ Pipelineburst chache
+                                   EDO RAM, mnoho detail… o Ÿipov‚
+                                   sadØ, "zelen‚" mainboardy, um¡ 
+                                   vçechny druhy procesor… (UMC, TI,
+                                   Cyrix, NexGen, 6x86, Pentium Pro,
+                                   atd.), vçechny VGA Ÿipy, APM 
+                                   funkce, PCMCIA, odhal¡ chybu 
+                                   starç¡ch Penti¡, EIDE, detailn¡
+                                   informace o PCI a SCSI.
+CPU201.ZIP     144806      30/11/96TMiOSDGL - Detekuje x86 CPU/FPU.
+                                   Pozn  pýes 30 r…znìch CPU a v¡ce
+                                   ne§ 17 FPU. SamozýejmØ V s bude
+                                   informovat i o jejich schopno-
+                                   stech a rychlosti. Arch¡v obsa-
+                                   huje i zdrojovì k¢d.
+CPUINFO.ZIP    266132      30/11/96CPUSpeed - Program, kterì V m 
+                                   ýekne jakì procesor m te ve sv‚m
+                                   poŸ¡taŸi a jak‚ je jeho rychlost.
+                                   Um¡ i Pentium Pro.
+CPUTYP13.ZIP   9106        30/11/96Tento progr mek zjist¡ druh Vaçe-
+                                   ho CPU a FPU. Um¡ vçechny druhy.
+                                   Pýid ny i zdrojov‚ k¢dy.
+DRH310E.ZIP    447961      30/11/96Dr.Hardware Sysinfo 3.10e - Tento
+                                   program analyzuje hardware, soft-
+                                   ware. Uk §e v m pýes 60 stran 
+                                   detailn¡ch informac¡ o CPU, BIOS,
+                                   PCI, SCSI, EIDE, VGA, CDROM, s¡œ,
+                                   pamØti, Win95. Nab¡z¡ i benchmark
+                                   (test rychlosti), report funkce a
+                                   ulo§en¡ aktu ln¡ho stavu pamØti.
+                                   M  SAA menu a podporu myçi.
+HCSDIAGS.ZIP   38489       30/11/96HSCDiags - Tanto program V m 
+                                   zjist¡ informace o syst‚mu, joy-
+                                   sticku, CMOS obsahu, LIM EMS.
+HWINF304.ZIP   152775      30/11/96HWiNFO 3.04 - Vynikaj¡c¡ infor-
+                                   maŸn¡ program o Vaçem hardware.
+                                   Rozezn  97 CPU, um¡ benchmarky,
+                                   informuje o cache, BP, U/V pipes,
+                                   podpora multiprocesor…, rozezn 
+                                   32 FPU a jejich rychlost, info o
+                                   ISA, EISA, MCA, VLB, PCI a SMbus,
+                                   identifikuje PnP, MCA (1250), 
+                                   EISA (300) a detailnØ PCI (880),
+                                   detekuje mnoho ISA/VLB karet, 
+                                   identifikuje BIOS rozç¡ýen¡, re-
+                                   portuje o FlashROM, Energy Star,
+                                   GreenPC, pozn  pýes 230 poŸ¡taŸ…,
+                                   identifikace Ÿipov‚ sady MB, jm‚-
+                                   na poŸ¡taŸe a vìrobce BIOSu, ro-
+                                   zezn  224 video Ÿip… a velikost
+                                   VGA pamØti, detekuje mnoho video
+                                   karet, rozezn  4 TV tunery, dete-
+                                   kuje RISC video akceler tory a
+                                   TMS TIGA video adapt‚ry, rozezn 
+                                   73 video RAMDAC, video benchmark,
+                                   pozn  vìrobce video karty, model,
+                                   detekuje mnoho zvukovìch karet, 
+                                   CDROM, PCMCIA, FTP s¡œ info, 
+                                   CDROM benchmark, COM/LPT/Game p.
+                                   identifikace, detekce 8042 BIOS
+                                   vìrobce, geometrie pevnìch disk…
+                                   a jejich benchmarky, IDE/EIDE
+                                   detekce a informace, ATAPI info,
+                                   test CPU, pØknì design. 
+IRQINF16.ZIP   55863       09/07/96IRQInfo 1.6 - Pýesn‚ informace o
+                                   IRQ. Pou§¡v  mnoho zaý¡zen¡ k
+                                   pýesn‚mu zjiçtØn¡ IRQ. Testuje
+                                   na jednotk ch, s¡œ¡ch, zvukovìch
+                                   kart ch, com portech, tisk rn ch,
+                                   modemech, scannerech, SCSI....
+                                   ProstØ na vçem co pou§¡v  IRQ.
+                                   Snadno tak zjist¡te, kter‚ IRQ je
+                                   voln‚ a kter‚ naopak vyu§¡vaj¡ 2
+                                   zaý¡zen¡.
+JCBENCH4.ZIP   97814       30/11/96JC-Bench 4.00 - Program, kterì 
+                                   zjist¡ rychlost Vaçeho poŸ¡taŸe:
+                                   CPU, video karta, hard disk. 
+                                   Velmi rychlì, zobrazuje barevn‚
+                                   grafy, porovn v n¡ atd.
+NEED65.ZIP     87490       30/11/96NEED, SNIFF, AVOID 6.5 - DOS info
+                                   utility. Testuje zda je aktivn¡
+                                   DESQview, BTrieve 386MAX, Append,
+                                   SmartDrv, Share, DPMI... Mnoho
+                                   dalç¡ch DOS a HW informac¡.
+SNOOP344.ZIP   228643      30/11/96Snooper 3.44 - Program, kterì V m
+                                   pod  podrobn‚ informace o Vaçem 
+                                   syst‚mu: CPU/NDP, DOS, BIOS, 
+                                   mØœ, CD-ROM, disky, video, pý¡-
+                                   sluçenstv¡, kl vesnice, zvukov 
+                                   karta, porty, IDE, CMOS, disk 
+                                   cache, Stacker, FILES/BUFFERS,
+                                   IRQ. M…§ete editovat CMOS, CONFIG
+                                   a AUTOEXEC. S¡œov‚ a benchmarkov‚
+                                   obrazovky, detekuje 1100 MCA ka-
+                                   ret, autologging.
+SPEED310.ZIP   95953       30/11/96Memory Speed/Video Speed 3.10 -
+                                   Testuje rychlost pamØti a video
+                                   karty.
+SYSCHK43.ZIP   126565      30/11/96SYSCHK 2.43 - Informace o syst‚-
+                                   mu. Tento program poskytuje kom-
+                                   pletn¡ detailn¡ informace o za-
+                                   ý¡zen¡ch ve Vaçem poŸ¡taŸi: CPU,
+                                   IRQ, BIOS, typ sbØrnice, info o
+                                   myçi, portech, IDE a SCSI disky,
+                                   CD-ROM, TSR info, s¡œ, video, 
+                                   info o CMOS pamØti, rychlost, 
+                                   Windows a dalç¡. Tiskne komplet-
+                                   n¡ report o configuraci syst‚mu.
+VSPEED13.ZIP   62599       30/11/96VSPEED 1.30 - Vynikaj¡c¡ tester
+                                   video karty u§¡vaj¡c¡ VESA SVGA
+                                   BIOS rozç¡ýen¡. Testuje vçechny
+                                   SVGA m¢dy + ModeX 8/16/32 bit
+                                   pýenos. PØkn‚ barevn‚ testy.

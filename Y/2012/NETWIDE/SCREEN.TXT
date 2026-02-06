@@ -1,0 +1,25 @@
+  File  Edit  Search  Assemble  Options  Window  Help                   23:07:07
+ÉÍ[þ]ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ C:\SOURCES\STORE1\ENGINE\640CLEAR.ASM ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ[]Í»
+º[SECTION ._TEXT]                                                              
+º%define PASCAL                                                                þ
+º%include "C:\SOURCES\STORE1\MACROS\c16.mac"                                   ±
+º                                                                              ±
+ºproc ClearHiRes                                                               ±
+º                                                                              ±
+º%$color arg                                                                   ±
+º                                                                              ±
+º  XOR SI, SI ; x                                                              ±
+º  MOV CX, 3                                                                   ±
+º                                                                              ±
+º@cykl:                                                                        ±
+º                                                                              ±
+º  XOR DI, DI ; y                                                              ±
+º  PUSH CX                                                                     ±
+º                                                                              ±
+º  MOV CX, SI                                                                  ±
+º  AND CX, 3                                                                   ±
+º  MOV AX, 0x0100                                                              ±
+º  SHL AX, CL                                                                  ±
+º  INC AX                                                                      
+ÈÍIÍÍÍÍ 10:12 ÍÍÍÍþ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±ÄÙ
+ F1 Help                                                                  122064

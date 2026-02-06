@@ -1,0 +1,43 @@
+Function CheckCislo: Byte;
+Begin
+  Case CisloRulety of
+     0: CheckCislo:=0;
+     1: CheckCislo:=28;
+     2: CheckCislo:=9;
+     3: CheckCislo:=26;
+     4: CheckCislo:=30;
+     5: CheckCislo:=11;
+     6: CheckCislo:=7;
+     7: CheckCislo:=20;
+     8: CheckCislo:=32;
+     9: CheckCislo:=17;
+    10: CheckCislo:=5;
+    11: CheckCislo:=22;
+    12: CheckCislo:=34;
+    13: CheckCislo:=15;
+    14: CheckCislo:=3;
+    15: CheckCislo:=24;
+    16: CheckCislo:=36;
+    17: CheckCislo:=13;
+    18: CheckCislo:=1;
+    19: CheckCislo:=99;
+    20: CheckCislo:=27;
+    21: CheckCislo:=10;
+    22: CheckCislo:=25;
+    23: CheckCislo:=29;
+    24: CheckCislo:=12;
+    25: CheckCislo:=8;
+    26: CheckCislo:=19;
+    27: CheckCislo:=31;
+    28: CheckCislo:=18;
+    29: CheckCislo:=6;
+    30: CheckCislo:=21;
+    31: CheckCislo:=33;
+    32: CheckCislo:=16;
+    33: CheckCislo:=4;
+    34: CheckCislo:=23;
+    35: CheckCislo:=35;
+    36: CheckCislo:=14;
+    37: CheckCislo:=2;
+  End; {Caes End}
+End;

@@ -1,0 +1,55 @@
+NASM-IDE License Agreement
+
+BEFORE PROCEEDING WITH THE INSTALLATION AND/OR USE OF THIS SOFTWARE,
+CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS OF THIS LICENSE
+
+NASM-IDE refers to all files included in the NASM-IDE archive
+(e.g help files, executable, etc). This archive must not be
+distributed with anything other than the files listed below.
+
+NASMIDE.HLP
+8086HELP.HLP
+8087HELP.HLP
+NASMIDE.EXE
+NASMIDE.RES
+NASMIDE.ICO
+NASMIDE.INI
+README.TXT
+LICENSE.TXT
+EXAMPLES\BINTEST.ASM
+EXAMPLES\DAZZLER.ASM
+EXAMPLES\FIRE.ASM
+EXAMPLES\FIREPAL.INC
+EXAMPLES\ERRORS.ASM
+EXAMPLES\BAR.ASM
+
+BY INSTALLING OR USING THIS SOFTWARE YOU INDICATE YOUR ACCEPTANCE OF THIS
+AGREEMENT. IF YOU DO NOT ACCEPT OR AGREE WITH THESE TERMS, YOU MAY NOT
+INSTALL OR USE THIS SOFTWARE!
+
+This software is provided "as is" and without warranties as to or any other
+warranties whether expressed or implied.
+
+Because of the various hardware and software environments in which this
+program may be used, no warranty of fitness for a particular purpose is
+offered. Use it entirely at your own risk.
+
+NASM-IDE is protected by UK and international copyright laws.
+
+In no event shall the author be liable for any loss of profit or any other
+commercial damage, including but not limited to special, incidental,
+consequential or other damages.
+
+This software may be freely copied, however no charge can be made for it
+(except to cover the cost of postage or disks). NASM-IDE may not be included
+as part of any compilation without permission from the author (see README.TXT
+for details on how to contact me).
+
+Without the expressed, written consent from me, you may NOT distribute
+modified versions of NASM-IDE, in whole or in part.
+
+NASM-IDE Version 1.8
+LICENSE.TXT
+Robert Anderton
+rob@inglenook.co.uk
+http://uk.geocities.com/rob_anderton/

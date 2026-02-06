@@ -1,0 +1,7 @@
+-f obj
+-o C:\OUTPUTS\640WSPRI.OBJ
+-w+macro-params
+-w+orphan-labels
+-w+number-overflow
+-w+macro-selfref
+-E C:\NETWIDE\NASM.LOG

@@ -1,0 +1,469 @@
+
+                           Inertia Real-time 3D System
+                             TUTORIAL DOCUMENTATION
+
+               v0.99 for Turbo Pascal v6, v7, and Borland Pascal v7
+
+               Copyright (c) 1995-96, Alex Chalfin and Jeroen Bouwens
+                              All Rights Reserved
+
+
+ Contents
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+        1.1     Package Contents
+        1.2     GFXFX3 Notes
+        1.3     Hardware Requirements
+        1.4     Credits
+
+        2.      Brief Tutorial
+        2.1     Notes About Rendering Modes
+
+        3.      Technical Support and Contact Information
+
+
+  Disclaimer
+  ---------------------------------------------------------------------
+     In  no  event  shall  the  author  be  liable  for  any damages
+     whatsoever  (including, without limitation, damages for loss of
+     business profits, business interruption, loss of business data,
+     or  any  other  pecuniary loss) arising  out  of  the use of or
+     inability  to  use  this product, even  if  the author has been
+     advised    of   the   possibility   of   such   damages.   Some
+     states jurisdictions  do not allow  the exclusion or limitation
+     of liability for consequential or incidental damages. We do not
+     sell to people from such perverse places.
+
+  License Agreement
+  ---------------------------------------------------------------------
+     This  software is protected by United States copyright laws and
+     international  treaty provisions. Therefore  you must treat the
+     software  like  any other  copyrighted material (books, musical
+     recordings,  etc.).
+
+     You  have  a  royalty-free right  to  reproduce  and distribute
+     executable  files  created  using  Inertia. You may not produce
+     applications  which  require payment from end users before they
+     can try the program. You are permitted to create  shareware and
+     freeware programs  royalty free. Further  levels (e.g. Commercial
+     Software) require the product be registered.
+
+     With your publicly released programs, you must:
+
+     (a) only distribute the runtime modules and executable files in
+     conjunction  with and part of your software product (i.e., do not
+     include  OBJ  or source files);  (b)  include a valid copyright
+     notice  on your software product;  (c) agree to indemnify, hold
+     harmless,  and  defend  the authors  of  this software from and
+     against any claims or lawsuits, including attorneys' fees, that
+     arise  or result from the use  or distribution of your software
+     product.
+
+     The  included source code may be edited anyway you wish, except
+     that  original copyright notices must remain unaltered. You may
+     not distribute any of the  included  source  code or OBJ files.
+     You are prohibited  from   reverse  engineering,   decompiling,
+     or disassembling any part of this software.
+
+     This  product  is provided as is  and  the authors disclaim all
+     other  warranties,  either expressed  or implied, including but
+     not  limited  to  implied  warranties  of  merchantability  and
+     fitness for a particular purpose.
+
+     This agreement is governed by the laws of the state of Ohio.
+
+
+1.1 Package Contents
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+          When you decompress Inertia to your hard drive, make sure you
+        use PKUNZIP with  the -D option, which will recreate the directory
+        structure.
+
+       Documentation: (Found in the /DOCS directory)
+        INERTIA.DOC    This tutorial document.
+        INERTIA.REV    List of all the latest changes and additions
+        INERTIA.REF    Function reference for the Inertia library.
+        TYPES.REF      Types reference for Inertia data types.
+        BUFIO.REF      Function reference for Buffered IO unit.
+        PCX.REF        Function reference for PCX unit.
+        REGISTER.DOC   Tells about what you get when you register.
+        REGISTER.FRM   Registration form to order Inertia.
+
+       Example Programs: (Found in the /EXAMPLE directory)
+        GMV.EXE        Program to demonstrate the complete Inertia
+                       system in an interactive viewer.
+        EX01.EXE       Basic object loading/spinning example.
+        EX02.EXE       Gouraud Object with multiple dynamic light sources.
+        EX03.EXE       Phong shading with multiple colored polygons.
+        EX04.EXE       Gouraud Transparency and Gouraud texture mapping.
+        EX05.EXE       Camera movements around an object.
+
+       Utilities: (Found in /UTILS directory)
+        OPAL.EXE       Optimize Palette. This program generates the shade
+                       tables necessary to the Inertia engine.
+        TMAP.EXE       Texture Mapper. This program adds texture coordinates
+                       to any object in the .GVO file format.
+        TRANS.EXE      Transparency Table generator. Builds the tables
+                       necessary for Inertia to perform object transparency.
+        GVO.EXE        Object conversion system. Converts .3DS and .ASC files
+                       to the GVO format.
+
+       Libraries:
+         /TP6/SMC/*.TPU    Turbo Pascal v6 Unit files with Self Modifying
+                           code fillers
+         /TP7/SMC/*.TPU    Turbo Pascal v7 Unit files with Self Modifying
+                           code fillers
+         /BP7/SMC/*.TPP    Borland Pascal v7 Unit files (protected mode)
+                           with Self Modifying Code fillers.
+         /TP6/STD/*.TPU    Turbo Pascal v6 Unit files with standard looping
+                           fillers
+         /TP7/STD/*.TPU    Turbo Pascal v7 Unit files with standard looping
+                           fillers
+         /BP7/STD/*.TPP    Borland Pascal v7 Unit files (protected mode)
+                           with standard looping fillers.
+
+          There are quite a few additional files, but they are fairly
+        self explanatory.
+
+1.2 GFXFX3 Notes
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+          The Inertia Real-Time 3d rendering system is part of the
+        GFXFX 3 package currently being worked on by Bas van Gaalen.
+        Due to time restrictions, the Inertia systems has been
+        completed well before the rest of the GFXFX3 package. However,
+        it has been decided to release Inertia. Not as a stand alone
+        package but as a first stage of GFXFX3. Registrations of Inertia
+        will be credited to some of the registration cost of the entire
+        GFXFX3 package. The details have not been entirely worked out,
+        nor has an exact date been set for the entire release. Please
+        wait for info relases about the rest of GFXFX3 or send email
+        with any questions or comments you have.
+
+
+1.3 Hardware Requirements
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+          Inertia requires a 386SX  or better  CPU.  Inertia uses a large
+        part of the 386 instruction set, making 286 compatibility non-
+        existent. However, a 486-66MHz is strongly recommended for any
+        sort of complex rendering at respectable speeds.
+
+          A standard VGA card is also required.
+
+
+1.4 Credits
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+        Alex Chalfin              - Pipeline design and coding, utilities,
+        achalfin@uceng.uc.edu       GVO systems. Some of the documentation.
+        6244 Beech View Circle
+        Cincinnati, OH 45213
+        USA
+
+        Jeroen Bouwens            - Filler coding, support coding, design
+        jay@il.ft.hse.nl            verification. Much of the documentation.
+        Kanaalstraat 6
+        5691 NC
+        Son en Breugel
+        The Netherlands
+
+        Bas van Gaalen            - Spearhead of Entire GFXFX3 and Inertia
+        bas@il.ft.hse.nl            project. Original system ideas.
+        Vestdijk 37G
+        5611 CA
+        Eindhoven
+        The Netherlands
+        Europe
+
+
+        Sean Palmer               - Part of GFXFX3 Team. Constructive
+        spalmer@pobox.com           criticism :)
+
+        Jim Leonard               - Massive amounts of beta testing.
+        trixter@mcs.com
+
+
+ 2. Brief Tutorial
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+           Inertia is a fairly complex system which makes the learning
+        curve non-trivial. This brief tutorial is provided to help shorten
+        this learning curve and help you on your way to creating your
+        own 3d visualizations.
+
+           Inertia requires 4 very basic things before it can even run.
+        These four things are a Palette, an intensity table, a 3d object
+        and a view.
+
+           There are two ways you can load a Palette. The first way is to
+        use the LoadPalette() function. This is a very simple and straight
+        forward method. Here is an example:
+
+          If (LoadPalette('MyPalette.Pal', 0) <> I_OK) Then Halt(0);
+
+        The first parameter is obviously the filename of the palette file.
+        The second parameter is the offset into the file to start reading.
+        The LoadPalette function returns I_OK if things were loaded
+        correctly. The palette read in is stored in the palette variable
+        called GlobalPalette.
+
+           The second way to load a palette is to grab it from a texture.
+        Once the texture is loaded, a call to GetTexturePalette will load
+        the GlobalPalette variable with the specified texture's palette.
+        Here is an example:
+
+           GetTexturePalette(0);
+
+        This will grab the palette from texture 0 in the list.
+
+
+           The next thing you need is an Intensity Table. This is
+        necessary to provide the most flexibility in setting up colors
+        for objects. Intensity tables are generated with the OPal program.
+        To load an intensity table, make a call to the LoadIntensityTable()
+        function. Here is an example:
+
+          If (LoadIntensityTable('MyTable.IT', 0) <> I_OK) Then Halt(0);
+
+        This loads the intensity table into an internal pointer. The first
+        parameter is the filename to load from and the second parameter is
+        the offset to read from. The constant I_OK is returned if the
+        intensity table is loaded successfully.
+
+
+           A 3d Object is also necessary to perform any sort of rendering.
+        To load 3d objects from disk, just use the LoadGVO() function.
+        Here is an example:
+
+          If (LoadGVO(Obj, 'TORUS.GVO', 0) <> I_OK) Then Halt(0);
+
+        The first parameter is the variable of type VectorObject where
+        the data is stored. The second parameter is the filename of the
+        data file to load from. The third parameter is the offset into
+        the data file to start reading.
+
+          The final thing necessary for basic setup is initializing a view.
+        This is the most complex part of the setup so I'll try and explain
+        it clearly. Here is what the call looks like:
+
+          If (InitView(View, 1000) <> I_OK) Then Halt(0);
+
+        The first parameter is the view which will be used for rendering. It
+        contains the viewport parameters and the sort list along with a few
+        other things. The second parameter is the number of visible polygons
+        the view can handle. This requires a bit of explanation. This number
+        should be set to the maximum number of visible polygons in a scene.
+        How do you determine this number? Many times its just a guess, but
+        you can make a very educated guess. If you are displaying a simple
+        object such as a sphere, you know 50% of the polygons will be visible
+        (due to backface culling), so you should initialize the view with
+        Sphere.NumPolygons Div 2. However, if you make the sphere transparent
+        and turn off culling, all of the sphere's polygons would be visible.
+        In this case you would initialize the view with Sphere.NumPolygons.
+        In the shareware version of Inertia, you are limited to 500 visible
+        polygons (which means you can display a 1000 polygon culled sphere).
+        In the registered version, this limit jumps up to 6400 visible
+        polygons (which means you can display up to a 12800 polygon culled
+        sphere). The InitView function returns an I_OK if the view was
+        successfully initialized. If you try an initialize for too many
+        polygons (say you want 1000 in the shareware version which is limited
+        to 500), the function will return a memory error (I_MEMERR).
+
+
+          With those 4 basic things out of the way, here are a few other
+        functions that are extremely useful:
+
+          PushLightSource(View, 10, 10, 10);
+
+        This will add a light source to the view. This is necessary
+        if any type of shading is used.
+
+          SetDeltaRotation(Obj, x, y, z);
+
+        This will rotate the Object by x on the x-axis, y on the y-axis
+        and z on the z-axis.
+
+          SetAbsoluteLocation(Obj, x, y, z);
+
+        This will set the location of the object to x, y, z.
+
+
+
+          OK, you have all of that stuff done, now you need to render
+        the object. There are two functions that do the rendering. The
+        first is AddToRenderList(). The second one is Render(). Here is
+        how AddToRenderList works:
+
+          AddToRenderList(View, Obj);
+
+        The first parameter is the view where we want to place the object.
+        The second parameter is the object we want to place. When this
+        function is called, the object is culled, rotated, shaded, and
+        projected according the view's camera matrix and location as
+        well as the objects rotation matrix and location. The visible
+        polygons are then inserted into the view's sorting list. The
+        function then terminates. Having the function set up this way
+        allows for multiple objects to be inserted in the same view. Making
+        a call to AddToRenderList with View and Obj2 as the parameters will
+        do the exact same thing storing the second object into the same view.
+        Once all of your objects are added to a view, you are ready to call
+        the Render function. Here is how it works:
+
+          Render(View, VPage);
+
+        The first parameter is the view in which to render. The second
+        parameter is a pointer to the 320x200 screen to render to. This
+        function sorts all of the polygons in the view's sortlist according
+        to Z values, then renders the polygons to the screen.
+
+
+
+          That is basically it in terms of the essential functions. Realizing
+        this explanation is not enough for most people, several example
+        programs have been provided utilizing nearly every aspect of the
+        Inertia system. Listed below is the first of 5 example programs
+        for you to learn from.
+
+-----------------------------------------------------------------------------
+
+Program Example01;
+{ Example program demonstrating the basic loading of a 3d object and }
+{ spinning it on the screen.                                         }
+
+Uses
+  Types,   { Inertia type declarations     }
+  Inertia, { the 3d engine                 }
+  Mode13h, { Basic Mode 13h graphics unit  }
+  Crt;
+
+Var
+  View : ViewObject;   { The View System }
+  Obj  : VectorObject; { A vector object }
+
+Begin
+  If (LoadPalette('COPPRENV.PAL', 0) <> I_OK)   { load the palette }
+    Then Begin
+      Writeln('Error loading Palette.');
+      Halt(0);
+    End;
+  If (LoadIntensityTable('COPPRENV.IT', 0) <> I_OK) { load intensity table }
+    Then Begin
+      Writeln('Error loading Intensity table.');
+      Halt(0);
+    End;
+  If (LoadGVO(Obj, 'TORUS.GVO', 0) <> I_OK)     { load the vector object }
+    Then Begin
+      Writeln('Error loading TORUS object.');
+      Halt(0);
+    End;
+  If (InitView(View, Obj.Num_Polygons Div 2) <> I_OK) { init the view }
+    Then Begin
+      Writeln('Error Initializing view.');
+      Halt(0);
+    End;
+  SetMode($13);              { Set graphics mode }
+  SetPalette(GlobalPalette); { Set the palette }
+
+  SetAbsoluteLocation(Obj, 0, 0, Obj.Radius * 5); { Set the object's location }
+  PushLightSource(View, 0, 0, -1);  { Add a light source }
+
+  SetSurface(Obj, SMOOTH);    { set smooth surface }
+  SetShading(Obj, LAMBERT);   { set lambert rendering for object }
+
+  SetBaseColor(Obj, 36);      { set the object's color }
+
+  Repeat
+    SetDeltaRotation(Obj, 1, 2, 3);  { rotate the object  }
+    AddtoRenderList(View, Obj);      { add it to the view }
+    Render(View, VirtualPage);       { render to the virtual page }
+    Flip;                            { Copy the page over }
+  Until KeyPressed;
+
+  FreeView(View);         { Free the view's allocated memory }
+  FreeVectorObject(Obj);  { free the vector object's allocated memory }
+  FreeIntensityTable;     { free the intensity table from memory }
+
+  SetMode($03);           { return to text mode }
+End.
+
+-----------------------------------------------------------------------------
+
+
+           One very large piece of code not provided by Inertia is
+        a Mode 13h graphics unit. This is because the system was designed
+        to not force to use our code. A *very* basic Mode13h unit has
+        been provided for those of you not familiar with Mode13h.
+
+
+           Also, please see the function references for more details of
+        the functions listed here.
+
+           The other example programs provided are EX02.PAS, EX03.PAS,
+        EX04.PAS, EX05.PAS, and GMV.PAS.
+
+           Here is a step by step breakdown of initialization.
+
+           - Load Palette (from a palette file or from a texture)
+           - Load Textures (if textures are used)
+           - Load Intensity Table
+           - Load Transparency Table (if transparency is used)
+           - Load Objects
+           - Initialize View
+           - Add light sources (if shading is used)
+           - Enter Graphics Mode
+           - Set the Palette
+
+           When exiting, be sure to free all allocated memory with the
+           following functions:
+
+           - FreeView
+           - FreeVectorObject
+           - FreeIntensityTable
+           - FreeTransparencyTable
+           - FreeTexture
+
+
+2.1  Notes About Rendering Modes
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+           Every effort has been taken to make sure all options are supported
+        in every possible rendering mode. However, there are a few
+        restrictions you should be made aware of.
+
+         - With PHONG and BUMP shading models only the first light source
+           in the light list is used. This is due to the use of env mapping
+           to produce the phong lighting phenomenon.
+
+         - With BUMP shading model, the REFLECTION surface type is unavailable.
+           This is due to the way texture coordiantes are stored internally in
+           the engine. However you can do the SMOOTH and TEXTURE surfaces with
+           bump mapping including full transparency with each.
+
+         - A requirement of BUMP shading is the bump map texture coordiantes
+           are the same as the standard texture mapping coordiantes.
+
+         - With PHONG and BUMP shading models, an intensity buffer is assigned
+           at the object level instead of the polygon level (like texture
+           mapping). For bump mapping, the bump map is also applied at the
+           object level.
+
+         - Bump mapping is currently unavailable with the Self Modifying Code
+           Fillers.
+
+
+3  Technical Support/Contact Information
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+          Technical support is free for all users of Inertia but
+        registered users receive the highest priority.
+
+        Contact Info:
+        -----------------------------------------------
+        Alex Chalfin              achalfin@uceng.uc.edu
+        Jeroen Bouwens            jay@il.ft.hse.nl
+        Bas van Gaalen            bas@il.ft.hse.nl
+        Sean Palmer               spalmer@pobox.com
+
+

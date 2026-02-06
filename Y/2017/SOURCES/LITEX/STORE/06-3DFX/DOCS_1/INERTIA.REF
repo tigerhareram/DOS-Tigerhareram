@@ -1,0 +1,701 @@
+Inertia Real-time 3D Graphics Library for Mode 13h
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Other Units Used
+~~~~~~~~~~~~~~~~
+  Types, Polygon, PCX, BufIO, DOS
+
+
+Variables
+~~~~~~~~~
+
+  IntensityTable : pIntensityTable
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Global Pointer to a shading table. The shading table is bitmap of 256
+  colors with 64 shades of each color. The engine rendering is based on the
+  color lookup in this table, and it is required to be set on startup. See
+  the LoadIntensityTable() function.
+
+  GlobalPalette  : Palette
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+  The palette that is effective during the rendering process. Can be loaded
+  from an external via the LoadPalette() function, or can be taken from any
+  of the textures loaded into memory using the GetTexturePalette() function.
+
+  TextureList  : Array[0..MAXTEXTURES-1] of TextureRec
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Array of textures available for use by 3d objects. This list is made
+  available (public) for any sort of real-time texture modifications or
+  for other uses of the textures (besides for texture maps).
+
+
+Procedures and Functions by Alex Chalfin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LoadIntensityTable
+~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Function LoadIntensityTable(Filename : String; FOfs : Longint) : Integer;
+
+  Parameters:
+    Filename - Name of the file to load
+    FOfs - Offset into file to load from
+
+  Returns:
+    0 - Operation successful
+    1 - Not Enough memory
+    2 - File not found
+    3 - Error reading from file
+
+  Description:
+    Loads an intensity table from the disk. The Intensity table should
+    be in the format of Array[0..63, 0..255] of Byte where color 63 is
+    the highest intensity and intensity 0 is the lowest.
+
+LoadTransparencyTable
+~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Function LoadTransparencyTable(Filename : String; FOfs : Longint) : Integer;
+
+  Parameters:
+    Filename - Name of the file to load
+    FOfs - Offset into file to load from
+
+  Returns:
+    0 - Operation successful
+    1 - Not Enough memory
+    2 - File not found
+    3 - Error reading from file
+
+  Description:
+    Loads an transparency table from the disk. The Intensity table should
+    be in the format of Array[0..255, 0..255] of Byte where colors are
+    cross referenced for best transparent color choice.
+
+
+LoadPalette
+~~~~~~~~~~~
+  Declaration:
+    Function LoadPalette(Filename : String; FOfs : Longint) : Integer;
+
+  Parameters:
+    Filename - Name of the file to load
+    FOfs - Offset into file to load from
+
+  Returns:
+    0 - load successful
+    1 - File not found
+    2 - Error Reading file
+
+  Description:
+    Loads a palette file from the disk. The palette should be in the format
+    of Array[0..255] of RGB, and the color range should be 0..63.
+    Note: This function is supplemented by GetTexturePalette() and is very
+    rarely used.
+
+MakePhongMap
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Function MakePhongMap(Index : Integer) : Integer;
+
+  Parameters:
+    Index - Index into TextureList to store phong intensity buffer
+
+  Returns:
+    0 - successful
+    1 - Not enough memory
+
+  Description:
+    Creates the internal phong highlight map to be stored in the texture
+    map list. Use FreeTexture to free the phong map from memory.
+
+FreeIntensityTable
+~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure FreeIntensityTable;
+
+  Description:
+    Frees a loaded intensity table from memory.
+
+FreeTransparencyTable
+~~~~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure FreeTransparencyTable;
+
+  Description:
+    Frees a loaded transparency table from memory.
+
+
+SetGlobalPalette
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetGlobalPalette;
+
+  Description:
+    Sets the global palette. Should only be called after video mode is set
+    and a global palette is loaded with LoadPalette() or GetTexturePalette().
+
+InitView
+~~~~~~~~
+  Declaration:
+    Function InitView(Var View : ViewObject; SortListSize : Word) : Integer;
+
+  Parameters:
+    View - The view to initialize
+    SortListSize - the number of records to allocate for polygon sorting.
+                   has a maximum size of 6500 visible polygons.
+
+  Returns:
+    0 - Initialization successful
+    1 - not enough memory for video buffer
+    2 - not enough memory for sortlist
+
+  Description:
+    Initializes a view for the 3d system. Allocates the virtual screen page
+    and all nodes for the depth sorting list. Sets the view port to the
+    maximum size (320x200), and initializes the frames per second counter.
+
+FreeView
+~~~~~~~~
+  Declaration:
+    Procedure FreeView(Var View : ViewObject);
+
+  Parameters:
+    View - View object to free
+
+  Description:
+    Frees the virtual page and the sorting list from memory. Also calculates
+    the FramesPerSecond field to reflect the performance of the finished
+    rendering process. Note: the FramesPerSecond value will be a bit slower
+    than actual frames per second values due to possible latency in calling
+    InitView and FreeView. This figure is intended to be a ball park figure.
+
+GetObjectAsCamera
+~~~~~~~~~~~~~~~~~
+  Declaration
+    Procedure GetObjectAsCamera(Var View : ViewObject; Obj : VectorObject);
+
+  Parameters:
+    View - View to store object matrix information in
+    Obj - Object to take matrix information from
+
+  Description:
+    Sets the camera of the current view to that of the object passed in. This
+    would be used for spaceship type things where the camera is "inside" an
+    object through out a scene.
+
+SetViewPort
+~~~~~~~~~~~
+  Declaration:
+    Procedure SetViewPort(Var View: ViewObject; X1, Y1, X2, Y2 : Integer; Update : Boolean);
+
+  Parameters:
+    View - View to set new view port to
+    X1,Y1 - Upper left corner of the view port
+    X2,Y2 - Lower right corner of the view port
+    Update - Boolean to tell if the Center projection values should be
+             updated as well. If you always update, then the objects will
+             always be centered around the center of the view port
+
+  Description:
+    Sets a new view port for rendering. X values will automatically be clipped
+    to 0..319 and Y values will be automatically clipped to 0..199. The center
+    of projection will only be changed if the Update parameter is TRUE.
+
+AddToRenderList
+~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure AddtoRenderList(Var View : ViewObject; Obj : VectorObject);
+
+  Parameters:
+    View - the view to add the object to
+    Obj - object to add
+
+  Description:
+    This is the heart of the 3d engine. This is where an object is culled,
+    shaded, transformed and projected. You need to call this procedure for
+    each object you want in the scene for each frame its in there.
+
+Render
+~~~~~~
+  Declaration:
+    Procedure Render(Var View : ViewObject; VPage : Pointer);
+
+  Parameters:
+    View - The view to render
+    VPage - Pointer to the 320x200 screen to render.
+
+  Description:
+    This procedure renders sorts all the polygons placed into the sortlist
+    (from subsequent calls to AddToRenderList), and renders them to the
+    specified virtual page. After the scene is rendered, the internal
+    counters are reset, so you have to go through another complete display
+    process to get the internal counters back. The scene gets rendered to
+    the page as pointed to by VPage.
+
+PushLightSource
+~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure PushLightSource(Var View : ViewObject; X, Y, Z : Real);
+
+  Parameters:
+    View - View to add light source to
+    X,Y,Z - Vector specifying the direction of the light
+
+  Description:
+    Add a light source to the list of light sources. A stack is used to
+    facilitate easy light source management. Up to 8 light sources may be in
+    each view. The stack index starts at 0, and goes up to 7.
+
+PopLightSource
+~~~~~~~~~~~~~~
+  Declaration:
+    Procedure PopLightSource(Var View : ViewObject);
+
+  Parameters:
+    View - View to remove light source
+
+  Description:
+    Removes the "top" light source from the stack
+
+RotateLightSource
+~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure RotateLightSource(Var View : ViewObject; Index, Xa, Ya, Za : Integer);
+
+  Parameters:
+    View - View which contains light source to rotate
+    Index - Index into light source table to rotate
+    Xa,Ya,Za - angles values to rotate light source
+
+  Description:
+    Rotates a light source by Xa, Ya, and Za and stores the result back into
+    the light source variable. If Index is invalid, the procedure returns
+    without making any changes. For an index to be valid, the index must
+    be within the 0..7 light source requirements and be under the top of
+    the light source stack. If one light source is in the list, the index
+    would be 0. You are not limited to only rotating the top light source on
+    the stack.
+
+LoadGVO
+~~~~~~~
+  Declaration:
+    Function LoadGVO(Var Obj : VectorObject; Filename : String; FOfs : Longint) : Integer;
+
+  Parameters:
+    Obj - The object to load data into
+    Filename - file name of the VO file
+    FOfs - Offset into file to load from
+
+  Returns:
+    0 - Load Successful
+    1 - Couldn't open file
+    2 - Error reading from file
+    3 - Not enough memory for object
+
+  Description:
+    Loads a GVO 3d object file into memory into the Obj parameter.
+    Please see the GVO conversion program for more details.
+
+AllocObject
+~~~~~~~~~~~
+  Declaration:
+    Function AllocObject(Var Obj : VectorObject; NumVert, NumPoly : Integer) : Integer;
+
+  Parameters:
+    Obj - VectorObject variable to allocate
+    NumVert - number of verticies for the object
+    NumPoly - number of polygons for the object
+
+  Returns:
+    0 - Load Successful
+    3 - Not enough memory for object
+
+  Description:
+    Provides a means of allocating an object without loaded data. Useful
+    for dynamic objects or temporary object working space.
+
+CopyVectorObject
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Function CopyVectorObject(Var Source, Dest : VectorObject) : Integer;
+
+  Parameters:
+    Source - the object to be copied
+    Dest - the object to be copied to
+
+  Returns:
+    0 - Operation successful
+    1 - Not enough memory for copy
+
+  Description:
+    Does a complete copy of a vector object. It builds its own data set
+    (instead of just copying pointers) so the object can be fully independent.
+
+InitVectorObject
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure InitVectorObject(Var Obj : VectorObject);
+
+  Parameters:
+    Obj - the object to initialize
+
+  Description:
+    Essentially initializes a vector object to "zero". This routine is called
+    automatically by LoadGVO() and CopyVectorObject().
+
+FreeVectorObject
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure FreeVectorObject(Var Obj : VectorObject);
+
+  Parameters:
+    Obj - Object to free from memory
+
+  Description:
+    Frees all the dynamic memory taken by a vector object.
+
+SetBaseColor
+~~~~~~~~~~~~
+  Declaration:
+    Procedure SetBaseColor(Var Obj : VectorObject; C : Integer);
+
+  Parameters:
+    Obj - Object to set color
+    C - the new color
+
+  Description:
+    Gives all polygons in the Obj the color C. This number is automatically
+    clipped to the range of 0..255 and only effects the SMOOTH surface
+    models.
+
+SetPolygonColor
+~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetPolygonColor(Var Obj : VectorObject; Poly, C : Integer);
+
+  Parameters:
+    Obj - Object to set color
+    Poly - the polygon index
+    C - the new color
+
+  Description:
+    Sets the polygon indexed by Poly to the color C.
+
+SetObjectTexture
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetObjectTexture(Var Obj : VectorObject; C : Integer);
+
+  Parameters:
+    Obj - Object to set texture number to
+    C - texture number
+
+  Description:
+    Assigns texture C to all polygons in Obj. This number is automatically
+    clipped to the range of 0..MAXTEXTURES and only effects the TEXTURE and
+    REFLECTION surface models.
+
+SetPolygonTexture
+~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetPolygonTexture(Var Obj : VectorObject; Poly, C : Integer);
+
+  Parameters:
+    Obj - Object to set color
+    Poly - the polygon index
+    C - the new texture
+
+  Description:
+    Sets the polygon indexed by Poly to the texture C.
+
+SetObjectBumpMap
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetObjectBumpMap(Var Obj : VectorObject; C : Integer);
+
+  Parameters:
+    Obj - Object to set texture number to
+    C - texture number
+
+  Description:
+    Assigns texture C to Obj for use as a bump map. This number is
+    automatically clipped to the range of 0..MAXTEXTURES and only effects
+    the BUMP shading model models.
+
+
+SetObjectPhongMap
+~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetObjectPhongMap(Var Obj : VectorObject; C : Integer);
+
+  Parameters:
+    Obj - Object to set Intensity Buffer to
+    C - Index into TextureList to assign to object
+
+  Description:
+    Sets the Intensity Buffer of the object as specified by the index C.
+    Intensity buffers are special textures which are limited to the color
+    range of 0..63. They get loaded like normal textures, or can be calculated.
+    Intensity buffers are used in Phong shading and Phong texture mapping.
+
+
+CalcBoundaryVolume
+~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure CalcBoundaryVolume(Var Obj : VectorObject);
+
+  Parameters:
+    Obj - Object radius to calculate
+
+  Description:
+    This is used to calculate an objects boundary sphere. The boundary
+    sphere is used in basic collision detection and view volume object
+    elimination. This procedure is called automatically by the LoadVO()
+    function. It only needs to be called if you manually change the object
+    (such as in object morphing) AND it need to be clipped to the view volume
+    in any way (this routine isn't designed for real-time calculations).
+
+SetSurface
+~~~~~~~~~~
+  Declaration:
+    Procedure SetSurface(Var Obj : VectorObject; Surf : SurfaceType);
+
+  Parameters:
+    Obj - Object to set surface type
+    Surf - Surface type
+
+  Declaration:
+    Sets the surface type for the object. The surface can be SMOOTH, TEXTURE,
+    or REFLECTION. SMOOTH is for things like standard gouraud and phong shading.
+    TEXTURE is for texture mapping (duh). REFLECTION is for environment mapping.
+
+SetShading
+~~~~~~~~~~
+  Declaration:
+    Procedure SetShading(Var Obj : VectorObject; Shade : ShadeType);
+
+  Parameters:
+    Obj - Object to set shading type
+    Shade - Shading type
+
+  Declaration:
+    Sets the shading type for the object. The shading can be AMBIENT, LAMBERT,
+    GOURAUD, or PHONG. These shading models can be intermixed with any of the
+    surface types.
+
+SetCull
+~~~~~~~
+  Declaration:
+    Procedure SetCull(Var Obj : VectorObject; Cull : Boolean);
+
+  Parameters:
+    Obj - Object to set the culling flag
+    Cull - tells weather or not to cull the object
+
+  Description:
+    When Cull is set to true, the object goes through the normal culling
+    pipeline otherwise, all the polygons in the object are considered
+    visible and are drawn.
+
+SetObjTrans
+~~~~~~~~~~~
+  Declaration:
+    Procedure SetObjTrans(Var Obj : VectorObject; T : Boolean);
+
+  Parameters:
+    Obj - Object to set the transparency flag
+    T - tells weather or not to render the object transparent
+
+  Description:
+    When Transparency is set to true, the object is rendered in transparency
+    mode. For best results, turn off culling when using transparency.
+
+SetAbsoluteRotation
+~~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetAbsoluteRotation(Var Obj : VectorObject; rx, ry, rz : Integer);
+
+  Parameters:
+    Obj - Object to set rotation parameters
+    rx,ry,rz - X,Y,Z angles of object respectively
+
+  Description:
+    Sets the Object's rotation angles to the parameter values passed in.
+    Angles are automatically adjusted to the 0..1023 range
+
+SetDetlaRotation
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetDeltaRotation(Var Obj : VectorObject; dx, dy, dz : Integer);
+
+  Parameters:
+    Obj - Object to adjust rotation parameters
+    dx,dy,dz - X,Y,Z delta rotation values
+
+  Description:
+    Modifies the Object's angle values by dx, dy, and dz.
+
+SetAbsoluteLocation
+~~~~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetAbsoluteLocation(Var Obj : VectorObject; tx, ty, tz : Longint);
+
+  Parameters:
+    Obj - Object to adjust position parameters
+    tx,ty,tx - new X,Y,Z locaiton for object
+
+  Description:
+    Sets Object's location to the parameter values passed in
+
+SetDeltaLocation
+~~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetDeltaLocation(Var Obj : VectorObject; dx, dy, dz : Longint);
+
+  Parameters:
+    Obj - Object to adjust location parameters
+    dx,dy,dz - X,Y,Z delta location values
+
+  Description:
+    Modifies the Object's location values by dx, dy, and dz.
+
+SetMaxZ
+~~~~~~~
+  Declaration:
+    Procedure SetMaxZ(Var Obj : VectorObject; Z : Longint);
+
+  Parameters:
+    Obj - Object to adjust MaxZ value
+    Z - new maximum Z depth
+
+  Description:
+    Allows an object to be removed from the culling pipeline once it reaches
+    a certain Z value (depth). This value defaults to 65536.
+
+
+SetMinZ
+~~~~~~~
+  Declaration:
+    Procedure SetMinZ(Var Obj : VectorObject; Z : Longint);
+
+  Parameters:
+    Obj - Object to adjust MinZ value
+    Z - new Minimum Z depth
+
+  Description:
+    Sets the minimum polygons can be before they are clipped. This value
+    defaults to 100. Note: This value may vary on an object to object basis.
+    Play around until you get the desired look.
+
+
+CheckHit
+~~~~~~~~
+  Declaration:
+    Function CheckHit(Obj1, Obj2 : VectorObject) : Boolean;
+
+  Parameters:
+    Obj1 - First object to check with
+    Obj2 - Second object to check with
+
+  Returns:
+    TRUE - the objects are hitting each other
+    FALSE - the objects are not hitting each other
+
+  Description:
+    Uses a basic boundary sphere to determine of object collide. This routine
+    is not very accurate, and should only be used as a first stage for a more
+    accurate collision detection.
+
+SetFocusPoint
+~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetFocusPoint(Var View : ViewObject; TargetX, TargetY, TargetZ, Roll : Longint);
+
+  Parameters:
+    View - The view to set target point
+    TargetX,TargetY,TargetZ - The point to look at
+    Roll - the amount of roll around the target axis
+
+  Description:
+    Sets the Camera field of the View object to look at the specified point.
+    The Roll factor is angle for an amount of roll around the target axis.
+    If the target vector is zero, things won't be changed. This routine is
+    meant for simple keyframing type applications and bypasses the use of a
+    separate object as a camera.
+
+
+SetViewLocation
+~~~~~~~~~~~~~~~
+  Declaration:
+    Procedure SetViewLocation(Var View : ViewObject; X, Y, Z : Longint);
+
+  Parameters:
+    View - View to set new location
+    X,Y,Z - new location
+
+  Description:
+    Sets a new position of the camera within the view object. Also bypasses
+    the need for a seperate object to be a camera. Use in conjunction with
+    SetFocusPoint()
+
+ScreenCapture
+~~~~~~~~~~~~~
+  Declaration:
+    Procedure ScreenCapture;
+
+  Description:
+    Dumps a 320x200 PCX file to disk of the current screen (the VGA screen
+    only, not virtual pages). The file name used is "I_XXXX.PCX" where XXXX
+    is an internal counter that counts from 0 to 9999. If an error is
+    encountered, the screen capture aborts without returning an error as not
+    to interrupt normal processing.
+
+GetTexturePalette
+~~~~~~~~~~~~~~~~~
+  Description:
+    Procedure GetTexturePalette(Index : Integer);
+
+  Parameters:
+    Index - Index into the texture list to grab palette from
+
+  Description:
+    Loads the GlobalPalette variable with the value from the texture map
+    specified by Index
+
+
+LoadPCXTexture
+~~~~~~~~~~~~~~
+  Declaration:
+    Function LoadPCXTexture(Index : Integer; Filename : String; FOfs : Longint) : Integer;
+
+  Parameters:
+    Index - Index into the texture table to load texture into
+    Filename - name of the PCX file to load
+    FOfs - Offset into file to load from
+
+  Returns:
+    0 - Operation successful
+    1 - File not found
+    2 - Error reading from file
+    3 - Not enough memory
+    4 - Texture is not 256 colors
+
+  Description:
+    Loads a PCX file into the texture table as indexed by Index parameter.
+    PCX files used as textures should be 256x256 in size. If they are not,
+    the routine will not return an error value, and your texture mapped
+    object will not look right. The texture mapping routines only support
+    256x256 textures.
+
+FreeTexture
+~~~~~~~~~~~
+  Declaration:
+    Procedure FreeTexture(Index : Integer);
+
+  Parameters:
+    Index - Index into the texture table to free
+
+  Description:
+    Frees the texture from memory held at the Index location.
+

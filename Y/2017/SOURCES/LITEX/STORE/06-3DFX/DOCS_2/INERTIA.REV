@@ -1,0 +1,40 @@
+Inertia Revision History
+
+4/11/98---------------------------------------------------------------------
+  Version 1.10
+
+  - Added Windows support via MSVC++ v5.0
+
+4/8/98----------------------------------------------------------------------
+  Version 1.02
+
+  - Fixed perspective texture mapping bug in Watcom C version of Inertia that
+    involved clipped polygons on the left side of the screen.
+
+  - Dropped support for Inertia/16 (If you really want Inertia/16, I can
+    get a version of it to you).
+
+
+12/23/97--------------------------------------------------------------------
+  Version 1.01
+
+  - Added 3dfx Glide rasterization to Watcom C version of Inertia/32
+
+10/4/97--------------------------------------------------------------------
+  Version 1.0
+
+  Major overhaul to Inertia.
+    - Added support for TMT Pascal and Watcom C (both 32-bit).
+    - Updated 16-bit version with smaller code size and newer API.
+    - Opal program is now STab (shade table).
+    - Documentation in MS Word.
+
+2/30/96--------------------------------------------------------------------
+  Version 0.99
+
+  - GVO Converter re-write. Cleared some confusion with old version numbers.
+
+11/20/96-------------------------------------------------------------------
+  Version 0.90
+
+  - Initial Inertia Release

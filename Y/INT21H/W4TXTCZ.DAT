@@ -1,0 +1,150 @@
+TlaŸ¡tka pýi kliknut¡ levìm myç¡tkem mØn¡ hodnotu o 1, pravìm o 10. V kombinaci s kl vesou Shift mØn¡ lev‚ myç¡tko o 100, prav‚ o 1000.
+Nedostatek pamØti
+pro zavýen¡ okna.
+        OK        ;;
+Dotaz:
+ Ano ;;
+"Ano" se d  zvolit i kl vesou A nebo Enter.
+ Ne  ;;
+"Ne" se d  zvolit i kl vesou N nebo Esc.
+A
+N
+Zpr va:
+  OK  ;;
+Zpr va jde odklepnout i kl vesami O, Enter a mezern¡kem.
+O
+Zadej text:
+ OK ;;
+potvrzen¡ zadan‚ho textu, lze pou§¡t t‚§ kl vesu Enter
+Zruç
+zruçen¡ zad v n¡ textu (pou§ije se ten, kterì byl v oknØ na zaŸ tku), lze pou§¡t t‚§ kl vesu Escape
+Zadej Ÿ¡slo:
+potvrzen¡ zadan‚ho Ÿ¡sla
+zruçen¡ zad v n¡ Ÿ¡sla (pou§ije se to, kter‚ bylo v oknØ na zaŸ tku)
+Vyber barvu:
+    OK    ;;
+potvrzen¡ vybran‚ barvy (jde zvolit i kl vesami O nebo Enter)
+zruçen¡ vìbØru; pou§ije se barva, kter  byla vybran  na zaŸ tku (jde zvolit i kl vesami Z nebo Esc)
+Z
+jen pro Ÿten¡, ;;
+skrytì, ;;
+syst‚movì, ;;
+archivovat, ;;
+§ dn‚.
+Vlastnosti souboru
+Jm‚no: ;;
+Velikost: ;;
+Posledn¡ zmØna: ;;
+Atributy: ;;
+Disketa
+Vyber soubor:
+V jednotce ;;
+: nen¡ vlo§en disk.
+Novì%%x-32%%y+10adr.
+Vytvoý¡ novì adres ý. Lze vyvolat tak‚ kombinac¡ Ctrl+N.
+Info
+Zobraz¡ podrobn‚ informace o vybran‚m souboru nebo adres ýi.
+Potvrd¡ zvolenì soubor a zavýe okno. Stejnì £Ÿinek m  Enter.
+Zruç¡ vìbØr a zavýe okno. To sam‚ udØl  Esc.
+adres ý, ;;
+Jm‚no adres ýe:
+Maska Ÿ ry:
+      OK      ;;
+Potvrzen¡ zadan‚ masky.
+Zruçen¡ zad v n¡ (pou§ije se maska, kter  byla v oknØ na zaŸ tku).
+VysvØtlivky.
+Zad v te dvojbarevnì 16bitovì vzorek. Zelen  znamen  1 (pixel vykreslen, lev‚ myç¡tko), Ÿern  0 (pr…hlednì pixel, prav‚ myç¡tko).
+Vzorek vìplnØ:
+Potvrzen¡ nastaven‚ho vzorku.
+Zruçen¡ zad v n¡ (z…stane ten, kterì byl v oknØ na zaŸ tku).
+Zad v te dvojbarevnì 8bytovì vzorek. Zelen  znamen  barvu popýed¡ (lev‚ myç¡tko), Ÿern  pozad¡ (prav‚ myç¡tko).
+Nastaven¡ myçi
+Vodorovn  citlivost:
+velk 
+mal 
+Svisl  citlivost:
+korigovat sk k n¡
+S nØkterìmi ovladaŸi se kurzor nepohybuje plynule, ale sk Ÿe v osmipixelovìch kroc¡ch. T¡mhle m…§ete tuto chybu opravit, ale pozor, §e se vìraznØ zmØn¡ citlivost myçi.
+vymØnit tlaŸ¡tka
+T¡mhle m…§ete prohodit lev‚ a prav‚ tlaŸ¡tko myçi. Vhodn‚ napý. pro pohodlnØjç¡ pr ci levou rukou.
+opatrn  zkouçka
+Nech  v s vyzkouçet nastaven‚ hodnoty bez nebezpeŸ¡, §e byste se pak týeba netrefili myç¡ na tlaŸ¡tka a posuvn¡ky.
+Zavýe dialog a vr t¡ p…vodn¡ hodnoty, kter‚ byly nastaven‚ pýed jeho otevýen¡m. Stejnì efekt m  kl vesa Escape.
+Nastav, ale neukl dej
+Potvrd¡ zadan‚ hodnoty, ale neulo§¡ je na disk, tak§e pýi pý¡çt¡m spuçtØn¡ tohoto programu budou nastaveny zase ty p…vodn¡. Stejnì efekt m  kl vesa Enter.
+    Nastav a ulo§    ;;
+Potvrd¡ zadan‚ hodnoty a ulo§¡ je na disk (do souboru ;;
+) pro pou§it¡ pýi pý¡çt¡m spuçtØn¡ tohoto programu.
+Ulo§en¡ na disk se nepovedlo.|Chcete to zkusit znovu?
+Vyhovuje v m to takhle?|M  se toto nastaven¡ zachovat?|(v pý¡padØ potýeby tohle okno|reaguje i na kl vesy A a N)
+backspace
+tabul tor
+enter
+escape
+mezern¡k
+insert
+delete
+home
+end
+page up
+page down
+Konfigurace kl ves
+ýeçit konflikty
+Pokud zad te kl vesu, kter  u§ byla zad na dý¡ve, a tohle je zatr§eno, bude starç¡ kl vesa zruçena. Pokud toto zatr§eno nen¡, z…stane starç¡ kl vesa nastavena a na pý¡padn‚ konflikty budete upozornØni a§ nakonec.
+Zavý¡t
+T¡mto tlaŸ¡tkem nebo kl vesou Escape zavýete okno. ZmØny v nastaven¡ se nedaj¡ NEulo§it!
+Kurzorovìmi kl vesami najdØte akci, enterem potvrÔte a pak stisknØte kl vesu, kterou chcete k t‚to akci pýiýadit.
+Pozor!
+Byly nalezeny konflikty - nØkolik akc¡|m  pýiýazenu stejnou kl vesovou kombinaci.|Opravdu to tak chcete nechat?
+* Zruçeno *
+ChybnØ zadan‚ Ÿ¡slo!
+Chyb¡ druh‚ Ÿ¡slo!
+ChybnØ zadan‚ druh‚ Ÿ¡slo!
+ChybnØ zadan‚ prvn¡ Ÿ¡slo!
+Sma§
+Vyma§e vybranì soubor. Stejnì £Ÿinek m  kl vesa Delete.
+%%nChyba%%NJm‚no adres ýe je potýeba zadat bez cesty.
+%%nChyba%%NAdres ý ;;
+ neçel vytvoýit.
+%%nChyba%%NFat ln¡ nedostatek pamØti, nelze pokraŸovat.
+Disky...
+Vybrat|-|N povØda|-|Novì adres ý|Odstranit|Vlastnosti
+Opravdu chcete smazat soubor ;;
+%%nVìbØr souboru - n povØda (1/3)%%NSoubor buÔ vyberte ze seznamu existuj¡c¡ch|nebo zadejte jeho jm‚no ruŸnØ (vŸetnØ koncovky).|Mezi seznamem a zad vac¡m pol¡Ÿkem se d |pýech zet buÔ myç¡ nebo kl vesou Tab.
+%%nVìbØr souboru - n povØda (2/3)%%ND le je mo§n‚ mazat soubory (ne adres ýe),|hledat v seznamu podle prvn¡ho p¡smena (staŸ¡|stisknout dan‚ p¡smeno na kl vesnici), vytv ýet|adres ýe a zjiçœovat informace o souborech a|adres ý¡ch.
+%%nVìbØr souboru - n povØda (3/3)%%NPýi proch zen¡ mezi disky prvn¡ týi tlaŸ¡tka|nefunguj¡. Symbol "%%z019" znamen  neexistuj¡c¡|(fantomovou) disketu, na kterou se ned  pýej¡t.| Tuto n povØdu vyvol te kl vesou F1 nebo pravìm myç¡tkem.
+
+
+;;Nasleduje rezerva do budoucna. Pokud chcete 100% doprednou kompatibilitu
+;;svych programu i v pripade zmen v jednotce, nechte nasledujici radky volne.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;Konec textu jednotky Woknows 4. Oblast pod timto radkem muzete bez obav vyuzit pro texty vasich programu.

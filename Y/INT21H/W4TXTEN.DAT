@@ -1,0 +1,150 @@
+Buttons change the value by 1 on left click, by 10 on right click, by 100 on left click while holding Shift key and by 1000 on right click with Shift.
+Not enough memory
+to close window.
+        OK        ;;
+Question:
+ Yes ;;
+"Yes" can also be selected by Y or Enter key.
+ No  ;;
+"No" can also be selected by N or Esc.
+Y
+N
+Message:
+  OK  ;;
+This message can be acknowledged also by keys O, Enter or space.
+O
+Enter text:
+ OK ;;
+Confirms the text and closes the window. You can also use the Enter key.
+Cncl
+Cancels input (default text displayed at the beginning will be used). You may also use the Esc key.
+Enter number:
+Confirms the number and closes the window.
+Cancels entering the number and closes the window.
+Select colour:
+    OK    ;;
+Confirms selected colour (also O or Enter keys do this).
+Cancels the selection (also C or Esc key).
+C
+read only, ;;
+hidden, ;;
+system, ;;
+archive, ;;
+none.
+File properties
+Name: ;;
+Size: ;;
+Last modified: ;;
+Attributes: ;;
+Floppy
+Select file:
+Drive ;;
+: is empty.
+New%%x-24%%y+10dir.
+Creates a new directory. Can be also invoked by Ctrl+N.
+Info
+Shows detailed information about the selected file or directory.
+Confirms selection and closes the window. Enter key does the same thing.
+Cancels selection and closes the window. Esc has the same effect.
+directory, ;;
+Directory name:
+Line mask:
+      OK      ;;
+Accepts this mask.
+Cancels this mask (original one will be used).
+Click here for help.
+Enter two-colour, 16bit pattern. Green means 1 (pixel visible, left mouse button), black means 0 (transparent pixel, right button).
+Fill pattern:
+Accepts this pattern.
+Cancels this pattern (original one will be used).
+Enter two-colour, 8byte fill pattern. Green means foreground colour (left mouse button), black means background colour (right button).
+Mouse settings
+Horizontal speed:
+fast
+slow
+Vertical speed:
+jump correction
+Some mouse drivers cause the cursor to jump in 8-pixel steps instead of smooth moving. This fixes it, but be careful, cursor speed will change significantly.
+switch buttons
+This exchanges left and right mouse button. Good thing for left-hand work.
+  safe test  ;;
+Temporarily applies your settings without any risk (such as being unable to press "cancel" button or the like).
+Closes the window and restores original settings. Esc key works the same way.
+ OK, but don't save  ;;
+Accepts entered values, but doesn't save them to disk. That means: on next start of this program the original settings will be set again. Enter key does the same.
+   Accept and save   ;;
+Accept entered values and saves them to disk (file ;;
+). They will be restored on every next start of this program.
+Saving to disk failed.|Do you want to try it again?
+Is this OK?|Do you want to use these settings?|(if you have troubles, this|window accepts Y a N keys too)
+backspace
+tabulator
+enter
+escape
+spacebar
+insert
+delete
+home
+end
+page up
+page down
+Keyboard configuration
+fix collisions
+Whenever you select a key that is already being used and this option is checked, the old assignment will be automatically deleted. If not checked, old assignments persist and you will be only notified on exit.
+Close
+This button or Esc key closes the window. Be careful, every change applies immediately and cannot be cancelled!
+Select an action with arrow keys, activate it with Enter and then press a key you want to assign to this action.
+Warning!
+Collisions detected: some key combination|is assigned to more than one action.|Do you really want it that way?
+* Cancelled *
+Error in number!
+Second number missing!
+Error in second number!
+Error in first number!
+Del.
+Deletes selected file. Del key has the same effect.
+%%nError%%NDirectory name must be entered without path.
+%%nError%%NDirectory ;;
+ could not be created.
+%%nError%%NFatal lack of free memory, unable to continue.
+Drive...
+Select|-|Help|-|New directory|Delete|Properties
+Do you really want to delete file ;;
+%%nFile selector - help (1/3)%%NSelect the file from a list of existing files|or type its name manually (including extension).|To switch between the list and the name field,|use mouse or Tab key.
+%%nFile selector - help (2/3)%%NAlso, you can delete files (not directories),|search the list by the first character (just|press the letter on the keyboard), create|directories and inspect file and directory|properties.
+%%nFile selector - help (3/3)%%NWhen selecting a drive, first three buttons|don't work. Symbol "%%z019" means nonexistent|(fantom) floppy drive that cannot be selected.| This help can be invoked by F1 or by right mouse click.
+
+;;Following lines are reserved for future expansions of the unit.
+;;If you want 100% forward compatibility of your programs, don't write
+;;anything here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;End of texts for unit Woknows 4. Area below this line can be used for your program's texts.

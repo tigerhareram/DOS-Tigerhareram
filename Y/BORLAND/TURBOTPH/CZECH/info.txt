@@ -1,0 +1,6 @@
+pridej soubor TURBO.TPH do složky s Pascalem , českou verzi nápovědy
+
+nastav v [autoexec] codepage na 852 a zajisti longfilenames podporu v dosu
+
+v základním nastevní na tigerhareram.cz už to tak všechno je od začátku
+

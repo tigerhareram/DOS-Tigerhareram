@@ -1,0 +1,95 @@
+----------------------------------------------------------------------
+JIVA's Tigerhareram - DOS Workshop Translations to Different Languages
+----------------------------------------------------------------------
+
+editgra.txt controlls :
+
+F1 - switch setup 4 colors
+
+F5 and F8 - step left and step right in colors palette 1-16 color slot
+
+in the middle of F5 a F8 :::>>> are F6 and F7 = this is function add plus or decrease minus a color temperature 
+
+F9 - switch R G B 
+
+step in F1 and mix all 16 colors with F5 , F6 , F7 , F8 , F9
+
+try F2 to save
+
+-
+
+IJKL (curosor arrows) I=Up , J=Left , K=Down , L=Right
+
+ASDF (press a pixel to point with color slot)
+
+step in F1 and define squares with 4 colors bz select color with only F5 and F8 then press ASDF to square 4 slots
+
+-
+
+step in F1 cursor arrows Key Left, Key Up, Key Down . Key Right
+
+, workaround in WORLD (here are more different versions look in git)
+
+find function program in menu , load file scan.bmp and file data.gra , level.map
+
+paint draw paper A4 to printer with drawi color 0 and 1 and transfer it into BMPINFO.EXE to be visible alias example WORLD.BMP
+
+press F2 export to GRA to program editgra.exe
+
+-
+
+load in WORLD a file gra then in program part there are function export as BMP !! sell file 160x200 16 colors (cca $50 at itch.io)
+
+-
+
+in program editmap.exe
+
+function F1
+
+function ASD (not F) and IJKL , cursor arrows up down left right similar to editgra.exe
+
+on map F1 switch , press button A to deploy object F1 go to editor key D erase
+
+dont draw to edges and corners rectangle around on edges and corners must be free
+
+draw objects in the middle of map
+
+editmap.exe work with data.gra file as source and produce level.map file
+
+try F2 to save
+
+--
+
+books about language is with text * BORLAND TURBO PASCAL 7.0 * are in many different languages it is historical book cca 1992-1997 or historical pdf
+
+Turbo Pascal IDE bp.exe help files and descriptions can be translated , look for TURBO.TPH file with your language or found ENG version
+
+language and keyboard in dosbox,conf file can be translated .. look on number 852 = czech , change to 437 is eng , or find your country code
+
+-
+
+translating TURBO PASCAL video tutorial on tigerhareram.cz youtube videos :
+
+try to use hardware or software translator what can translate audio on the fly and save immedietely a subtitles or simply speak to your language
+
+this function is for money somewhere on internet but if you must have it for understand ?? it work
+
+,, suggestion print this file info.txt and use in hand printer is part of work with scan function so buy printer
+
+when you select printer buy that model what can print on printable media DVD+R 8,5GB Dual Layer Printable for example Verbatim (surface of media by image)
+
+it is scanner too and then buy boxes , papers , toners ,, it is full of bussiness
+
+-
+
+after you have fully understand and have book , translated TURBO.TPH etc , have dosbox in language what you preferred and keyboard ,
+
+then build instructions . burn media copy with image and box and share it as DVD in box with paper and color image with others around
+
+build team , team work bring briliant results and it is only one chance to be commercial and have sell copies
+
+-
+
+RESOURCE = tigerhareram.cz/dosbox.html
+
+end

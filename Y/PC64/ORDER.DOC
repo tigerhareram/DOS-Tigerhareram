@@ -1,0 +1,426 @@
+		      Personal C64 ordering information
+		      ---------------------------------
+
+Unlike the licensed version, the shareware version contains two limitations.
+First, you can control your games only with the keyboard, so you cannot
+connect external analog or digital joysticks. Second, the comfortable file
+transfer options in the emulation are disabled. Thus you can only execute
+programs that are already located on your hard disk.
+
+The licensed full version can be ordered with the order form that is in the
+end of this file. Its costs depend on the configuration you want. But you
+should read the following text through first, so that you also order the
+correct cable.
+
+
+			   Which cable do I need?
+			   ----------------------
+
+Unfortunately it is impossible to read 1541 disks in the 5.25" drive of the
+PC. In order to get your C64 programs to the emulator, you will need a C64
+or a C128 with a disk drive and the PC64 cable. You can either order it
+together with PC64 or build it yourself following the connection diagram in
+the manual or in the online help.
+
+After you have cloned and started the server program L64 on the C64, you can
+access the C64 disk drives directly from the emulator. It works in a similar
+manner than copying from a network disk drive in Windows File manager. In
+addition, you can make 1:1 copies of whole single sided disks if you are
+using a 1541, 1570 or 1571 disk drive. The built-in fastloader will do it in
+1 minute and 40 seconds.
+
+By the way, the PC64 cable is not compatible with the X1541 cable, with the
+C64S adapter or with the C64Alive cable. But you can import files from these
+programs to PC64 that are already stored on your hard disk.
+
+
+			  How is it with joysticks?
+			  -------------------------
+
+Here you have two possibilities:
+
+1) You already have a Game port card (e.g. Sound blaster) and an analog
+   joystick for IBM compatible computers. Then you can use it in PC64
+   without problem and do not need to buy any further adapter. The same
+   applies for the hard-to-find digital IBM joysticks, which actually also
+   produce analog signals. The joystick won't slow down the emulation like
+   in the Beta version 12, which didn't access the hardware directly.
+
+2) You have no Game port card and do not want to install any in the near
+   future. Or you want to play on your laptop. Or the IBM joysticks are too
+   expensive for you or not stable enough. In this case you can connect your
+   old digital C64 joystick to the PC by ordering the Joystick adaptor or by
+   building it yourself. But this will only work with Personal C64, you
+   cannot control normal PC games with it.
+
+
+			    Distributor addresses
+			    ---------------------
+
+Australia:
+
+  Russell Alphey	      Internet: R.Alphey@dce.vic.gov.au
+  439 Punt Road,
+  Richmond, Victoria, 3121
+  Australia
+
+Germany, Austria and Switzerland (German version):
+
+  Wolfgang Lorenz	      Internet: 100112.220@compuserve.com
+  Gundekarstr. 4
+  91187 Rîttenbach                 Tel: +49-9172-2885 from 10:00 to 20:00
+  Germany				except Sundays, German only
+
+Mexico:
+
+  MegaGraphics, S.A. de C.V.	   Internet: rkrenz@campus.mor.itesm.mx
+  Roberto AndrÇs Renz Keith		     megalink@gcomm.com
+  Paseo Cuauhn†huac Km. 2.5	 Compuserve: 76534,635
+  2do Piso Ferreter°a PM Delta
+  Col. Bugambilias, Area Tizoc		Tel: (73) 20-57-72
+  Jiutepec, Morelos			BBS: (73) 21-12-41
+  MEXICO
+
+United Kingdom:
+
+  Lee Taylor          Internet: gbbs2df2@ibmmail.com
+  75 Milburn Ave
+  Thornton Cleveleys       Tel: +44 1253 821947 (try this one last)
+  Lancashire                    +44 973 402053 (anytime mobile / Answer phone)
+  FY5 2LD                       +44 114 258 8273 (most nights after 6pm)
+  United Kingdom
+
+USA and Canada:
+
+  Ted Drude		      Internet: 71450.726@compuserve.com
+  103 Belle Circle			teddrude@delphi.com
+  Madison AL 35758	      Phone:	(205) 730-8990 (days)
+  USA					(205) 461-7221 (nights)
+
+Other countries:
+
+  We are searching for people who want to distribute Personal C64 in their
+  contries. This includes also printing the manual and building the cables.
+  Please contact Wolfgang Lorenz 100112.220@compuserve.com for details.
+
+
+				 Order forms
+				 -----------
+
+================================================================================
+                                  Australia
+      (prices not calculated yet, please contact R.Alphey@dce.vic.gov.au)
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+	To
+	Russell Alphey
+	439 Punt Road,
+	Richmond, Victoria, 3121
+	Australia
+
+
+
+	Hereby I order the full version of Personal C64:
+
+	( ) Program plus 100 games on two 3.5" disks		     ?????
+
+	Additional cost for manual, equals online help:
+
+	( ) User's manual with 155 pages: Installation,		     ?????
+	    Introduction, Command Reference, Tips and Tricks,
+	    Programming, Appendix
+
+	Additional cost for cables, home-making according to online
+	help is possible:
+
+	( ) PC64 cable for file transfer LPT - Userport (2,5 m)	     ?????
+	( ) Alternative joystick adaptor for a digital C64	     ?????
+	    joystick on LPTx, ideal for Laptops
+	( ) X1541 cable plus shareware transfer programs, not	     ?????
+	    directly supported in PC64 1.x yet
+
+	Total price (includes shipping and value added tax)
+								    -------
+
+	The products will be shipped by Cash on Delivery. ?????
+	My address is:
+
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	Date and signature:
+
+
+	----------------------------------------------
+
+
+================================================================================
+               Germany, Austria and Switzerland (German version)
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+        An
+        Wolfgang Lorenz
+        Gundekarstr. 4
+
+        D-91187 Rîttenbach
+
+
+
+
+        Hiermit bestelle ich die Vollversion von Personal C64:
+
+        ( ) Programm plus 100 Spiele auf zwei Disketten 3.5"      DM  49,-
+
+        ( ) Handbuch mit 160 Seiten, entpricht Online-Hilfe       DM  15,-
+
+        ( ) 64'er-CD mit 220 Programmservicedisketten der         DM  25,-
+            Zeitschrift 64'er Magazin von 4'84 bis 5'94
+
+        Aufpreise fÅr Kabel, Selbstbau nach Online-Hilfe mîglich:
+
+        ( ) PC64-Kabel fÅr Dateitransfer LPT - Userport (2,5 m)   DM  20,-
+
+        ( ) Joystickadapter fÅr einen digitalen C64-Joystick      DM  17,-
+            an LPT (50 cm), ideal zum Spielen auf Laptops
+
+        ( ) X1541-Kabel plus Shareware-Kopierprogramme, wird      DM  14,-
+            in PC64 1.x noch nicht direkt unterstÅtzt
+
+        Gesamtpreis (enthÑlt Versand und 15% Mehrwertsteuer)      DM
+        ôsterreich und Schweiz je nach Gewicht DM 14,50 bis           -----
+        DM 25,50 Aufpreis, Nicht-EU-Staaten minus deutsche
+        MWSt plus landesÅbliche MWSt
+
+        Die Lieferung erfolgt per Nachnahme. Meine Adresse lautet:
+
+
+        ----------------------------------------------
+
+        ----------------------------------------------
+
+        ----------------------------------------------
+
+        ----------------------------------------------
+
+        Datum und Unterschrift:
+
+
+        ----------------------------------------------
+
+
+================================================================================
+                                    Mexico
+================================================================================
+
+
+
+
+
+
+
+	A:
+	MegaGraphics, S.A. de C.V.
+	Roberto AndrÇs Renz Keith
+	Paseo Cuauhn†huac Km. 2.5
+	2do Piso Ferreter°a PM Delta
+	Col. Bugambilias, Area Tizoc
+	Jiutepec, Morelos
+	MEXICO
+
+	Quiero Ordenar la version completa de Personal C64:
+
+	( ) Mas 100 juegos en dos discos de 3 1/2 pulgadas	  N$ 204.00
+
+	Precio adicional por el manual que equivale a la ayuda en l°nea:
+
+	( ) manual del usuario con 155 paginas: Instalaci¢n	   N$ 68.00
+	    Introducci¢n, Referencia de Comandos, Tips y Trucos,
+	    Programaci¢n, ApÇndice
+
+	Costo adicional por cables, hechura casera como lo especifica
+	la ayuda en l°nea es posible:
+
+	( ) cable PC64 para transferir archivos por puerto LPT	  N$ 102.00
+	( ) Adaptador para joystick digital del C64		   N$ 82.00
+	    joystick en LPTx, ideal para Laptops
+	( ) cable X1541 mas programas de transferencia shareware,  N$ 68.00
+	    no directamente soportado por PC64 1.x todav°a
+
+	Precio total (incluyendo gastos de env°o mas IVA)
+								    -------
+
+	Los productos seran enviados cuando se hayan pagado.
+
+	Mi direcci¢n es:
+
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	Fecha y Firma:
+
+
+        ----------------------------------------------
+
+
+================================================================================
+                                United Kingdom
+  (prices not calculated yet, please contact Lee Taylor gbbs2df2@ibmmail.com)
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+        Lee Taylor
+        75 Milburn Ave
+        Thornton Cleveleys
+        Lancashire
+        FY5 2LD
+        United Kingdom
+
+
+
+
+	Hereby I order the full version of Personal C64:
+
+	( ) Program plus 100 games on two 3.5" disks		     ?????
+
+	Additional cost for manual, equals online help:
+
+	( ) User's manual with 155 pages: Installation,		     ?????
+	    Introduction, Command Reference, Tips and Tricks,
+	    Programming, Appendix
+
+	Additional cost for cables, home-making according to online
+	help is possible:
+
+	( ) PC64 cable for file transfer LPT - Userport (2,5 m)	     ?????
+	( ) Alternative joystick adaptor for a digital C64	     ?????
+	    joystick on LPTx, ideal for Laptops
+	( ) X1541 cable plus shareware transfer programs, not	     ?????
+	    directly supported in PC64 1.x yet
+
+	Total price (includes shipping and value added tax)
+								    -------
+
+	The products will be shipped by Cash on Delivery. ?????
+	My address is:
+
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	Date and signature:
+
+
+	----------------------------------------------
+
+
+================================================================================
+                                USA and Canada
+            (prices may differ, please contact teddrude@delphi.com)
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+	To
+	Ted Drude
+	103 Belle Circle
+	Madison AL 35758
+
+
+
+
+
+	Hereby I order the full version of Personal C64:
+
+	( ) Program plus 100 games on two 3.5" disks		      $30
+
+	Additional cost for manual, equals online help:
+
+	( ) User's manual with 155 pages: Installation,		      $10
+	    Introduction, Command Reference, Tips and Tricks,
+	    Programming, Appendix
+
+	Additional cost for cables, home-making according to online
+	help is possible:
+
+	( ) PC64 cable for file transfer LPT - Userport (2,5 m)	      $15
+	( ) Alternative joystick adaptor for a digital C64	      $12
+	    joystick on LPTx, ideal for Laptops
+	( ) X1541 cable plus shareware transfer programs, not	      $10
+	    directly supported in PC64 1.x yet
+
+	Total price (includes shipping and value added tax)
+								    -------
+
+	The products will be shipped by Cash on Delivery. ?????
+	My address is:
+
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	----------------------------------------------
+
+	Date and signature:
+
+
+        ----------------------------------------------
+
+
+================================================================================

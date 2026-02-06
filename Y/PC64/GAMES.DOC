@@ -1,0 +1,833 @@
+This list contains the optimal settings for a number of games under PC64.
+
+The names match as close as possible the original title screens.
+
+Some names are starting with a space. This little trick will move the file
+to the beginning of the directory. It isn't necessary for disk images
+because they are not sorted.
+
+Sequels of a game my be spread over the whole doc file.
+
+The setting "For slow graphic cards: Update screen every xth vertical
+refresh" means that this game is changing big portions of the screen, e.g.
+scrolling background patterns. This will strain the PC46 screen cache.
+
+------------------------------------------------------------------------------
+
+JIFFY601.64K (JIFFYDOS V6.01, alternate KERNAL)
+    These required patches will disable the fastloader:
+    1FA5: 4C AA FB -> 4C 13 EE
+    11B5: 4C AA FB -> 4C 13 EE
+    14E0: 20 79 F1 -> 20 13 EE
+    14FB: 20 AA FB -> 20 13 EE
+
+    This recomended patch will shorten the RAM test:
+    1D83: C8 D0 E8 -> 4C 6C FD
+
+BELOW THE ROOT
+ALICE IN WONDERLAND
+    - Joystick #2
+
+    Uses an unsupported IEC mode with a query of the EOF bit at $382C. Runs
+    if you issue the following patch (BTR Disk 1, AIW Disk 2):
+    24 90 50 F9 -> 24 90 EA EA
+
+9 PRINCES IN AMB (Nine Princes In Amber)
+AMAZON
+DRAGONWORLD
+FARENHEIT 451
+PERRY MASON
+TREASURE ISLAND
+WIZARD OF OZ
+    - Switch off national keyboard driver
+    - No joysticks
+
+    In these Windham/Telarium adventures you must press the Space key at
+    the beginning within one second. As own keyboard tables are defined
+    at address $0A05, <Options / Keyboard / Use national keyboard driver>
+    must be off. Otherwise all letters will be upcase and Backspace won't
+    work. Loader files and disk names may be renamed.
+
+MASQUERADE
+    - No joysticks
+
+    Pictures are not displayed, the message NOT A MASQUERADE PICTURE DISK
+    appears. The game uses an own copy of the IEC routines at $2D09 with
+    other zero page addresses.
+
+ASYLUM
+    - No joysticks
+    - Start of interrupt consumes -10 cycles
+
+    Only the cracked version runs. The original game has NETLoc copy
+    protection and SpeeDOS fastloader.
+
+FORT APOCALYPSE
+    - Joystick #2
+
+COMMANDO
+SPACE INVASION
+    - Joystick #2 with autofire
+
+    Commando is the Englisch original version. In the German version, the
+    Nazis have been replaced by aliens.
+
+ASTERIX
+    - Joystick #2
+    - VIC[12h]: Report new line at 100 percent
+
+RAMBO
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - Use VideoCounter algorithm #3
+    - Start of interrupt consumes 10 cycles
+    - Enable char and sprite DMA
+
+IMPOSSIBLE MISS.
+    - Joystick #2
+    - VIC[12h]: Report new line at 100 percent
+    - Set FM volume to 11
+
+    If you destroy the orb by driving it into a robot, your hero also dies.
+    Prevent this by setting <Options / Timing / Update screen every nth
+    vertical refresh> temporarily to 1 (or permanently if you have a
+    Pentium).
+
+INTERNAT. KARATE
+    - Joystick #2
+    - VIC[12h]: Report new line at 50 percent
+    - Set FM volume to 13
+
+JAMMIN'
+    - Joystick #1
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+SURVIVOR
+    - Joystick #2
+    - Use VideoCounter algorithm #3
+    - Start of interrupt consumes 5 cycles
+    - Enable char and sprite DMA
+
+GHOST'N'GOBLINS
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+ALCAZAR
+    - Joystick #2
+
+ARCHON
+    - Joystick #2
+
+ATTACK OF M.C.
+    - Joystick #1
+
+REVENGE OF M.C.
+    - Joystick #2
+
+BALAKON RAIDER
+    - Joystick #2
+
+BANDITS
+    - Joystick #2
+
+BASKETBALL
+    - Joystick #2
+
+BLACK HAWK
+    - Joystick #1
+
+BLUE MOON
+    - Joystick #1
+
+BMX SIMULATOR
+    - Joystick #1
+
+BOULDER DASH
+    - Joystick #1
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - Use VideoCounter algorithm #3
+
+BOULDER DASH II
+    - Joystick #1
+    - Use VideoCounter algorithm #3
+
+BREAKDOWN
+    - Joystick #2
+    - Enable char and sprite DMA
+
+BRUCE LEE
+    - Joystick #1
+
+CONGO BONGO
+    - Joystick #2
+
+CRYSTAL CASTLES
+    - Joystick #1
+
+CYBERNOID II
+    - Joystick #2
+    - VIC[12h]: Report new line at 70 percent
+    - Enable char and sprite DMA
+
+DEFENDER
+    - Joystick #1 with autofire
+
+DIG DUG
+    - Joystick #1
+
+DRELBS
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+EAGLE EMPIRE
+    - Joystick #2 with autofire
+
+FALCON PATROL
+    - Joystick #1
+
+FIRE ONE
+    - Joystick #1
+
+FRANTIC FREDDIE
+    - Joystick #2
+
+GALAXY
+    - Joystick #1 with autofire
+
+GANDALF
+    - Joystick #2
+    - Start of interrupt consumes 6 cycles
+
+GHOSTBUSTERS
+    - Joystick #1
+    - VIC[12h]: Report new line at 50 percent
+
+GIANA
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+    - Enable char and sprite DMA
+
+GREEN BERET
+    - Joystick #2
+
+GUMSHOE
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+GYRUSS
+    - Joystick #1 with autofire
+
+H.E.R.O.
+    - Joystick #2
+    - VIC[12h]: Report new line at 50 percent
+
+HACKER
+    - Joystick #1
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - VIC[12h]: Report new line at 50 percent
+
+KRAKOUT
+    - Joystick #2
+
+MARIO BROS
+    - Joystick #1
+
+MAX HEADROOM
+    - Joystick #2
+
+MINER 2049'ER
+    - Joystick #1
+
+MONTY MOLE
+    - Joystick #2
+    - Use VideoCounter algorithm #3
+
+MOON CRESTA
+    - Joystick #2 with autofire
+
+MR ROBOT
+    - Joystick #1
+
+MR.DIG
+    - Switch off national keyboard driver
+    - Joystick #1
+
+MR.DO'S CASTLE
+    - Joystick #1
+
+NIGHT MISSION
+    - No joysticks
+
+OLYMPIC SKIER
+    - Joystick #1
+
+ON COURT TENNIS
+    - Joystick #1
+
+ONE ON ONE
+    - Joystick #1
+
+OUT RUN
+    - Joystick #1
+
+PHARAOH'S CURSE
+    - Joystick #2
+
+PITFALL II
+    - Joystick #1
+
+POGO JOE
+    - Joystick #1
+
+POLE POSITION
+    - Joystick #1
+
+POOLBILLARD
+    - Joystick #1
+
+POOYAN
+    - Joystick #1 with autofire
+
+PRICE OF MAGIC
+    - No joysticks
+    - VIC[12h]: Report new line at 50 percent
+
+PUCK-MAN
+    - Joystick #2
+
+RAID OVER MOSCOW
+    - Joystick #2
+
+RALLY SPEEDWAY
+    - Joystick #1
+
+REDLED
+    - Joystick #2
+
+REVS
+    - Switch off national keyboard driver
+    - No joysticks
+
+    After pressing Alt+F3 you can steer the car over the paddle (IBM analog
+    joystick) but X and Y axis are swapped. The other functions will be
+    controlled over the keyboard.
+
+SANTA'S XMAS CAP
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - Enable char and sprite DMA
+
+    The game idea is delicious! Do you remember the movie Die Hard: "Now I
+    have a machine gun! Ho Ho Ho!"
+
+FRANKIE GOES (Frankie Goes To Hollywood)
+    - Joystick #2
+
+MASTER OF LAMP
+    - Joystick #2
+
+TERMINATOR 2
+    - Joystick #2 with autofire
+    - Set video to NTSC
+
+THE GOONIES
+    - Joystick #1
+
+    Runs only from a disk image.
+
+SCARABAEUS
+    - Joystick #2
+    - For slow graphic cards: Update screen every 4th vertical refresh
+
+    Runs only from a disk image.
+
+HYPA-BALL
+    - Joystick #1
+
+MACADAM BUMPER
+    - No joysticks
+
+HUBBARD HACKS
+    - Joystick #2
+
+MORPHOSES!
+    - Use VideoCounter algorithm #3
+    - Enable char and sprite DMA
+
+PAULCHEN PANTHER
+    - Update screen every 1th vertical refresh
+
+VIDCOM 64
+    - Joystick #2
+
+GATEWAY 2 APHSAI
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - Use VideoCounter algorithm #3
+    - Start of interrupt consumes 8 cycles
+
+ROUND ABOUT
+    - Joystick #2
+
+RUPERT TOY PARTY (Rupert And The Toymaker's Party)
+RUPERT ICE CASTL (Rupert And The Ice Castle)
+    - Joystick #2
+
+SHAMUS
+    - Joystick #1
+    - Update screen every 1th vertical refresh
+    - Start of interrupt consumes 0 cycles
+
+SKI II
+    - Joystick #1
+
+SNOOPY
+    - Joystick #2
+
+SPINDIZZY
+    - Joystick #2
+
+SPLIT PERSONAL.
+    - Joystick #2
+
+STELLAR 7
+    - Joystick #2
+
+STYX
+    - Joystick #1
+
+SUICIDE STRIKE
+    - Joystick #2
+
+SUPER ZAXXON
+    - Joystick #2
+
+SWORD OF FARGOAL
+    - Joystick #2
+
+THE HOBBIT
+    - No joysticks
+    - Update screen every 5th vertical refresh
+    - Limit CPU performance to 65535 percent
+    - VIC[12h]: Report new line at 100 percent
+
+    Raising the CPU limit will make the graphics bearable.
+
+THE LAST NINJA
+    - Joystick #2
+
+THING II
+    - Joystick #2
+    - VIC[12h]: Report new line at 100 percent
+
+MASTER OF LAMPS
+    - Joystick #2
+
+TIME RUNNER
+    - Joystick #2
+    - Update screen every 1th vertical refresh
+
+TRACK & FIELD
+    - Joystick #1
+
+TURMOIL
+    - Joystick #1
+
+URIDIUM
+    - Joystick #2 with autofire
+
+VELOCIPEDE
+VELOCIPEDE II
+    - Joystick #2
+
+WAVY NAVY
+    - Joystick #1
+
+WOW
+    - Joystick #2
+
+XENO
+    - Joystick #1
+
+XERONS
+    - Joystick #1
+
+Z
+    - Joystick #2
+    - Enable char and sprite DMA
+
+ZAXXON
+    - Joystick #2
+    - VIC[12h]: Report new line at 0 percent
+
+ZEPPELIN
+    - Joystick #2
+
+ZIX
+    - Joystick #2
+
+ZONE RANGER
+    - Joystick #1
+    - VIC[12h]: Report new line at 100 percent
+
+ TALES OF THE (Tales of the Arabian Nights)
+    - Joystick #2
+
+DAVID'S M.MAGIC
+    - No joysticks
+
+DRAGON'S LAIR
+    - Joystick #2
+
+ELITE
+    - Joystick #2
+
+FROGGER'93
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+
+GARFIELD
+    - Joystick #2
+    - Start of interrupt consumes 10 cycles
+
+ GAUNTLET
+    - Joystick #1
+    - VIC[12h]: Report new line at 50 percent
+
+ GIANA
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+    - Enable char and sprite DMA
+
+ KARATEKA
+    - Joystick #2 with autofire
+
+ M.U.L.E.
+    - Joystick #2
+
+ MEGA TANK.BOOT
+    - Joystick #2
+    - Set Video to NTSC
+
+ GUARDIANS OF M.
+    - Joystick #2 with autofire
+    - Set Video to NTSC
+
+ OMICRON
+    - Joystick #2
+
+SUPER PIPELINE
+    - Joystick #1
+
+SUPER PIPELINE 2
+    - Joystick #2
+
+ WARHAWK
+    - Joystick #2 with autofire
+
+BLUE THUNDER
+    - Joystick #2
+
+GROUND SNIPE
+    - Joystick #1
+
+HIGH NOON
+    - Joystick #2
+
+SKRAMBLE
+    - Joystick #2 with autofire
+
+SMURFEN
+    - Joystick #2
+
+CR. FEVER INTRO 
+    - Use VideoCounter algorithm #2
+    - Start of interrupt consumes -8 cycles
+    - Enable char and sprite DMA
+
+CENSOR DESIGN/CD
+    - Update screen every 1th vertical refresh
+    - Use VideoCounter algorithm #2
+
+LESPAR DU OXO!!!
+    - Use VideoCounter algorithm #3
+    - Start of interrupt consumes 0 cycles
+
+WONDERLAND V(CD)
+    - Enable char and sprite DMA
+
+LETHAL DISPLAY 3
+    - Start of interrupt consumes 3 cycles
+    - Enable char and sprite DMA
+
+W/33 SCROLLS
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+W/FLI INTERLACE
+    - Start of interrupt consumes -7 cycles
+    - VIC[12h]: Report new line at 0 percent
+
+W/CIRCLESCROLL
+    - Update screen every 1th vertical refresh
+    - Use VideoCounter algorithm #3
+    - Start of interrupt consumes 10 cycles
+
+W/STARROUTINE
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+
+W/VECTORPART
+    - Enable char and sprite DMA
+
+DEMO FROM BONZAI
+    - Use VideoCounter algorithm #2
+    - Start of interrupt consumes -10 cycles
+    - VIC[12h]: Report new line at 0 percent
+    - Set Video to NTSC
+
+MORE THAN A TREE
+    - Joystick #2
+    - Start of interrupt consumes -10 cycles
+
+MASTERS OF T.U.
+    - Joystick #2
+    - For slow graphic cards: Update screen every 3th vertical refresh
+
+ROCKY HORROR SH.
+    - Joystick #2
+
+AVENGER
+    - Joystick #2
+
+BIG TRBL. I.L.C. (Big Trouble In Little China)
+    - Joystick #2
+
+BLACK LAMP
+    - Joystick #2
+    - VIC[12h]: Report new line at 50 percent
+
+CLEVER & SMART
+    - Joystick #2
+
+DRILLER
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+    - Enable char and sprite DMA
+    - Set AdLib volume to 13
+
+FAIRLIGHT
+    - Joystick #1
+
+FLASH GORDON
+    - Joystick #2
+    - Use VideoCounter algorithm #3
+
+GATEW. TO APHSAI
+    - Joystick #2
+
+INFILTRATOR II
+    - Joystick #2
+
+NIGHT SHADE
+    - Joystick #2
+
+OMEGA MISSION
+    - Joystick #1
+
+SHADOWFIRE
+    - Joystick #1
+
+SHORT CIRCUIT
+    - Joystick #2
+    - Use VideoCounter algorithm #2
+    - Enable char and sprite DMA
+
+SKOOL DAZE
+    - Joystick #2
+
+SPACE DOUBT
+    - Joystick #2
+
+SPY VS. SPY I
+SPY VS. SPY II
+SPY VS. SPY III
+    - Joystick #2
+
+SPELLBOUND
+    - Joystick #2
+
+STRIKE F. COBRA
+    - Joystick #2
+
+V
+    - Joystick #1
+
+NEVERENDING ST.
+    - Joystick #2
+
+INDIANA JONES
+    - Joystick #2
+
+ABSOLUTE DEMO
+    - No joysticks
+    - Enable char and sprite DMA
+
+EXPRESS RAIDER
+    - Joystick #2
+
+MEAN STREAK
+    - Joystick #2
+    - Start of interrupt consumes 30 cycles
+    - VIC[12h]: Report new line at 53 percent
+
+MISSION ELEVATOR
+    - Joystick #1
+
+RAMPAGE
+    - Joystick #2
+
+RENEGADE
+    - Joystick #2
+
+SAMURAI WARRIOR
+    - Joystick #2
+    - VIC[12h]: Report new line at 78 percent
+    - Enable char and sprite DMA
+
+STAR PAWS
+    - Joystick #2
+
+THE FURY
+    - Joystick #1
+
+TRANSFORMERS
+    - Joystick #2
+    - Use VideoCounter algorithm #3
+    - Enable char and sprite DMA
+
+ALLEYKAT
+    - Joystick #2 with autofire
+
+POWER DRIFT
+    - Joystick #2
+
+SOUND WIZ #1
+    - No joysticks
+    - For slow graphic cards: Update screen every 3th vertical refresh
+    - Switch of real time timer 1A
+
+SAM
+    - Update screen every 1th vertical refresh
+    - Set Video to NTSC
+    - Set DSP volume to 15
+    - Switch off music
+
+    The speech may be more understandable if you change the screen refresh
+    and press the turbo button. This depends from the computer.
+
+FUNKY DRUMMER
+    - Switch off national keyboard driver
+    - No joysticks
+
+BOOGABOO
+    - Joystick #2
+
+ANTIRIAD
+    - Joystick #2
+
+COUNTD. MELTDOWN
+    - Joystick #2
+
+PARADROID
+    - Joystick #2
+
+MR. DIG
+    - Joystick #1
+
+MIKIE
+    - Joystick #2
+
+CR WITH GARFIELD (Create With Garfield)
+    - Joystick #1
+
+DONKEY KONG NINT (Nintendo)
+    - Joystick #1
+
+DONKEY KONG OCEA (Ocean)
+    - Joystick #2
+
+FINDERS KEEPERS
+    - Joystick #2
+
+HEXENKUECHE II
+CAULDRON II
+    - Joystick #2
+
+HUNCHBACK II
+    - Joystick #2
+
+JUMPMAN JUNIOR
+    - Joystick #2
+
+LODE RUNNER
+    - Joystick #2
+
+MONKEY MAGIC
+    - Joystick #2
+
+CRAZY COMETS
+    - Joystick #2
+
+NEMESIS
+    - Joystick #2
+
+GALAGA
+    - Joystick #2
+
+GALAGA COLOR
+    - Joystick #2
+
+ENCOUNTER
+    - Joystick #2
+
+BUBBLE BOBBLE
+    - Joystick #2
+
+DICKYS DIAMONDS
+    - Joystick #2
+
+MOON BUGGY
+    - Joystick #2
+
+FROGGER
+    - No joysticks
+
+    Title screen ist displayed for 5 seconds. To start the game, hold F1
+    for 1 second.
+
+LEMANS
+    - Joystick #2
+
+YIE AR KUNG FU 2
+    - Joystick #1
+
+MATCH POINT
+    - Joystick #2
+
+RENAISSANCE
+    - Joystick #2
+
+DONALD DUCK
+    - Joystick #2
+
+ELIZA
+    - No joysticks
+
+THE INSTITUTE
+    - No joysticks
+
+MOONMIST
+    - No joysticks
+
+    The question at the beginning must be answered with "1541 = No". Then
+    the game doesn't use its fastlader.

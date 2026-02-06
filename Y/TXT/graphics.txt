@@ -1,0 +1,114 @@
+---------------------------------
+JIVA's DOSBox Workshop - GRAPHICS
+---------------------------------
+https://www.tigerhareram.cz/dosbox.html
+
+*
+
+You can use programs: EDITGRA.EXE , EDITMAP.EXE , BMPINFO.EXE , and WORLD (wrld_16.exe) version github.
+
+You can draw picture to paper too and scan it by home printer.
+
+*
+
+when you use EDITGRA.EXE , you obtain gra format of image 160x200 px , 16 colors from 65535 , image is squared to rectangles 8x8 pixels with 4 colors to square
+
+*
+
+when you use EDITMAP.EXE , source is editgra file , beware draw in the middle of map file , dont go to edges and corners , output format is map file.
+
+so You have only option to snapshot screenshot dosbox window by pressing CTRL+F5 from program EDITMAP.EXE
+
+*
+
+you can use BMP file in BMPINFO , it must be the same format as example files WORLD.BMP or RAMBO.BMP. These two files have less color palete as ALIEN.BMP and COSMON.BMP
+
+file WORLD.BMP have in BMPINFO.EXE program option F2 = export as gra file (it must be with only two colors , file WORLD.BMP have only two colors)
+
+final gra file output from this process you can open in EDITGRA.EXE then post process creating grafics with more work
+
+*
+
+you can draw on paper , then scan via printer and obtain modern image file type , convert it in program like GIMP to format the same as WORLD.BMP
+
+after that you can open it in BMPINFO.EXE and use F2 export to gra file format. In EDITGRA.EXE your drawings post process for example linie drawings
+
+*
+
+when you work hard , will you create good file 160x200 in gra format with all work done
+
+*
+
+now go to program WORLD git version wrld_16.exe
+
+on command line type gra file to program as executable parameter , (name of file must be acceptable) , when you run wrld_16 goto menu - program - convert
+
+there you must see your gra file visible on the screen , this mean is in program already prepared to convertion 
+
+option to convert have output BMP file
+
+*
+
+at this moment you have 160x200 px BMP file , it is really pixel art file , have 16 colors , it satisfied square 8x8 cells in color palete quadro colors
+
+go to marketplace , cost of full complete graphics file like this one is cca 50 dollars
+
+dont be mad , itch.io is good marketplace portal
+
+JIVA's Tigerhareram
+
+Blazej Kozlowski ASCII ART
+
+Martin Kolecek DOSBox Workshop
+
+                              __
+
+                            .d$$b
+
+                          .' TO$;\
+
+                         /  : TP._;
+
+                        / _.;  :Tb|
+
+                       /   /   ;j$j
+
+                   _.-"       d$$$$
+
+                 .' ..       d$$$$;
+
+                /  /P'      d$$$$P. |\
+
+               /   "      .d$$$P' |\^"l
+
+             .'           `T$P^"""""  :
+
+         ._.'      _.'                ;
+
+      `-.-".-'-' ._.       _.-"    .-"
+
+    `.-" _____  ._              .-"
+
+   -(.g$$$$$$$b.              .'
+
+     ""^^T$$$P^)            .(:
+
+       _/  -"  /.'         /:/;
+
+    ._.'-'`-'  ")/         /;/;
+
+ `-.-"..--""   " /         /  ;
+
+.-" ..--""        -'          :
+
+..--""--.-"         (\      .-(\
+
+  ..--""              `-\(\/;`
+
+    _.                      :
+
+                            ;`-
+
+                           :\
+
+                           ;  bug

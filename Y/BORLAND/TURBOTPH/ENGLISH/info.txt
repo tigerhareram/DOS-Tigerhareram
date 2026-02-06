@@ -1,0 +1,4 @@
+add file TURBO.TPH to Pascal folder , it contain English help
+
+set codepage in [autoexec] to 437 (default is in czech so find number 852 and change it to 437)
+
