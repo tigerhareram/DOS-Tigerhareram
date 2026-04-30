@@ -5,17 +5,38 @@ Var
 Begin
   KonecProgramu:=False;
 
-
   Repeat
 
-    MainWorldScreen;                            {1st write screen interface}
-    Str80('KNIHOVNA\001.txt');                  {2nd write text file}
-    Str80BMP('KNIHOVNA\001.bmp',150,250,0,0,79,49); {3rd write image}
+      SkocNaStranku(StranaCis,0,0,0,0,159,199);   {+auto gra1234, map, ASCII}
+      Kbd_RKey;                                   {wait a key.. and bmp scan}
 
-    SVGA_WaitRetrace;
-    SVGA_FlipPage;                              {4th show screen finished}
+{Left}   If ((Key[75]=1) or (Key[36]=1)) then
+         Begin
+           If Key[75]=1 then Kbd_RPush(75);
+           If Key[36]=1 then Kbd_RPush(36);
+           If StranaCis>StranaMin then Dec(StranaCis);
+         End;
 
-    Kbd_RKey;                                   {5th wait a key}
+{Right}  If ((Key[77]=1) or (Key[38]=1)) then
+         Begin
+           If Key[77]=1 then Kbd_RPush(77);
+           If Key[38]=1 then Kbd_RPush(38);
+           If StranaCis<StranaMax then Inc(StranaCis);
+         End;
+
+{Enter}  If ((Key[28]=1) or (Key[30]=1)) then
+         Begin
+           If Key[28]=1 then Kbd_RPush(28);
+           If Key[30]=1 then Kbd_RPush(30);
+           {Enter Page 160x200 switch Enter}
+           If VisiblePage<4 then Inc(VisiblePage) else VisiblePage:=0;
+         End;
+
+{Insert} If Key[82]=1 then {Visibility BMP toggle}
+         Begin
+           If Key[82]=1 then Kbd_RPush(82);
+           If VisibleBMP<1 then Inc(VisibleBMP) else VisibleBMP:=0;
+         End;
 
 {Esc}    If ((Key[1]=1) or (Key[31]=1)) then
          Begin

@@ -82,6 +82,10 @@ If Scan_Toggle=False then Begin
                             Scan_Toggle:=True;
                             LoadBMPFile('SCAN\scan.bmp',0,160,0,0,Buffer[3]);
                             VGA_SprZ(160,0,160,0,319,199,1,Buffer[3],Buffer[2]);
+
+                            LoadGRAFile('PLANET01\001a.gra',0,1);                        {LAYER GRA1}
+                            VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[2]);        {LOAD}
+                            LoadMAPFile('PLANET01\001.map',0);                {LAYER MAP EXPERIMENTAL}
                           End
                      else Scan_Toggle:=False;
 End;

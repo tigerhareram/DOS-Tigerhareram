@@ -5,23 +5,27 @@ Begin
   SVGA_ClearPage(ColX[0]); {ColX [0..15] = 16 barevnych fixu barvy 240..255}
   SVGA_Rectangle(0,400,639,479,ColX[15]); {Pouziva se ColX[0] a ColX[15]}
 
+  If Scan_Toggle=True then
+  Begin
+    Map_WriteSVGAComplet(Buffer[2]);
+    SVGA_SprZ(ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSizeX2,ScanSizeY2,1,Buffer[2]);
+  End;
+
   If Psani=True then
   Begin
-    _Print(10,410,ColX[15],'Alt+Cisla:');
+    _Print(10,405,ColX[15],'Alt+Cisla:');
 
-    _Print(115,410,ColX[15],'Ú 218'); _Print(175,410,ColX[15],'Â 194'); _Print(235,410,ColX[15],'¿ 191');
-    _Print(115,430,ColX[15],'Ã 195'); _Print(175,430,ColX[15],'Å 197'); _Print(235,430,ColX[15],'´ 180');
-    _Print(115,450,ColX[15],'À 192'); _Print(175,450,ColX[15],'Á 193'); _Print(235,450,ColX[15],'Ù 217');
+    _Print(10,425,ColX[15],'Û219 ß223 ß223 ß223 Û219');
+    _Print(10,445,ColX[15],'Û219 °176 ±177 ²178 Û219');
+    _Print(10,465,ColX[15],'Û219 Ü220 Ü220 Ü220 Û219');
 
-    _Print(295,410,ColX[15],'³ 179');
-    _Print(295,430,ColX[15],'Ä 196');
+    _Print(260,425,ColX[15],'Ú218 Â194 Ä196 ¿191');
+    _Print(260,445,ColX[15],'³179 ³179      ³179');
+    _Print(260,465,ColX[15],'À192 Á193 Ä196 Ù217');
 
-    _Print(400,410,ColX[15],'É 201'); _Print(460,410,ColX[15],'Ë 203'); _Print(520,410,ColX[15],'» 187');
-    _Print(400,430,ColX[15],'Ì 204'); _Print(460,430,ColX[15],'Î 206'); _Print(520,430,ColX[15],'¹ 185');
-    _Print(400,450,ColX[15],'È 200'); _Print(460,450,ColX[15],'Ê 202'); _Print(520,450,ColX[15],'¼ 188');
-
-    _Print(580,410,ColX[15],'Í 205');
-    _Print(580,430,ColX[15],'º 186');
+    _Print(470,425,ColX[15],'É201 Ë203 Í205 »187');
+    _Print(470,445,ColX[15],'Ì204 º186      º186');
+    _Print(470,465,ColX[15],'È200 Ê202 Í205 ¼188');
   End;
 
   If Cteni=True then
@@ -37,8 +41,6 @@ Begin
   For X:=0 to 79 do Begin
                       _Print(X*8,Y*16,ColX[15],Stranka[Y,X]);
                     End;
-
-  If Scan_Toggle=True then SVGA_SprZ(ScanX,ScanY,ScanSizeX1,ScanSizeY1,ScanSize_X2,ScanSizeY2,1,Buffer[2]);
 
 End;
 

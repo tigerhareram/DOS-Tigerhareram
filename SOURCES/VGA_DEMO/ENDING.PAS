@@ -1,4 +1,0 @@
-Procedure Ending;
-Begin
-
-End;

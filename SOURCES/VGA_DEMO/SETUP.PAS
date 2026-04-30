@@ -1,3 +1,0 @@
-Procedure Setup;
-Begin
-End;

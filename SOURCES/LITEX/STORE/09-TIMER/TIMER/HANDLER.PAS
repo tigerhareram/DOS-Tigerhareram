@@ -76,42 +76,42 @@ end;
     Inc(clock5);
     If clock5 >= 400 then
     Begin
-      VGA_BarZ(60,8,85,21,ColX[0],Buffer[4]);
+      SVGA_BarZ(60,8,85,21,ColX[0]);
       Case LoadingPhase of
         0: Begin
-             VGA_Pixel(60,8,ColX[1],Buffer[4]);
-             VGA_Pixel(61,9,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,11,ColX[1],Buffer[4]);
-             VGA_Pixel(64,12,ColX[1],Buffer[4]);
+             SVGA_Pixel(60,8,ColX[1]);
+             SVGA_Pixel(61,9,ColX[1]);
+             SVGA_Pixel(62,10,ColX[1]);
+             SVGA_Pixel(63,11,ColX[1]);
+             SVGA_Pixel(64,12,ColX[1]);
            End;
         1: Begin
-             VGA_Pixel(60,10,ColX[1],Buffer[4]);
-             VGA_Pixel(61,10,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,10,ColX[1],Buffer[4]);
-             VGA_Pixel(64,10,ColX[1],Buffer[4]);
+             SVGA_Pixel(60,10,ColX[1]);
+             SVGA_Pixel(61,10,ColX[1]);
+             SVGA_Pixel(62,10,ColX[1]);
+             SVGA_Pixel(63,10,ColX[1]);
+             SVGA_Pixel(64,10,ColX[1]);
            End;
         2: Begin
-             VGA_Pixel(60,12,ColX[1],Buffer[4]);
-             VGA_Pixel(61,11,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,9,ColX[1],Buffer[4]);
-             VGA_Pixel(64,8,ColX[1],Buffer[4]);
+             SVGA_Pixel(60,12,ColX[1]);
+             SVGA_Pixel(61,11,ColX[1]);
+             SVGA_Pixel(62,10,ColX[1]);
+             SVGA_Pixel(63,9,ColX[1]);
+             SVGA_Pixel(64,8,ColX[1]);
            End;
         3: Begin
-             VGA_Pixel(62,8,ColX[1],Buffer[4]);
-             VGA_Pixel(62,9,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(62,11,ColX[1],Buffer[4]);
-             VGA_Pixel(62,12,ColX[1],Buffer[4]);
+             SVGA_Pixel(62,8,ColX[1]);
+             SVGA_Pixel(62,9,ColX[1]);
+             SVGA_Pixel(62,10,ColX[1]);
+             SVGA_Pixel(62,11,ColX[1]);
+             SVGA_Pixel(62,12,ColX[1]);
            End;
       End; {Case End}
       If LoadingPhase<3 then Inc(LoadingPhase) else LoadingPhase:=0;
-      Text_WriteDefaultFont(270,180,ColX[1],ColX[0],Buffer[2],VGA);
-      Text_WriteText(Buffer[2],270,180,5,5,1,8,8, 'loading ',Buffer[4],VGA);
-      Text_WriteText(Buffer[2],270,180,5,5,1,8,16,'time    ',Buffer[4],VGA);
-      Text_WriteNumber(Buffer[2],270,195,5,5,1,60,16,1+(Timer_Watch_GetTime div 100),Buffer[4],VGA);
+      Text_WriteDefaultFont(270,180,ColX[1],ColX[0],Buffer[2],SVGA);
+      Text_WriteText(Buffer[2],270,180,5,5,1,8,8, 'loading ',Buffer[4],SVGA);
+      Text_WriteText(Buffer[2],270,180,5,5,1,8,16,'time    ',Buffer[4],SVGA);
+      Text_WriteNumber(Buffer[2],270,195,5,5,1,60,16,1+(Timer_Watch_GetTime div 100),Buffer[4],SVGA);
 
       clock5:=0;
     End;

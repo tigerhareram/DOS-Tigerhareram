@@ -7,7 +7,7 @@ Var BaseIO: word;
 Begin
   RAM_Init;                             { global memory model     }
   Timer_Init;                           { paralel processing      }
-  VGA_Init;                             { 320x200 x256 colors     }
+  SVGA_Init;                            { 320x200 x256 colors     }
   Text_Init(255);                       { Text,Numbers output     }
   Spkr_Init;                            { PC-Speaker              }
 
