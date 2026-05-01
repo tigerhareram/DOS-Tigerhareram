@@ -1,0 +1,490 @@
+    Ûßßß ÛßßÜ ÛßßÜ Ûßßß Û  Û
+    Û  Ü ÛÜÜß ÛÜÜÛ ÛÜ   ÜßßÜ
+    ßßßß ß  ß ß  ß ß    ß  ß *************************************************
+  ******************************* (c) 1996-2002 by Stefan Goehler, Germany ***
+ ***** GRAFX 1.4c ************************************************************
+*****  Documentation - Version 1.11                                      *****
+****  Find me in the Web @ http://www.crossfire-designs.de                 ***
+***  Mail me @ stefan.goehler@gmx.de                                         *
+**                                                                           *
+*                                                                            *
+* A thanx flies to Christian Klukas - he made a lot of testing on            *
+* version 1.3. Only with his help I was able to make the newest              *
+* release 1.3 so stable and bugfree (hey ;)!                                 *
+******                                                                       *
+******************************************************************************
+***
+*
+
+Hi!
+
+
+Some release notes:
+I'm currently developing GrafX 2 and there was really not enough
+time to test all of the procedures for HiColor. So if you find
+any bugs, send me, like always, the information about it. But
+please don't expect a bugfix short after your report. Maybe I
+release GrafX 1.41, maybe not. My time is really limited at the
+moment.
+
+I'll revise this text also into html in the next time (I think
+with Grafx2).
+BTW, the manual is not finished. I began making it with version
+1.3a1 or so, where were not all procedures. Don't blame me, I'm
+happy I finally finished version 1.3c (final version) after a
+
+STOP!
+Before doing anything, read this COPYRIGHT information:
+
+  Copyright agreement, changes reserved
+  All these statements apply, if not explicitely stated different, on ANY
+  unit delivered with this package.
+
+
+  1st
+  You can use my units entired in your own programs. Ripping any code off
+  or using parts (unimportant if modified or original) of this package
+  somewhere else, e.g. in other packages, is not allowed without my
+  permission.
+
+  Exceptions:
+
+  þ If you wrote any code for the package yourself (meaning not modified
+    code), you are allowed to use this special kind of code yourself and
+    without my permission (just because it's your work, not mine)
+  þ You can get a license for parts of this package or the whole package,
+    the respective author(s) of such a part will get a donation from you
+
+
+  2nd
+  This package is Freeware, as long as the product which uses it, is Freeware.
+
+  You can use it freely in any kind of software which uses this and any of
+  the other delivered units with these restrictions:
+
+  þ You need to state the name of the package and also the names of the
+    authors who did their hard work in this product on an often seen place
+    of your product (intro/extro etc.).
+  þ You have to inform me if you use this package in any kind of commercial
+    software, you need to get a license for it
+
+
+  3rd
+  You are allowed to do modifications on my units. If they are useful, please
+  let me know what you've done and give me the modifications.
+  Modifications concerning the existence and/or modification of any
+  copyright/author/name statements are generally not allowed.
+  You are not allowed to publish modified units, you may only use them in
+  your own productions (where these sources aren't published).
+  Version publications are restricted to my person (Stefan Goehler).
+  Additionally, you aren't allowed to charge any money for the units or any
+  derivates of them, except you put them on some kind of
+  shareware/freeware/sourcecode collection media.
+
+
+  4th
+  If not different stated, you aren't allowed use or spread any of the
+  delivered units single, you have to spread the package with all files.
+  Spreading units single is only allowed if I gave you my permission or
+  the unit is yours and is not special licensed (see chapter 1).
+
+  If you don't agree with these statements, please erase this sofware.
+  If you don't understand a part, feel free to contact me.
+
+
+
+JPEG:
+  If you want to use the GrafX JPEG extensions, have a look at my site.
+
+
+INSTALLING INFORMATION:
+I tried to put the files in a overviewable way into the zip-library, this
+means that they are not at all in the way you'll need them.
+So, just do this: decompress the files WITH SUBDIRS into your tp\bin -
+directory (or whereever your turbo.exe is placed), after that move all
+files from tp\bin\loader to tp\bin and do the same with the directory
+tp\bin\demo. Thereafter delete these subdirs, which are empty now.
+It's your stuff how you do it with the tp\bin\fonts - dir, but I
+suggest to keep it - more than 25 fonts spreaded in your bin - directory
+are not that fine thing ;)
+
+The most important commands:
+.setmode     (setting up a graphical mode)
+.graphresult (needs to be called after setmode)
+.closegraph  (any comments? ;)
+
+What you need to do:
+Add to your USES-line the following units:
+gr_vars,grafx
+Make sure that GrafX is AFTER crt, because the color-constants
+(white, blue, etc.) have other values in hicolor-modes.
+
+shortcuts : i.e. = in example
+
+>> procedure getpal;
+   Get the whole palette and put the colors into the variable pal.
+
+>> procedure setpal;
+   Set the whole palette provided by the variable pal.
+
+>> procedure getuserpal(var pal);
+   Same as getpal, but you can give your own colortable as a parameter.
+
+>> procedure setuserpal(var pal);
+   Same as setpal but you can give your own colortable as a parameter.
+
+>> procedure setrgbpalette(col,r,g,b : integer);
+   Set a color directly. Colornum contains the color number, R,G and B contain
+   the color values. Unlike in older versions the maximum value you can
+   set there, is 255. That's for a more easy handling with hicolor modes.
+   The 2nd virtual palette for image conversion will be filled with the
+   values, use putline8 then for automatic conversion.
+
+>> procedure getrgbpalette(col : byte;var r,g,b : byte);
+   Write the colors of palette index COLOR into the variables R,G and B.
+
+>> procedure setrgbpal(col,r,g,b : byte);
+>> procedure getrgbpal(col : byte;var r,g,b : byte);
+   These 2 procedures run like their pendants with the 'ette' on the end
+   but it does not affect the real color palette but the virtual color
+   palette which is in the variable PAL.
+
+>> function  rgb(r,g,b : byte) : longint;
+   8 Bit mode:
+   Looks for the nearest rgb-value available. You should call getpal
+   prior to this function, to use the actual palette.
+   If you call it very often (for whatever), call therefore initrgb.
+   This procedure fills a color-lookup-table to find a fitting color.
+   That procedure takes some time, but thereafter you have very fast
+   results.
+   Hi/Truecolor:
+   Converts the rgb-values to the current screen mode. 
+
+>> procedure loadjascpal(path : string);
+   Load a palette made with Paint Shop Pro. The palette is loaded into the
+   virtual palette. To set the palette you should use setpal thereafter.
+
+>> function  loadpal(name : string;pal : pointer) : boolean;
+   Load a 768-byte-sized palette-file into PAL. To set the palette, loaded by
+   this function, use setuserpal.
+
+>> procedure setmode(resx,resy,colres : word);
+   It's really simple to use, like this: setmode(640,480,16);.
+   After you called this procedure, you should call graphresult to check
+   if there were any errors in the initialization. Otherwise your program
+   may crash when there was a problem ;))).
+
+>> procedure closegraph;
+   You _must_ use this to close a graphical mode. It restores the last
+   textmode and restores the last text screen. It also sets a variable,
+   defining that you are not in graphical mode anymore.
+
+>> function  grapherrormsg(errorcode : integer) : string;
+   Use it with the errorcodes returned by graphresult - you'll get back
+   an error string.
+
+>> function  graphresult : integer;
+   Graphresult will be always equal 0 if there were no errors after a
+   call of a procedure (like setmode, loadfont etc). If it returns
+   nonzero, then use GraphErrorMSG with the returned value to give
+   out the errorstring.
+
+>> function  getdrivername : string;
+   Returns string with the name of detected card. If a special card is
+   supported (like S3 and Cirrus) then it returns the chip
+   information, like 'S3 Trio64 764' otherwise only 'VESA'.
+
+>> procedure waitretrace;
+   Avoids flickering in animations, because it pauses drawing until the
+   vertical beam of the monitor goes back to start (top left point on
+   screen). Use it when finished one frame before drawing the next.
+
+>> procedure hretrace;
+   Waits until the cathode-beam is in the next line. Useful for
+   copperbars.
+
+>> procedure setscreen(on : boolean);
+   Sets the screen on(true) or off(false). If it's set to off,
+   the memory-transferring process gets a little more speed and you can
+   draw slow things(like loading a png-picture) while the user can'n see
+   the process on the monitor.
+
+>> procedure setviewport(x1,y1,x2,y2 : integer;clip : boolean);
+   Sets the actual viewport. Clip means that the draw commands can draw
+   only in the ranges of rectangle (x1,y1),(x2,y2).
+
+>> procedure getviewsettings(var viewport : viewporttype);
+   Get the actual viewport settings.
+
+>> procedure clearviewport;
+   Clear the actual viewport area.
+
+>> function  openimage(var p : pointer;sx,sy : word) : word;
+   Creates a new image in the memory - calculates the memory-size,
+   gets the memory, sets the image size and gives back the getted
+   memory. WARNING: if it returns zero, then there occured a problem.
+   Normally that means that your image would be larger than 64 Kbyte.
+   If you ignore the zero, your program could crash!!
+
+>> procedure closeimage(var p : pointer);
+   Frees the memory of an image - call this, if you don't need the
+   image anymore.
+
+>> procedure clearimage(p : pointer);
+   Clears the image at the pointer P.
+
+>> procedure getimagesize(p : pointer;var x,y : word);
+   Get the sizes of an image captured with getimage or set by setimagesize
+   in memory.
+
+>> procedure setimagesize(p : pointer;x,y : word);
+   Set the sizes of an image in memory.
+   If you wanna use your self-made images (i.e. they're calculated in
+   memory), use this function. Please use the variable
+   ImageDataSize to get the size of this sizedata. At the moment,
+   the datasize is 4, but it'll change in further versions because
+   of the support of Hi/Truecolor. Then the i.e. 2 bytes more are
+   used the specify the colordepth, alphamapping-information,
+   and maybe for 256 color-images if there's any palette at the
+   end of an image (because it's needed in truecolor...)
+
+>> function  imagesize(x1,y1,x2,y2 : word) : word;
+   Returns memory size needed for an image with coordinates
+   (x1,y1),(x2,y2).
+   It returns zero and graphresult <> 0 if the image is too large.
+
+>> procedure scale(image : pointer;px,py,sx,sy : word);
+   Scale image on position PX:PY with the factors SX and SY.
+
+>> procedure putpixel(x,y : word;color : longint);
+   Put a pixel with COLOR at position X:Y.
+
+>> function  getpixel(x,y : word) : longint;
+   Get the pixel color at position X:Y.
+
+>> procedure putimage(x,y : integer;p : pointer);
+   Put image from memory pointer P, previosly captured with getimage or
+   set by setimagesize, at position X:Y.
+
+>> procedure putsprite(x,y : integer;p : pointer;key : byte);
+   Runs almost like putimage with the difference that you can declare any
+   color as transparent through variable KEY.
+
+>> procedure getimage(x,y,x2,y2 : integer;p : pointer);
+   Save an image starting at X:Y and ending at X2:Y2 to the pointer P.
+   You can calculate the size of P with imagesize(x,y,x2,y2) or with the
+   following calculation : abs(x2-x)*abs(y2-y)+4 (the 4 extra bytes are
+   used to save the size of the image).
+
+>> procedure bar(x1,y1,x2,y2: integer);
+   Draw a filled rectangle starting from X1:Y1 and ending at X2:Y2. The
+   filling pattern and the color can be set via setfillstyle. To set
+   only the color of bar, use setfillcolor.
+
+>> procedure line(x1,y1,x2,y2: integer);
+   Draw a line starting from X1:Y1 and ending at X2:Y2. To set the color
+   of line call setcolor before drawing line.
+   The fastest way to draw horizontal lines is hline.
+   The fastest way to draw vertical lines is vline.
+
+>> procedure bitblit(x1,y1,x2,y2,dstx,dsty : integer);
+   Copy the rectangle X1:Y1-X2:Y2 to the position DSTX:DSTY. Remember that
+   this function is very fast with supported gfx-cards, because it uses
+   hardware acceleration.
+
+>> procedure rbar(x1,y1,x2,y2 :integer;r:word);
+   Similar to bar, but draws rounded edges, using radius R. Looks sometimes
+   very nice :)
+
+>> procedure fillcircle(x,y :integer;r:word);
+   Draw a filled circle. Center is defined by X:Y, radius is R. Filling
+   pattern and color can be set via setfillstyle. To set only the color,
+   use setfillcolor.
+
+>> procedure circle(px,py :integer;r:word);
+   Draws a circle. Center is defined by PX:PY, radius is R. Color can be 
+   set via setcolor.
+
+>> procedure hline(x1,y1,sizex: integer;col : longint);
+   Draw a horizontal line with the color COL with the length SIZEX from
+   position X1:Y1.
+
+>> procedure vline(x1,y1,sizey: integer;col : longint);
+   Draw a vertical line with the color COL with the length SIZEY from
+   position X1:Y1.
+
+>> procedure putline(x1,y1,sizex: integer;p : pointer);
+   Put a line with the imagedata P and size SIZEX on the screen, starting
+   at point X1:Y1.
+
+>> procedure putline8(x1,y1,sizex: integer;p : pointer);
+   Like putline, but the imagedata must be 8 bits large and it's
+   calculated to the actual colordepth.
+
+>> procedure putline24(x1,y1,sizex: integer;p : pointer);
+   Like putline, but the imagedata must be 24 bits large and it's
+   calculated to the actual colordepth.
+
+>> procedure spriteline(x1,y1,sizex: integer;p : pointer;key : byte);
+   Put a line with the imagedata P and size SIZEX on the screen,
+   starting at point X1:Y1. KEY defines the transparent color.
+
+>> procedure getline(x1,y1,sizex: integer;p : pointer);
+   Get a line from the screen to the pointer P in memory with the length
+   SIZEX starting from point X1:Y1.
+
+>> procedure fillpoly(numpoints : integer;var points : array of pointtype);
+   Draw a filled polygon. Use just like the one in Graph.TPU by Borland.
+
+>> procedure drawpoly(numpoints : integer;var polypoints : array of pointtype);
+   Draw a boundary polygon. Use just like the one in Graph.TPU by Borland.
+
+>> procedure rectangle(x1,y1,x2,y2: integer);
+   Draw a boundary rectangle. Set the color via setcolor.
+
+>> procedure rrectangle(x1,y1,x2,y2 :integer;r : word);
+   Draw a boundary rectangle with rounded edges. The radius is R.
+   Set the color via setcolor.
+
+>> procedure cleardevice;
+   Clear the whole screen.
+
+>> procedure floodfill(x,y : integer;border : longint);
+   Fill an area starting at point X:Y. The color of the border (= the color
+   where the filling stops) is BORDER. Set the filling color and pattern
+   via setfillpattern. To set only the color use setfillcolor.
+
+>> procedure settextjustify(Horiz, Vert : word);
+   Set text justification. Use just like the one in Graph.TPU by
+   Borland.
+
+>> procedure readgraphline(x1,y1,col,maxchars,posx : word;var s2 : string);
+   Read a line from the screen at position X1:Y1. The text color is COL.
+   MAXCHARS means the maximum number of chars to read. POSX is the
+   starting position of the cursor in the string. It should be = 1 for the
+   first char, that means zero is not allowed! S2 contains the output
+   string, it can be empty at the beginning, but it can also have
+   chars in it - these chars would be drawn on screen and you can edit
+   them with the string then.
+
+>> procedure writexy(x,y : integer;s : string);
+   Write the string S at position X:Y. Set color of the text via setcolor.
+
+>> procedure outtextxy(x,y : integer;s : string);
+   Same as writexy. Use just like the one in Graph.TPU by Borland.
+   This is only for compatibility with graph.
+
+>> procedure setfont(fnt,size : byte);
+   Set a font. FNT represents the selected font:
+   0 = Standard font
+   2 = Small font
+   ^^both automatically linked with graph-unit. All other fonts loadable
+   by the user, but only one vectorfont at a time (at the moment).
+   SIZE is the size of the font. Will only affect vector fonts (also
+   at the moment).
+
+>> function  makestr(w : longint) : string;
+   Convert an integer value to a string. Useful with writexy.
+
+>> function  makestrr(r : real;sh,st : byte) : string;
+   Convert a real to a string. Useful with writexy.
+   R is converted like following:   R:SH:ST.
+   To get 2 values after the comma, use it like this:
+   s := makestrr(r,4,2); Write(s);
+   That result will be the same as if you did: Write(r:4:2);.
+
+>> function  textwidth(s : string) : word;
+   Get the width of the textstring S for the currently used font.
+
+>> function  textheight : word;
+   Get the height of the character for the currently used font.
+
+>> function  loadfont(name : string;num : byte) : boolean;
+   Load a font from disk. NUM is the handle which is used to select font
+   later in the program. It must be above 2!
+
+>> function  loadfontmem(p : pointer;num : byte) : boolean;
+   The same as loadfont, but it loads the font from the memory. Useful for
+   linked-in fonts.
+
+>> procedure setactivepage(page : byte);
+   Set the graphical page, you want to draw at. I CANNOT SAY IT ENOUGH:
+   THE FIRST PAGE (default on start) IS PAGE 0 !!!!!!!!!
+
+>> procedure setvisualpage(page : word);
+   Set graphical page, which the user can see. This procedure
+   automatically avoids flickering (for smooth animations).
+
+>> procedure scroll(ypos : word);
+   Set the y-start of the screen. Default (on start) is 0.
+
+>> procedure setcolor(col : byte);
+   Set the current paint color.
+
+>> function  getcolor : byte;
+   Get the current paint color.
+
+>> procedure setfillstyle(pattern : word;col : byte);
+   Use just like the one in Graph.TPU by Borland.
+
+>> procedure setfillcolor(col: byte);
+   Sets only the filling color. Pattern won't change.
+
+>> function  getmaxx : word;
+   Gives back the maximum X - resolution of the screen.
+   Only for compatibility - use variable maxx instead
+
+>> function  getmaxy : word;
+   Gives back the maximum Y - resolution of the screen.
+   Only for compatibility - use variable maxy instead
+
+>> function  getmaxcolor : word;
+   Gives back the number of available colors. It's always 256 at the
+   moment.
+
+>> procedure setwritemode(writemode: integer);
+   Is almost the same like in the unit graph, but affects only the
+   procedure line and there's only the xorput and the normalput mode
+   available (at the moment).
+
+That's all at the moment. Improvements'll come soon (Well, I hope so ;).
+
+
+Known bugs
+. Univbe and other Utilities may make problems (not MY problem ;)
+. older S3-cards may make some problems (some have also a
+  hardware-bug in their bitblitting-engine)
+. very late S3-cards won't work in acceleration mode 2 - I know now
+  about the changes to make, but they may only appear in GrafX 2
+
+****** COMING SOON ***********************************************************
+
+Well, the next Version should be Grafx2. It'll support also Truecolor.
+. maybe gif-support (also anigifs)
+. truetype-support (will use freetype 1.0, also with fontsmoothing!!)
+. OOP-like model
+. faster RLE-sprites
+. more easy using of images with different colordepths
+. Linear frame buffer support
+
+Grafx2 won't be that compatible to Grafx1.3. It could be that
+you have to rewrite your programs.
+I don't know yet, but I think about a FPK-Pascal port of my unit.
+But before I do this, I have to finish Grafx2. Also this depends
+on if FPK-Pas finally gets it's own fully integreated Dos-IDE with
+syntax colors, undo... like the TP-IDE.
+
+
+
+Wanna know more about me?
+Well,
+my name is Stefan Goehler. I'm living in Germany near Rostock. I have brown
+hair and (dark-)brown eyes. I've reached in my 18 years of living here on
+this silly world a size of 1.73m.... that's enough... I'm too lazy to think
+about what I could write any more... ;)
+Ok, have fun with my unit. If you did something really impressing with it,
+let me know :)
+
+Bye,
+Stefan
+******************************************************************************
