@@ -11,7 +11,7 @@ Begin
   A:=0;
   For I:=0 to 124 do
   Begin
-    Dec2Bin(DefaultFont[I]);
+    Dec2Bin(DefaultFontJIVA[I]);
     For N:=0 to 7 do
     If b[N]>0 then mem[FontBufSeg:A+(7-N)]:=Color
               else mem[FontBufSeg:A+(7-N)]:=ColorBack;

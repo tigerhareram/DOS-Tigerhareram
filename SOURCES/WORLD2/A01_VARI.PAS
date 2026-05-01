@@ -7,7 +7,7 @@ Interface
 Uses CRT, DOS,
 
 {Lite}
-x01_glob, x02_ram,  x03_dos,  x04_vga,  x05_svga, x06_3dfx, x07_text, x08_maps,
+x01_glob, x02_ram,  x03_dos,  x04_vga,  x05_svga, x05_xvga, x06_3dfx, x07_text, x08_maps,
 x09_time, x10_sb16, x11_kbd1, x12_kbd2, x13_mous, x14_math, x15_ipx,  x16_misc,
 
 {World}
@@ -19,15 +19,15 @@ i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 b_xms, b_detect, b_smix;
 
 Type
-  TLenght: Record
-             BMP = LongInt;
-             MAP = LongInt;
-             TXT = LongInt;
-             GRAA = LongInt;
-             GRAB = LongInt;
-             GRAC = LongInt;
-             GRAD = LongInt;
-           End;
+  TLenght = Record
+              BMP: LongInt;
+              MAP: LongInt;
+              TXT: LongInt;
+              GRAA: LongInt;
+              GRAB: LongInt;
+              GRAC: LongInt;
+              GRAD: LongInt;
+            End;
 
 
 Const
@@ -57,7 +57,7 @@ Const
   (BMP: 0; MAP: 0; TXT: 0; GRAA: 0; GRAB: 0; GRAC: 0; GRAD: 0), {index 17}
   (BMP: 0; MAP: 0; TXT: 0; GRAA: 0; GRAB: 0; GRAC: 0; GRAD: 0), {index 18}
   (BMP: 0; MAP: 0; TXT: 0; GRAA: 0; GRAB: 0; GRAC: 0; GRAD: 0), {index 19}
-  (BMP: 0; MAP: 0; TXT: 0; GRAA: 0; GRAB: 0; GRAC: 0; GRAD: 0), {index 20}
+  (BMP: 0; MAP: 0; TXT: 0; GRAA: 0; GRAB: 0; GRAC: 0; GRAD: 0) {index 20}
   );
 
 Var

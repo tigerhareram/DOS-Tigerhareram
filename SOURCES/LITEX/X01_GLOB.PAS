@@ -10,6 +10,10 @@ Uses CRT, DOS,
 
 {LiteX}
 
+{GrafX}
+adler32, crc32, gr_vars, gr_8bit, gr_hicol, grafx, fadelib,
+inflate, mousedr7, pngunit,
+
 {Inertia 3D engine}
 i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 
@@ -243,7 +247,7 @@ Const
 
 {06-3DFX}
 
-{07-Texts}   DefaultFont: array[0..124] of Byte =   { WriteText,WriteNumber }
+{07-Texts}   DefaultFontJIVA: array[0..124] of Byte =   { WriteText,WriteNumber }
              (119,157,239,253,241,255,227,24,198,16,
              132,72,31,250,17,247,175,242,6,49,
              140,97,8,196,145,143,157,239,193,209,

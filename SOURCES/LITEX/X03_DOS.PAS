@@ -10,6 +10,10 @@ Uses CRT, DOS,
 {LiteX}
 x01_glob, x02_ram,
 
+{GrafX}
+adler32, crc32, gr_vars, gr_8bit, gr_hicol, grafx, fadelib,
+inflate, mousedr7, pngunit,
+
 {Inertia 3D engine}
 i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
 

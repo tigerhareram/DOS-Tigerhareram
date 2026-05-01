@@ -8,7 +8,11 @@ Interface
 Uses CRT, DOS,
 
 {LiteX}
-x01_glob, x02_ram, x03_dos, x04_vga, x05_svga, x06_3dfx, x07_text,
+x01_glob, x02_ram, x03_dos, x04_vga, x05_svga, x05_xvga, x06_3dfx, x07_text,
+
+{GrafX}
+adler32, crc32, gr_vars, gr_8bit, gr_hicol, grafx, fadelib,
+inflate, mousedr7, pngunit,
 
 {Inertia 3D engine}
 i_Types, i_Polygo, i_Memory, i_BufIO, i_PCX, i_Shade, i_Inerti,
