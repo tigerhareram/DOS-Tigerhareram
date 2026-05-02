@@ -28,6 +28,7 @@ b_xms, b_detect, b_smix;
              Procedure Map_WriteVGASegment(X,Y,X1,Y1,X2,Y2,BufferTo:Word;Rect1,Rect2:Byte);
              Procedure Map_WriteSVGASegment(X,Y,X1,Y1,X2,Y2:Word;Rect1,Rect2:Byte);
              Procedure Map_WriteSVGAComplet(BufferFrom:Word);
+             Procedure Map_WriteXVGAComplet(BufferFrom:Word);
 
 Implementation
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
@@ -35,10 +36,11 @@ Implementation
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsqr0.pas}
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsqr1.pas}
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsqr2.pas}
+             {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsqr3.pas}
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsegm1.pas}
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsegm2.pas}
              {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsegm3.pas}
-
+             {$I ..\SOURCES\Litex\STORE\08-MAPS\mapsegm4.pas}
 
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin End.
