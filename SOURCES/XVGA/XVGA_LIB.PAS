@@ -25,6 +25,11 @@ Var
  stranka:array[0..25,0..79] of char; {xxx 2D pole je pro vetsinu ukonu pohodlnejsi na obsluhu}
  LinearniStranka:array[0..IndexKonce] of char absolute stranka; {xxx nekdy se ale puvodni linearni pristup hodi}
 
+
+{fps}
+ fps: Integer;
+ frame_counter: Word;
+
  Procedure Str80BMP(Cesta:String);
  Procedure Str80(Cesta:String);
 

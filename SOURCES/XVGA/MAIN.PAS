@@ -4,8 +4,10 @@ Var Konec: Boolean;
 Begin
   Konec:=False;
 
-  setactivepage(1);
-  setvisualpage(0);
+  setvisualpage(0); {visible page set 0 , page 0 is visible}
+  setactivepage(1); {4 pages avaiable [0..3]} {draw to page 1}
+  setviewport(0,0,639,479,True);
+  clearviewport;
 
   LoadGRAFile('DATA\001a.gra',0,1);                            {LAYER GRA1 }
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]); {Into Buf[1] to x=160,y=0 }
@@ -21,22 +23,37 @@ Begin
 
 
   Str80('DATA\001.TXT');         {text page 80x25 visible - load from disk }
-
-  waitretrace;
   copypage(1,0);
+
+{fps}
+  fps:=0;
+  frame_counter:=0;
+
 
   Repeat
 
-    MainScreen;
     copypage(1,0);
 
-    i:=0;
-    Repeat
-    if i<25 then Begin
-                   Inc(i);
-                   Timer_Wait(20);
-                   If KeyCode<128 then i:=25;
-                 End;
+    MainScreen; {fps and pixels , write to page 2}
+
+{fps count}
+    If Timer_Second=True then
+    Begin
+      Inc(frame_counter);
+    End else
+    Begin
+      If frame_counter>0 then fps:=frame_counter;
+      frame_counter:=0;
+    End;
+
+{wait key time 20x25=500 (0,5 seconds waiting) }
+{   i:=0;
+   Repeat
+   if i<25 then Begin
+                  Inc(i);
+                  Timer_Wait(20);
+                  If KeyCode<128 then i:=25;
+                End;
     Until i>=25;
 
 {Esc}    If ((Key[68]=1) or (Key[1]=1)) then
