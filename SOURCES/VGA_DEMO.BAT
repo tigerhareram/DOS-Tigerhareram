@@ -17,7 +17,8 @@ echo --------------------------------------------------               * * * * *
 echo  Building Program                                                * START *
 echo --------------------------------------------------               * * * * *
 
-bpc -Q -E..\OUTPUTS ..\SOURCES\VGA_DEMO\vga_lib.pas
-bpc -Q -E..\OUTPUTS ..\SOURCES\VGA_DEMO\vga_demo.pas
+bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\VGA_DEMO\vga_lib.pas
+bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\VGA_DEMO\vga_demo.pas
 
 COPY ..\OUTPUTS\vga_demo.exe ..\OUTPUTS\VGA_DEMO
+CD ..\OUTPUTS

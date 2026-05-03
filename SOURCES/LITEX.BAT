@@ -53,3 +53,5 @@ bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\LITEX\x13_mous.pas
 bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\LITEX\x14_math.pas
 bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\LITEX\x15_ipx.pas
 bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\LITEX\x16_misc.pas
+
+cd ..\OUTPUTS\

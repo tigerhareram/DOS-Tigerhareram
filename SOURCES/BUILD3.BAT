@@ -94,3 +94,4 @@ bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\WORLD3\a15_serv.pas
 bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\WORLD3\a16_wrld.pas
 
 COPY ..\OUTPUTS\a16_wrld.exe ..\OUTPUTS\WORLD3\
+cd ..\OUTPUTS\

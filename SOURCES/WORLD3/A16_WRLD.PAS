@@ -23,9 +23,11 @@ b_xms, b_detect, b_smix;
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin
   PowerOn;
+  SVGA_Init;
 
   Init;
   Main;
 
+  SVGA_Done;
   PowerOff;
 End.

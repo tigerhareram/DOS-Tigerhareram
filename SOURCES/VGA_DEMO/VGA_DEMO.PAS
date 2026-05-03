@@ -16,11 +16,13 @@ b_xms, b_detect, b_smix;
 Begin
 
  PowerOn;
+ VGA_Init;
 
   Init;
   Main;
   Ending;
 
+ VGA_Done;
  PowerOff;
 
 End.

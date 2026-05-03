@@ -19,12 +19,13 @@ b_xms, b_detect, b_smix;
 {XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 Begin
                            {Stefan GrafX}        {Mircosoft}  {JIVA}
- PowerOn; {LiteX PowerOn -< setmode(640,480,8) -< SVGA_Init -< VGA_Init }
+ PowerOn;
+ XVGA_Init;
 
   Init;
   Main;
   Ending;
-                             {Stefan GrafX} {Mircosoft}  {JIVA}
- PowerOff; {LiteX PowerOff -< closegraph; -< SVGA_Done -< VGA_Done }
 
+ XVGA_Done;
+ PowerOff;
 End.

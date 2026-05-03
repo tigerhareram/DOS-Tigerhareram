@@ -7,9 +7,7 @@ echo --------------------------------------------------               * * * * *
 
 mkdir ..\OUTPUTS
 mkdir ..\OUTPUTS\XVGA
-mkdir ..\OUTPUTS\XVGA\INT21H
 mkdir ..\OUTPUTS\XVGA\DATA
-COPY ..\SOURCES\FILES\INT21H\*.* ..\OUTPUTS\XVGA\INT21H
 COPY ..\SOURCES\FILES\XVGA\DATA\*.* ..\OUTPUTS\XVGA\DATA
 CLS
 echo --------------------------------------------------               * * * * *
@@ -20,4 +18,5 @@ bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\XVGA\xvga_lib.pas
 bpc /U..\BORLAND\UNITS\ -Q -E..\OUTPUTS ..\SOURCES\XVGA\xvga.pas
 
 COPY ..\OUTPUTS\xvga.exe ..\OUTPUTS\XVGA
-CD ..\OUTPUTS\
+
+cd ..\OUTPUTS\
