@@ -1,8 +1,4 @@
-Procedure XVGA_BAR( x1,y1,
-                    x2,y2: Integer;
-                    Barva: Byte );
-Var i,j:word;
+procedure XVGA_Bar(x,y,barva:word);
 Begin
-  for i:=y1 to y2 do
-  for j:=x1 to x2 do putpixel(j,i,Barva);
+  XVGA_BarZ(x,y,x+7,y+7,barva);
 End;

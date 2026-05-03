@@ -4,10 +4,8 @@ Var Konec: Boolean;
 Begin
   Konec:=False;
 
-  setvisualpage(0); {visible page set 0 , page 0 is visible}
-  setactivepage(1); {4 pages avaiable [0..3]} {draw to page 1}
-  setviewport(0,0,639,479,True);
-  clearviewport;
+  XVGA_setvisualpage(0); {visible page set 0 , page 0 is visible}
+  XVGA_setactivepage(1); {4 pages avaiable [0..3]} {draw to page 1}
 
   LoadGRAFile('DATA\001a.gra',0,1);                            {LAYER GRA1 }
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]); {Into Buf[1] to x=160,y=0 }
@@ -23,18 +21,15 @@ Begin
 
 
   Str80('DATA\001.TXT');         {text page 80x25 visible - load from disk }
-  copypage(1,0);
 
 {fps}
   fps:=0;
   frame_counter:=0;
 
-
   Repeat
 
-    copypage(1,0);
-
-    MainScreen; {fps and pixels , write to page 2}
+    MainScreen; {fps and pixels}
+    XVGA_FlipPage(1,0);
 
 {fps count}
     If Timer_Second=True then
