@@ -30,7 +30,7 @@ Var
  fps: Integer;
  frame_counter: Word;
 
- Procedure Str80BMP(Cesta:String);
+ Procedure Str80BMP(Cesta:String;StartColor: Byte);
  Procedure Str80(Cesta:String);
 
  Procedure Init;

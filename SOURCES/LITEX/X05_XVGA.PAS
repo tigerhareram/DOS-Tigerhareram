@@ -35,13 +35,10 @@ b_xms, b_detect, b_smix;
      Procedure XVGA_Bar(x,y,barva:word);
      Procedure XVGA_Spr(x,y,x1,y1,Transp,BufferFrom:Word);
 
-     Procedure XVGA_ClearPage(barva:word); {SLOW}
+     Procedure XVGA_ClearPage(barva:word);
      Procedure XVGA_SetActivePage(page: word);
      Procedure XVGA_SetVisualPage(page: word);
      Procedure XVGA_FlipPage(Source,Destination: Word); {4 pages}
-
-     Procedure XVGA_ClearViewport;
-{    Procedure XVGA_SetViewport(x1,y1,x2,y2 : integer;clip : boolean); } {ERROR NEVIM}
 
      Procedure XVGA_Init;
      Procedure XVGA_Done;
@@ -64,10 +61,6 @@ Implementation
     {$I ..\SOURCES\Litex\STORE\05-XVGA\setapage.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\setvpage.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\flip.pas}
-
-
-    {$I ..\SOURCES\Litex\STORE\05-XVGA\viewprt1.pas}
-{   {$I ..\SOURCES\Litex\STORE\05-XVGA\viewprt2.pas }
 
     {$I ..\SOURCES\Litex\STORE\05-XVGA\init.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\done.pas}

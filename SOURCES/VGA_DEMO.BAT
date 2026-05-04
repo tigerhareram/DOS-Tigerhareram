@@ -7,7 +7,6 @@ echo --------------------------------------------------               * * * * *
 
 mkdir ..\OUTPUTS
 mkdir ..\OUTPUTS\VGA_DEMO
-mkdir ..\OUTPUTS\VGA_DEMO\INT21H
 mkdir ..\OUTPUTS\VGA_DEMO\DATA
 mkdir ..\OUTPUTS\VGA_DEMO\BMP
 COPY ..\SOURCES\FILES\VGA_DEMO\DATA\*.* ..\OUTPUTS\VGA_DEMO\DATA\

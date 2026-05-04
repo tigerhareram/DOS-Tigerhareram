@@ -25,14 +25,6 @@ Begin
 
   Timer_StartInit(1900); {LOADING PHASE (2 SECOND)}
 
-  {fonty}
-  _nactifont(FFont,'INT21H\space.fnt');
-  _NastavFont(FFont,True);
-
-  {klavesnice}
-  NactiRozlozeni2('INT21H\en_std.rk');
-  NactiRozlozeni2('INT21H\cz_std.rk');
-
   LoadGRAFile('DATA\data.gra',0,1);
   VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]);       {LOAD}
 
