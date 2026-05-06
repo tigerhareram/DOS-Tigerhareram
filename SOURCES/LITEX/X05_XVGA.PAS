@@ -40,6 +40,10 @@ b_xms, b_detect, b_smix;
      Procedure XVGA_SetVisualPage(page: word);
      Procedure XVGA_FlipPage(Source,Destination: Word); {4 pages}
 
+     Procedure XVGA_InitImage(x,y,xsize,ysize: word; p: pointer);
+     Procedure XVGA_CopyImage(x,y: word; Sprite: Boolean; p: pointer);
+     Procedure XVGA_DoneImage(p: pointer);
+
      Procedure XVGA_Init;
      Procedure XVGA_Done;
 
@@ -61,6 +65,10 @@ Implementation
     {$I ..\SOURCES\Litex\STORE\05-XVGA\setapage.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\setvpage.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\flip.pas}
+
+    {$I ..\SOURCES\Litex\STORE\05-XVGA\initimg.pas}
+    {$I ..\SOURCES\Litex\STORE\05-XVGA\copyimg.pas}
+    {$I ..\SOURCES\Litex\STORE\05-XVGA\doneimg.pas}
 
     {$I ..\SOURCES\Litex\STORE\05-XVGA\init.pas}
     {$I ..\SOURCES\Litex\STORE\05-XVGA\done.pas}

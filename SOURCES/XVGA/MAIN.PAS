@@ -3,8 +3,12 @@ Var Konec: Boolean;
     i: Byte;
 Begin
   Konec:=False;
-
   XVGA_setvisualpage(0); {visible page set 0 , page 0 is visible}
+
+
+
+  {---} {map to page 1 background}
+
   XVGA_setactivepage(1); {4 pages avaiable [0..3]} {draw to page 1}
 
   {gra 01 + map}
@@ -14,10 +18,22 @@ Begin
   LoadMAPFile('DATA\level.map',0);
   Map_WriteXVGAComplet(Buffer[3]);                 {LAYER MAP EXPERIMENTAL }
 
-  {to page 1 (640x480) from buffer[1]}
-  XVGA_SprZ(0,200,0,0,159,199,1,Buffer[1]);           {In Buffer[1] is gra1}
+  Str80('DATA\001.TXT');         {text page 80x25 visible - load from disk }
 
-  {---}
+  XVGA_Rectangle(0,0,639,400,ColX[1]);
+  XVGA_Rectangle(0,400,639,479,ColX[1]);
+
+
+
+
+  {---} {gra and bmp to page 2 objects}
+
+  XVGA_setactivepage(2); {4 pages avaiable [0..3]} {draw to page 1}
+
+  VGA_ClearPage(ColX[0],Buffer[1]); {ColX[0]=black}
+  LoadGRAFile('DATA\graa.gra',0,1);                            {LAYER GRA1 }
+  VGA_SprZ(0,0,0,0,159,199,1,Buffer[3],Buffer[1]); {Into Buf[1] to x=0,y=0 }
+  XVGA_SprZ(0,200,0,0,159,199,1,Buffer[1]);           {In Buffer[1] is gra1}
 
   VGA_ClearPage(ColX[0],Buffer[1]); {ColX[0]=black}
   LoadGRAFile('DATA\grab.gra',0,2);                            {LAYER GRA2 }
@@ -42,20 +58,20 @@ Begin
   Str80BMP('DATA\cosmon.bmp',136);             {cosmon.bmp 160x200 visible Buf1 }
   XVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]);
 
-  Str80('DATA\001.TXT');         {text page 80x25 visible - load from disk }
+  {now we can take objects to pointers for getimage putimage putsprites}
 
-  XVGA_Rectangle(0,0,639,400,ColX[1]);
-  XVGA_Rectangle(0,400,639,479,ColX[1]);
+  XVGA_InitImage(Image[0].ImgX,Image[0].ImgY,Image[0].ImgXsize,Image[0].ImgYsize,Image[0].ImgPointer); {alien 160x200}
+  XVGA_InitImage(Image[1].ImgX,Image[1].ImgY,Image[1].ImgXsize,Image[1].ImgYsize,Image[1].ImgPointer); {cosmon 160x200}
 
 {fps}
   fps:=0;
   frame_counter:=0;
 
-  XVGA_setactivepage(3); {MainScreen play in page 3}
+  XVGA_setactivepage(3);    {MainScreen play in page 3 = scene}
+  XVGA_FlipPage(1,3);       {background layer map and txt -> to page 3}
   Repeat
 
     MainScreen; {fps and pixels}
-    XVGA_FlipPage(3,0);
 
 {fps count}
     If Timer_Second=True then
