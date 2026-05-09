@@ -1,5 +1,5 @@
-Procedure XVGA_DoneImage(p: pointer);
+Procedure XVGA_DoneImage(ObjectNumber: Word);
 begin
-clearimage(p);
-closeimage(p);
+clearimage(Img[ObjectNumber].Point);
+closeimage(Img[ObjectNumber].Point);
 end;

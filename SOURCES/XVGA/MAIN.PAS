@@ -58,17 +58,13 @@ Begin
   Str80BMP('DATA\cosmon.bmp',136);             {cosmon.bmp 160x200 visible Buf1 }
   XVGA_SprZ(480,0,160,0,319,199,1,Buffer[1]);
 
-  {now we can take objects to pointers for getimage putimage putsprites}
-
-  XVGA_InitImage(Image[0].ImgX,Image[0].ImgY,Image[0].ImgXsize,Image[0].ImgYsize,Image[0].ImgPointer); {alien 160x200}
-  XVGA_InitImage(Image[1].ImgX,Image[1].ImgY,Image[1].ImgXsize,Image[1].ImgYsize,Image[1].ImgPointer); {cosmon 160x200}
+  XVGA_InitImage(320,0,160,200,0); {alien 160x200}
+  XVGA_InitImage(480,0,160,200,1); {cosmon 160x200}
 
 {fps}
   fps:=0;
   frame_counter:=0;
 
-  XVGA_setactivepage(3);    {MainScreen play in page 3 = scene}
-  XVGA_FlipPage(1,3);       {background layer map and txt -> to page 3}
   Repeat
 
     MainScreen; {fps and pixels}

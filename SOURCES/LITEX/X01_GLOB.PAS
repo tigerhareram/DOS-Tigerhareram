@@ -104,6 +104,15 @@ Type
 
              P_VESAinfo = ^T_VESAInfo;
 
+{05-XVGA} TImage = Record
+                     X : Integer;
+                     Y : Integer;
+                     Xs : Integer;
+                     Ys : Integer;
+                     Point : Pointer;
+                     Size : Word;
+                   End;
+
 {06-3DFX}
 
 {07-Texts}   TMode = (VGA,SVGA,OpenGL);
@@ -494,6 +503,9 @@ Var
              __SwitchBank:pointer; {adresa procedury pro prepinani bank pod VESA}
              __LHy:word; {automaticky se pricita k yove souradnici vseho, co se kresli
              (kvuli strankovani)}
+
+{05-XVGA}
+             Img: array[0..499] of TImage;                { graphic objects }
 
 {06-3DFX}
 

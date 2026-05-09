@@ -40,9 +40,9 @@ b_xms, b_detect, b_smix;
      Procedure XVGA_SetVisualPage(page: word);
      Procedure XVGA_FlipPage(Source,Destination: Word); {4 pages}
 
-     Procedure XVGA_InitImage(x,y,xsize,ysize: word; p: pointer);
-     Procedure XVGA_CopyImage(x,y: word; Sprite: Boolean; p: pointer);
-     Procedure XVGA_DoneImage(p: pointer);
+     Procedure XVGA_InitImage(x,y,xsize,ysize: word; ObjectNumber: Word);
+     Procedure XVGA_CopyImage(x,y: word; Sprite: Boolean; ColorTransparent: Byte; ObjectNumber: Word);
+     Procedure XVGA_DoneImage(ObjectNumber: Word);
 
      Procedure XVGA_Init;
      Procedure XVGA_Done;

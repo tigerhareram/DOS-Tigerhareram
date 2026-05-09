@@ -1,5 +1,5 @@
-Procedure XVGA_InitImage(x,y,xsize,ysize: word; p: pointer);
+Procedure XVGA_InitImage(x,y,xsize,ysize: word; ObjectNumber: Word);
 Begin
-  openimage(p,xsize,ysize);
-  getimagesize(p,x,y);
+  openimage(Img[ObjectNumber].Point,xsize,ysize);
+  getimage(x,y,x+xsize-1,y+ysize-1,Img[ObjectNumber].Point);
 End;

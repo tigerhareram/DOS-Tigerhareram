@@ -17,24 +17,15 @@ inflate, mousedr7, pngunit,
 {Ethan Brodsky smix}
 b_xms, b_detect, b_smix;
 
-Type
-  TImage = Record
-             ImgX : Integer;
-             ImgY : Integer;
-             ImgXsize : Integer;
-             ImgYSize : Integer;
-             ImgPointer : Pointer;
-           End;
-
 Const
   IndexKonce =80*25-1; {xxx index posledniho znaku linearni stranky}
+
 
 Var
 {Kniha}
  stranka:array[0..25,0..79] of char; {xxx 2D pole je pro vetsinu ukonu pohodlnejsi na obsluhu}
  LinearniStranka:array[0..IndexKonce] of char absolute stranka; {xxx nekdy se ale puvodni linearni pristup hodi}
 
- Image: array[0..9] of TImage;
 
 {fps}
  fps: Integer;
