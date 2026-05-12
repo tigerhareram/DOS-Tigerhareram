@@ -95,10 +95,17 @@ Begin
   {experiment 2 = palette processes}
 
   Konec:=False;
-  P16_StartBlink(ColX[1],0);
 
-  P16_FadeOut(120,0); {fade out color 120 + next 15 alien palette}
-  P16_FadeOut(136,0); {fade out color 136 + next 15 cosmon palette}
+  P16_Init(120);
+  P16_FadeOut(120,1); {black out color 120 + next 15 alien palette}
+  P16_Done(120);
+
+  P16_Init(136);
+  P16_FadeOut(136,1); {black out color 136 + next 15 cosmon palette}
+  P16_Done(136);
+
+  P16_Init(ColX[1]);
+  P16_StartBlink(ColX[1],1); {tempo 1=fastest}
 
   Repeat
 
@@ -119,5 +126,7 @@ Begin
          End;
 
   Until Konec=True;
+
   P16_StopBlink;
+  P16_Done(ColX[1]);
 End;
