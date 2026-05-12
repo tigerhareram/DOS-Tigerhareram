@@ -17,8 +17,9 @@ Begin
   ColX[14]:=14;
   ColX[15]:=15;
 
-  setrgbpal(ColX[0],0,0,0);    {Palette Color 0}
-  setrgbpal(ColX[1],24,40,16); {Palette Color 1 : R=24, G=40, B=16}
+  setrgbpalette(ColX[0],0,0,0);    {Palette Color 0}
+  setrgbpalette(ColX[1],0,0,255);  {Palette Color 1 : R=24, G=40, B=16}
+  setrgbpalette(ColX[2],255,0,0);
 
   loadfont('fonts\descent.chs',3);
 End;

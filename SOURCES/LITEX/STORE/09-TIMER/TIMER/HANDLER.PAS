@@ -1,5 +1,6 @@
 procedure TimerHandler; Interrupt;
 Var r,g,b:byte; {xxx takhle se zbavime veskereho rizika kolize}
+    s: string;
 begin
 {zaloha 32bitovych registru - nutne, protoze pracujeme s longinty:}
 asm
@@ -39,25 +40,49 @@ end;
   Begin
        If blinking=True then
        Begin
-          P16_GetPal(blinkCol,r,g,b);
-          Case blinkFade of
-            0: Begin
-                 if r>0 then dec(r);
-                 if g>0 then dec(g);
-                 if b>0 then dec(b);
-                 If n64<63 then inc(n64);
-                 if n64>=63 then blinkFade:=1;
-               End;
-            1: Begin
-                 If r<PalBack[blinkCol].R then inc(r);
-                 If g<PalBack[blinkCol].G then inc(g);
-                 If b<PalBack[blinkCol].B then inc(b);
-                 If n64>0 then dec(n64);
-                 if n64=0 then blinkFade:=0;
-               End;
-          End; {Case End}
-          P16_SetPal(blinkCol,r,g,b);
-          {xxx tohle bude zpusobovat poblikavani obrazu, protoze to jede nezavisle na vsync}
+          If XVGA_Enabled = False then {XVGA_Enabled=False (is VGA set)}
+          Begin
+            P16_GetPal(blinkCol,r,g,b);
+            Case blinkFade of
+              0: Begin
+                   if r>0 then dec(r);
+                   if g>0 then dec(g);
+                   if b>0 then dec(b);
+                   If n64<63 then inc(n64);
+                   if n64>=63 then blinkFade:=1;
+                 End;
+              1: Begin
+                   If r<PalBack[blinkCol].R then inc(r);
+                   If g<PalBack[blinkCol].G then inc(g);
+                   If b<PalBack[blinkCol].B then inc(b);
+                   If n64>0 then dec(n64);
+                   if n64=0 then blinkFade:=0;
+                 End;
+            End; {Case End}
+            P16_SetPal(blinkCol,r,g,b);
+            {xxx tohle bude zpusobovat poblikavani obrazu, protoze to jede nezavisle na vsync}
+          End else {XVGA_Enabled=True (is XVGA set)}
+          Begin
+            getrgbpalette(blinkCol,r,g,b);
+            Case blinkFade of
+              0: Begin
+                   if r>0 then dec(r);
+                   if g>0 then dec(g);
+                   if b>0 then dec(b);
+                   If n64<255 then inc(n64);
+                   if n64>=255 then blinkFade:=1;
+                 End;
+              1: Begin
+                   If r<PalBack[blinkCol].R then inc(r);
+                   If g<PalBack[blinkCol].G then inc(g);
+                   If b<PalBack[blinkCol].B then inc(b);
+                   If n64>0 then dec(n64);
+                   if n64=0 then blinkFade:=0;
+                 End;
+            End; {Case End}
+            setrgbpalette(blinkCol,r,g,b);
+            {xxx tohle bude zpusobovat poblikavani obrazu, protoze to jede nezavisle na vsync}
+          End;
        End;
     clock3:=0;
   End;
@@ -76,44 +101,44 @@ end;
     Inc(clock5);
     If clock5 >= 400 then
     Begin
-      VGA_BarZ(60,8,85,21,ColX[0],Buffer[4]);
-      Case LoadingPhase of
-        0: Begin
-             VGA_Pixel(60,8,ColX[1],Buffer[4]);
-             VGA_Pixel(61,9,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,11,ColX[1],Buffer[4]);
-             VGA_Pixel(64,12,ColX[1],Buffer[4]);
-           End;
-        1: Begin
-             VGA_Pixel(60,10,ColX[1],Buffer[4]);
-             VGA_Pixel(61,10,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,10,ColX[1],Buffer[4]);
-             VGA_Pixel(64,10,ColX[1],Buffer[4]);
-           End;
-        2: Begin
-             VGA_Pixel(60,12,ColX[1],Buffer[4]);
-             VGA_Pixel(61,11,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(63,9,ColX[1],Buffer[4]);
-             VGA_Pixel(64,8,ColX[1],Buffer[4]);
-           End;
-        3: Begin
-             VGA_Pixel(62,8,ColX[1],Buffer[4]);
-             VGA_Pixel(62,9,ColX[1],Buffer[4]);
-             VGA_Pixel(62,10,ColX[1],Buffer[4]);
-             VGA_Pixel(62,11,ColX[1],Buffer[4]);
-             VGA_Pixel(62,12,ColX[1],Buffer[4]);
-           End;
-      End; {Case End}
-      If LoadingPhase<3 then Inc(LoadingPhase) else LoadingPhase:=0;
-      Text_WriteDefaultFont(270,180,ColX[1],ColX[0],Buffer[2],VGA);
-      Text_WriteText(Buffer[2],270,180,5,5,1,8,8, 'loading ',Buffer[4],VGA);
-      Text_WriteText(Buffer[2],270,180,5,5,1,8,16,'time    ',Buffer[4],VGA);
-      Text_WriteNumber(Buffer[2],270,195,5,5,1,60,16,1+(Timer_Watch_GetTime div 100),Buffer[4],VGA);
+        VGA_BarZ(60,8,85,21,ColX[0],Buffer[4]);
+        Case LoadingPhase of
+          0: Begin
+               VGA_Pixel(60,8,ColX[1],Buffer[4]);
+               VGA_Pixel(61,9,ColX[1],Buffer[4]);
+               VGA_Pixel(62,10,ColX[1],Buffer[4]);
+               VGA_Pixel(63,11,ColX[1],Buffer[4]);
+               VGA_Pixel(64,12,ColX[1],Buffer[4]);
+             End;
+          1: Begin
+               VGA_Pixel(60,10,ColX[1],Buffer[4]);
+               VGA_Pixel(61,10,ColX[1],Buffer[4]);
+               VGA_Pixel(62,10,ColX[1],Buffer[4]);
+               VGA_Pixel(63,10,ColX[1],Buffer[4]);
+               VGA_Pixel(64,10,ColX[1],Buffer[4]);
+             End;
+          2: Begin
+               VGA_Pixel(60,12,ColX[1],Buffer[4]);
+               VGA_Pixel(61,11,ColX[1],Buffer[4]);
+               VGA_Pixel(62,10,ColX[1],Buffer[4]);
+               VGA_Pixel(63,9,ColX[1],Buffer[4]);
+               VGA_Pixel(64,8,ColX[1],Buffer[4]);
+             End;
+          3: Begin
+               VGA_Pixel(62,8,ColX[1],Buffer[4]);
+               VGA_Pixel(62,9,ColX[1],Buffer[4]);
+               VGA_Pixel(62,10,ColX[1],Buffer[4]);
+               VGA_Pixel(62,11,ColX[1],Buffer[4]);
+               VGA_Pixel(62,12,ColX[1],Buffer[4]);
+             End;
+        End; {Case End}
+        If LoadingPhase<3 then Inc(LoadingPhase) else LoadingPhase:=0;
+        Text_WriteDefaultFont(270,180,ColX[1],ColX[0],Buffer[2],VGA);
+        Text_WriteText(Buffer[2],270,180,5,5,1,8,8, 'loading ',Buffer[4],VGA);
+        Text_WriteText(Buffer[2],270,180,5,5,1,8,16,'time    ',Buffer[4],VGA);
+        Text_WriteNumber(Buffer[2],270,195,5,5,1,60,16,1+(Timer_Watch_GetTime div 100),Buffer[4],VGA);
 
-      clock5:=0;
+        clock5:=0;
     End;
   End;
 

@@ -39,7 +39,9 @@ Begin
           BMP.Palette[I].B:=BMP.Palette[I].B DIV 4;
           BMP.Palette[I].G:=BMP.Palette[I].G DIV 4;
           BMP.Palette[I].R:=BMP.Palette[I].R DIV 4;
-          P16_SetPal(StartColor+I,BMP.Palette[I].R,BMP.Palette[I].G,BMP.Palette[I].B);
+          If XVGA_Enabled=false
+          then P16_SetPal(StartColor+I,BMP.Palette[I].R,BMP.Palette[I].G,BMP.Palette[I].B)
+          else setrgbpalette(StartColor+I,BMP.Palette[I].R,BMP.Palette[I].G,BMP.Palette[I].B);
         End;
         Seek(F,BMP.Header.DataOffset);
        End

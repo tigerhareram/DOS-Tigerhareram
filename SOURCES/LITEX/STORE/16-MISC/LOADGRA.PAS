@@ -136,7 +136,9 @@ Begin
   For Ii:=0 to 15 do
   Begin
     SprPal[Ii].c:=Ii+(PageNumber*16);
-    P16_SetPal(SprPal[Ii].c,SprPal[Ii].R,SprPal[Ii].G,SprPal[Ii].B);
+    If XVGA_Enabled=false
+    then P16_SetPal(SprPal[Ii].c,SprPal[Ii].R,SprPal[Ii].G,SprPal[Ii].B)
+    else setrgbpalette(SprPal[Ii].c,SprPal[Ii].R,SprPal[Ii].G,SprPal[Ii].B);
   End;
 
   Close(F);

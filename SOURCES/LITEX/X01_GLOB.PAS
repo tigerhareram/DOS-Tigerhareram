@@ -506,6 +506,7 @@ Var
 
 {05-XVGA}
              Img: array[0..499] of TImage;                { graphic objects }
+             XVGA_Enabled : Boolean;
 
 {06-3DFX}
 

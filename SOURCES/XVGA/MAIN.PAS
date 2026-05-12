@@ -5,8 +5,6 @@ Begin
   Konec:=False;
   XVGA_setvisualpage(0); {visible page set 0 , page 0 is visible}
 
-
-
   {---} {map to page 1 background}
 
   XVGA_setactivepage(1); {4 pages avaiable [0..3]} {draw to page 1}
@@ -20,8 +18,8 @@ Begin
 
   Str80('DATA\001.TXT');         {text page 80x25 visible - load from disk }
 
-  XVGA_Rectangle(0,0,639,400,ColX[1]);
-  XVGA_Rectangle(0,400,639,479,ColX[1]);
+  XVGA_Rectangle(0,0,639,400,ColX[2]);
+  XVGA_Rectangle(0,400,639,479,ColX[2]);
 
 
 
@@ -79,8 +77,32 @@ Begin
       frame_counter:=0;
     End;
 
-{wait key time 20x25=500 (0,5 seconds waiting) }
-{   i:=0;
+{Esc}    If ((Key[68]=1) or (Key[1]=1)) then
+         Begin
+           If Key[68]=1 then Kbd_RPush(68);
+           If Key[1]=1 then Kbd_RPush(1);
+           Konec:=True;                         {Esc MainMenu}
+         End;
+
+  Until Konec=True;
+
+
+
+
+
+
+
+  {experiment 2 = palette processes}
+
+  Konec:=False;
+  P16_StartBlink(ColX[1],0);
+
+  P16_FadeOut(120,0); {fade out color 120 + next 15 alien palette}
+  P16_FadeOut(136,0); {fade out color 136 + next 15 cosmon palette}
+
+  Repeat
+
+   i:=0;
    Repeat
    if i<25 then Begin
                   Inc(i);
@@ -97,4 +119,5 @@ Begin
          End;
 
   Until Konec=True;
+  P16_StopBlink;
 End;

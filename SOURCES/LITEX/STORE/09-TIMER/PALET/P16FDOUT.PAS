@@ -3,7 +3,7 @@ Var I,N: Byte;
     ms: Word;
 Begin
   ms:=((Tempo*100)+256) div 64;
-
+  If XVGA_Enabled=false then
   For N:=0 to 63 do
   Begin
     For I:=0 to 15 do
@@ -16,7 +16,23 @@ Begin
       If Tmp[StartColor+I,3]>0 then dec(Tmp[StartColor+I,3]);
       P16_SetPal(StartColor+I,Tmp[StartColor+I,1],
                               Tmp[StartColor+I,2],
-                              Tmp[StartColor+I,3]);
+                              Tmp[StartColor+I,3])
+    End;
+    Timer_Wait(ms);
+  End else {XVGA_Enabled=True}
+  For N:=0 to 255 do
+  Begin
+    For I:=0 to 15 do
+    Begin
+      getrgbpalette(StartColor+I,Tmp[StartColor+I,1],
+                                 Tmp[StartColor+I,2],
+                                 Tmp[StartColor+I,3]);
+      If Tmp[StartColor+I,1]>0 then dec(Tmp[StartColor+I,1]);
+      If Tmp[StartColor+I,2]>0 then dec(Tmp[StartColor+I,2]);
+      If Tmp[StartColor+I,3]>0 then dec(Tmp[StartColor+I,3]);
+      setrgbpalette(StartColor+I,Tmp[StartColor+I,1],
+                                 Tmp[StartColor+I,2],
+                                 Tmp[StartColor+I,3])
     End;
     Timer_Wait(ms);
   End;
