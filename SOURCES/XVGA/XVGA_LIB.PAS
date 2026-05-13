@@ -26,6 +26,9 @@ Var
  stranka:array[0..25,0..79] of char; {xxx 2D pole je pro vetsinu ukonu pohodlnejsi na obsluhu}
  LinearniStranka:array[0..IndexKonce] of char absolute stranka; {xxx nekdy se ale puvodni linearni pristup hodi}
 
+{palette experiment}
+ zjisti_R, zjisti_G, zjisti_B : Byte;
+
 
 {fps}
  fps: Integer;

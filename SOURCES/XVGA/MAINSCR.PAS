@@ -16,6 +16,12 @@ Begin
   XVGA_BarZ(10,405,106,412,ColX[1]); {clear fps space wirh color 1} {Init define}
   writexy(10,405,'fps='+s);
 
+  getrgbpalette(205,zjisti_R,zjisti_G,zjisti_B);
+  XVGA_BarZ(120,405,160,436,205); {clear fps space wirh color 1} {Init define}
+  s:=''; Str(zjisti_R,s); writexy(120,407,'R='+s);
+  s:=''; Str(zjisti_G,s); writexy(120,417,'G='+s);
+  s:=''; Str(zjisti_B,s); writexy(120,427,'B='+s);
+
   {flip page 3 to visible screen page 0}
   XVGA_FlipPage(3,0); {to screen}
 End;
