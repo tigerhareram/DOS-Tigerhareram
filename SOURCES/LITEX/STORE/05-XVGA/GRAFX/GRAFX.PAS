@@ -2169,7 +2169,7 @@ begin
   col8bitpal^[i] := rgb(r,g,b);
 end;
 
-procedure setrgbpalette_8(col,r,g,b : byte);far;assembler;
+procedure setrgbpalette_8(col,r,g,b : byte); far; assembler;
 {sets color i to rgb value}
 asm
   mov   rgbinited,false
@@ -2188,7 +2188,25 @@ asm
   out   dx,al
 end;
 
-procedure getrgbpalette_8(col : byte;var r,g,b : byte);far;assembler;
+{procedure setrgbpalette_8(col,r,g,b:byte); far; assembler; {Ladislav Lacina = Laaca VERSION}
+{Asm
+mov rgbinited,false
+mov DX,$03C8        {coz znamena:}
+{mov AL,col
+out DX,AL           {port[$3C8]:=col;}
+{inc DX
+mov AL,r
+shr AL,2
+out DX,AL           {port[$3C9]:=r;}
+{mov AL,g
+shr AL,2
+out DX,AL           {port[$3C9]:=g;}
+{mov AL,b
+shr AL,2
+out DX,AL           {port[$3C9]:=b;}
+{End;{setrgbpalette_8}
+
+procedure getrgbpalette_8(col : byte;var r,g,b : byte); far; assembler;
 asm
   mov   al,col
   mov   dx,03C7h
@@ -2206,6 +2224,28 @@ asm
   les   di,b
   mov   es:[di],al
 end;
+
+
+{Procedure getrgbpalette_8(col:byte;var r,g,b:byte); far; assembler; {Ladislav Lacina = Laaca VERSION}
+{Asm
+mov DX,$03C7
+mov AL,col
+out DX,AL               {port[$03C7]:=col;}
+{add DX,2
+in AL,DX
+les DI,r
+shl AL,2
+mov ES:[DI],AL          {R:=port[$03C9];}
+{in AL,DX
+les DI,g
+shl AL,2
+mov ES:[DI],AL          {G:=port[$03C9];}
+{in AL,DX
+les DI,b
+shl AL,2
+mov ES:[DI],AL          {B:=port[$03C9];}
+{End;{getrgbpalette_8}
+
 
 procedure getrgbpalette_gen(col : byte;var r,g,b : byte);far;
 begin

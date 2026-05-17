@@ -96,15 +96,31 @@ Begin
 
   Konec:=False;
 
-  P16_Init(120);
-  P16_FadeOut(120,1); {black out color 120 + next 15 alien palette}
-  P16_Done(120);
+  XVGA_setactivepage(0);
+  XVGA_setvisualpage(0);
 
-  P16_Init(136);
-  P16_FadeOut(136,1); {black out color 136 + next 15 cosmon palette}
-  P16_Done(136);
+  setrgbpalette(ColX[0],0,0,0);    {Palette Color 0}
+  setrgbpalette(ColX[1],0,0,255);
+  setrgbpalette(ColX[2],255,0,0);
 
-  P16_Init(ColX[1]);
+ {experimental color 205}
+  setrgbpalette(205,24,40,16); {Palette Color 205 : R=24, G=40, B=16}
+  zjisti_R:=0;
+  zjisti_G:=0;
+  zjisti_B:=0;
+
+  getrgbpalette(205,zjisti_R,zjisti_G,zjisti_B);
+  XVGA_BarZ(120,405,160,436,205); {clear fps space wirh color 1} {Init define}
+  s:=''; Str(zjisti_R,s); writexy(120,407,'R='+s);
+  s:=''; Str(zjisti_G,s); writexy(120,417,'G='+s);
+  s:=''; Str(zjisti_B,s); writexy(120,427,'B='+s);
+
+
+
+  P16_FadeOut(120,1); {alien}
+  P16_FadeOut(136,1); {cosmon}
+
+
   P16_StartBlink(ColX[1],1); {tempo 1=fastest}
 
   Repeat
@@ -128,5 +144,4 @@ Begin
   Until Konec=True;
 
   P16_StopBlink;
-  P16_Done(ColX[1]);
 End;

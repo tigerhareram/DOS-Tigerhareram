@@ -17,15 +17,5 @@ Begin
   ColX[14]:=14;
   ColX[15]:=15;
 
-  setrgbpalette(ColX[0],0,0,0);    {Palette Color 0}
-  setrgbpalette(ColX[1],0,0,255);
-  setrgbpalette(ColX[2],255,0,0);
-
- {experimental color 205}
-  setrgbpalette(205,24,40,16); {Palette Color 205 : R=24, G=40, B=16}
-  zjisti_R:=0;
-  zjisti_G:=0;
-  zjisti_B:=0;
-
   loadfont('fonts\descent.chs',3);
 End;
