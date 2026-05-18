@@ -109,19 +109,48 @@ Begin
   zjisti_G:=0;
   zjisti_B:=0;
 
-  getrgbpalette(205,zjisti_R,zjisti_G,zjisti_B);
-  XVGA_BarZ(120,405,160,436,205); {clear fps space wirh color 1} {Init define}
+  getrgbpalette(ColX[1],zjisti_R,zjisti_G,zjisti_B);
+  XVGA_BarZ(120,405,160,436,ColX[1]); {clear fps space wirh color 1} {Init define}
   s:=''; Str(zjisti_R,s); writexy(120,407,'R='+s);
   s:=''; Str(zjisti_G,s); writexy(120,417,'G='+s);
   s:=''; Str(zjisti_B,s); writexy(120,427,'B='+s);
 
 
 
+
+{alien}
+  P16_Init(120);
   P16_FadeOut(120,1); {alien}
+  P16_FadeIn(120,1); {alien}
+
+  XVGA_BarZ(170,405,210,436,120); {Col 120 .RGB}
+  s:=''; Str(PalBack[120].R,s); writexy(170,407,'R='+s);
+  s:=''; Str(PalBack[120].G,s); writexy(170,417,'G='+s);
+  s:=''; Str(PalBack[120].B,s); writexy(170,427,'B='+s);
+{alien end}
+
+
+
+{cosmon}
+  P16_Init(136);
   P16_FadeOut(136,1); {cosmon}
+  P16_FadeIn(136,1); {alien}
+
+  XVGA_BarZ(220,405,260,436,136); {Col 136 .RGB}
+  s:=''; Str(PalBack[136].R,s); writexy(220,407,'R='+s);
+  s:=''; Str(PalBack[136].G,s); writexy(220,417,'G='+s);
+  s:=''; Str(PalBack[136].B,s); writexy(220,427,'B='+s);
+{cosmon end}
 
 
+
+{blinking}
   P16_StartBlink(ColX[1],1); {tempo 1=fastest}
+
+  XVGA_BarZ(270,405,319,436,ColX[1]); {ColX[1].RGB}
+  s:=''; Str(PalBack[ColX[1]].R,s); writexy(270,407,'R='+s);
+  s:=''; Str(PalBack[ColX[1]].G,s); writexy(270,417,'G='+s);
+  s:=''; Str(PalBack[ColX[1]].B,s); writexy(270,427,'B='+s);
 
   Repeat
 
@@ -144,4 +173,5 @@ Begin
   Until Konec=True;
 
   P16_StopBlink;
+{blinking end}
 End;
