@@ -69,8 +69,8 @@ end;
                    if r>0 then dec(r);
                    if g>0 then dec(g);
                    if b>0 then dec(b);
-                   If n64<255 then inc(n64);
-                   if n64>=255 then blinkFade:=1;
+                   If n64<63 then inc(n64);
+                   if n64>=63 then blinkFade:=1;
                  End;
               1: Begin
                    If r<PalBack[blinkCol].R then inc(r);

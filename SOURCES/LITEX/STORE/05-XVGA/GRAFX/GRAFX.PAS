@@ -2223,7 +2223,7 @@ asm
   shl   al,2
   les   di,b
   mov   es:[di],al
-end; }
+end;}
 
 
 Procedure getrgbpalette_8(col:byte;var r,g,b:byte); far; assembler; {Ladislav Lacina = Laaca VERSION}

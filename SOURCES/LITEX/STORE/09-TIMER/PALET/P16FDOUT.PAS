@@ -20,7 +20,7 @@ Begin
     End;
     Timer_Wait(ms);
   End else {XVGA_Enabled=True}
-  For N:=0 to 255 do
+  For N:=0 to 63 do
   Begin
     For I:=0 to 15 do
     Begin

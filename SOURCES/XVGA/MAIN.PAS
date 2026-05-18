@@ -100,8 +100,8 @@ Begin
   XVGA_setvisualpage(0);
 
   setrgbpalette(ColX[0],0,0,0);    {Palette Color 0}
-  setrgbpalette(ColX[1],0,0,255);
-  setrgbpalette(ColX[2],255,0,0);
+  setrgbpalette(ColX[1],0,0,63);
+  setrgbpalette(ColX[2],63,0,0);
 
  {experimental color 205}
   setrgbpalette(205,24,40,16); {Palette Color 205 : R=24, G=40, B=16}
@@ -122,11 +122,6 @@ Begin
   P16_Init(120);
   P16_FadeOut(120,1); {alien}
   P16_FadeIn(120,1); {alien}
-
-  XVGA_BarZ(170,405,210,436,120); {Col 120 .RGB}
-  s:=''; Str(PalBack[120].R,s); writexy(170,407,'R='+s);
-  s:=''; Str(PalBack[120].G,s); writexy(170,417,'G='+s);
-  s:=''; Str(PalBack[120].B,s); writexy(170,427,'B='+s);
 {alien end}
 
 
@@ -135,11 +130,6 @@ Begin
   P16_Init(136);
   P16_FadeOut(136,1); {cosmon}
   P16_FadeIn(136,1); {alien}
-
-  XVGA_BarZ(220,405,260,436,136); {Col 136 .RGB}
-  s:=''; Str(PalBack[136].R,s); writexy(220,407,'R='+s);
-  s:=''; Str(PalBack[136].G,s); writexy(220,417,'G='+s);
-  s:=''; Str(PalBack[136].B,s); writexy(220,427,'B='+s);
 {cosmon end}
 
 
