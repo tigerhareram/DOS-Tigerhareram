@@ -2222,7 +2222,7 @@ Asm
 End;
 
 {procedure getrgbpalette_8(col : byte;var r,g,b : byte); far; assembler;  {ORIGINAL VERSION}
-asm
+{asm
   mov   al,col
   mov   dx,03C7h
   add   dx,2
